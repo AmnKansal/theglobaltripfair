@@ -4,8 +4,12 @@ import type { Locale } from "../i18n/languages"
 import { suggestLocations } from "../services/locations"
 import { useDebouncedValue } from "./useDebouncedValue"
 
+export const LOCATION_SUGGEST_DELAY_MS = 400
+
 export function useLocationSuggest(query: string, locale: Locale, includeAirports: boolean, enabled: boolean) {
-  const debounced = useDebouncedValue(query.trim(), 280)
+  const trimmed = query.trim()
+  const debounced = useDebouncedValue(trimmed, LOCATION_SUGGEST_DELAY_MS)
+  const pending = enabled && trimmed.length >= 2 && trimmed !== debounced
   const [items, setItems] = useState<PlaceRef[]>([])
   const [loading, setLoading] = useState(false)
 
@@ -40,5 +44,8 @@ export function useLocationSuggest(query: string, locale: Locale, includeAirport
     return () => controller.abort()
   }, [debounced, enabled, includeAirports, locale])
 
-  return { items, loading }
+  return {
+    items: pending ? [] : items,
+    loading: pending || loading,
+  }
 }
