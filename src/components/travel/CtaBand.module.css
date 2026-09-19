@@ -1,0 +1,33 @@
+.band {
+  padding: 0 0 40px;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 36px 40px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #1c1a18 0%, #2f221f 58%, #4a1f1c 100%);
+  color: #f6f3ee;
+}
+
+.copy h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  letter-spacing: -0.04em;
+}
+
+.copy p {
+  margin-top: 8px;
+  color: rgba(246, 243, 238, 0.78);
+  max-width: 520px;
+}
+
+@media (max-width: 720px) {
+  .inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 22px;
+  }
+}

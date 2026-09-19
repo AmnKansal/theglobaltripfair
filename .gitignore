@@ -1,0 +1,55 @@
+# Dependencies
+node_modules
+
+# Build
+dist
+dist-ssr
+*.tsbuildinfo
+
+# Environment and local overrides
+.env
+.env.*
+*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Test and coverage
+coverage
+.nyc_output
+
+# Editor and OS
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Hosting caches
+.vercel
+.netlify
+
+# Local development notes and one-off migration tools
+FINAL_WEBSITE_AUDIT.md
+IMAGE_MIGRATION_REPORT.md
+scripts/download-images.mjs
+src/assets/
+
+# Tooling workspaces
+.cursor
+.claude
+.agent
+.agents
+.codex
+.github/copilot
+*.canvas.tsx

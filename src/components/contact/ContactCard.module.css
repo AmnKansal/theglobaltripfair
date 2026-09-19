@@ -1,0 +1,82 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 28px 26px 24px;
+  border-radius: 24px;
+  background: #f7f3ee;
+  border: 1px solid transparent;
+  box-shadow: 0 12px 32px rgba(16, 10, 10, 0.22);
+  color: var(--color-ink);
+  transition:
+    transform 220ms var(--ease),
+    box-shadow 220ms var(--ease),
+    border-color 220ms var(--ease);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(227, 27, 35, 0.22);
+  box-shadow: 0 18px 40px rgba(16, 10, 10, 0.3);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  background: var(--color-red-soft);
+  color: var(--color-red);
+}
+
+.card h3 {
+  font-size: 1.08rem;
+  letter-spacing: -0.03em;
+}
+
+.value {
+  margin-top: 10px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+  overflow-wrap: anywhere;
+}
+
+.copy {
+  margin-top: 8px;
+  color: var(--color-slate);
+  font-size: 0.94rem;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-red);
+}
+
+.cta svg {
+  transition: transform 200ms var(--ease);
+}
+
+.card:hover .cta svg {
+  transform: translate(2px, -2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .cta svg {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}

@@ -1,0 +1,27 @@
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stars {
+  display: inline-flex;
+  gap: 3px;
+  color: var(--color-red);
+}
+
+.filled {
+  opacity: 0.92;
+}
+
+.empty {
+  color: var(--color-line-strong);
+}
+
+.score {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-slate);
+}

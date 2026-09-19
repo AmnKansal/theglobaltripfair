@@ -1,0 +1,22 @@
+{
+  "name": "TheGlobalTripFair.com",
+  "short_name": "TheGlobalTripFair",
+  "description": "Global travel platform for flights, hotels, holiday packages and transfers.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#FFFFFF",
+  "theme_color": "#E31B23",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

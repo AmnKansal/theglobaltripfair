@@ -1,0 +1,95 @@
+.page {
+  padding: 48px 0 80px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.copy h1 {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+}
+
+.copy p {
+  margin-top: 14px;
+  color: var(--color-slate);
+  max-width: 460px;
+}
+
+.details {
+  margin-top: 28px;
+  display: grid;
+  gap: 8px;
+  color: var(--color-charcoal);
+}
+
+.details a {
+  width: fit-content;
+  max-width: 100%;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.details a:hover {
+  color: var(--color-red);
+}
+
+.form {
+  display: grid;
+  gap: 14px;
+  padding: 28px;
+  border: 1px solid var(--color-line);
+  border-radius: 24px;
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.form label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.form input,
+.form textarea,
+.form select {
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid var(--color-line);
+  border-radius: 14px;
+  background: var(--color-paper);
+}
+
+.form textarea {
+  height: 140px;
+  padding: 12px 14px;
+  resize: vertical;
+}
+
+.success {
+  padding: 36px 28px;
+  border-radius: 24px;
+  background: var(--color-paper);
+}
+
+.success h2 {
+  letter-spacing: -0.03em;
+}
+
+.success p {
+  margin-top: 10px;
+  color: var(--color-slate);
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}

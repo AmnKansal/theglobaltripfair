@@ -1,0 +1,115 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(22, 21, 19, 0.35);
+  z-index: 200;
+}
+
+.panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(100%, 360px);
+  height: 100%;
+  background: var(--color-white);
+  padding: 20px 20px 32px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  box-shadow: var(--shadow-lg);
+}
+
+.panel::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.close {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: var(--color-paper);
+}
+
+.links {
+  display: grid;
+  gap: 4px;
+}
+
+.links a,
+.groupTitle {
+  display: block;
+  padding: 12px 10px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.links a:hover,
+.active {
+  background: var(--color-red-soft);
+  color: var(--color-red-ink);
+}
+
+.groupTitle {
+  color: var(--color-stone);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 16px;
+}
+
+.sub a {
+  font-weight: 600;
+  color: var(--color-charcoal);
+}
+
+.actions {
+  display: grid;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.call {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: var(--color-red-soft);
+  color: var(--color-red-ink);
+}
+
+.callLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-red);
+}
+
+.call strong {
+  font-size: 1.2rem;
+  letter-spacing: -0.03em;
+  color: var(--color-ink);
+}
+
+.language {
+  margin-top: 20px;
+}

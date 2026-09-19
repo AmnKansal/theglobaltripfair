@@ -1,0 +1,81 @@
+.wrap {
+  position: relative;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  white-space: nowrap;
+}
+
+.trigger:hover,
+.open {
+  background: var(--color-mist);
+}
+
+.chevron {
+  transition: transform 180ms var(--ease);
+}
+
+.open .chevron {
+  transform: rotate(180deg);
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 200px;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  padding: 8px;
+  z-index: 20;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.option:hover,
+.option:focus-visible,
+.selected {
+  background: var(--color-red-soft);
+  color: var(--color-red-ink);
+}
+
+.panel {
+  width: 100%;
+}
+
+.panel .trigger {
+  width: 100%;
+  justify-content: flex-start;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--color-paper);
+  padding: 0 14px;
+}
+
+.panel .menu {
+  left: 0;
+  right: 0;
+  width: 100%;
+}

@@ -1,0 +1,400 @@
+type NamedCopy = {
+  title: string
+  description: string
+}
+
+type OfferItemCopy = {
+  location: string
+  title: string
+  description: string
+  alt: string
+}
+
+type DestinationCopy = {
+  name: string
+  country: string
+}
+
+export type Messages = {
+  meta: {
+    title: string
+    description: string
+  }
+  seo: {
+    home: { title: string; description: string }
+    flights: { title: string; description: string }
+    hotels: { title: string; description: string }
+    holidays: { title: string; description: string }
+    transfers: { title: string; description: string }
+    destinations: { title: string; description: string }
+    contact: { title: string; description: string }
+    about: { title: string; description: string }
+    privacy: { title: string; description: string }
+    terms: { title: string; description: string }
+    notFound: { title: string; description: string }
+    maintenance: { title: string; description: string }
+  }
+  a11y: {
+    skipToContent: string
+    primaryNav: string
+    openMenu: string
+    closeMenu: string
+    selectLanguage: string
+    home: string
+    travelSearch: string
+    menu: string
+    callUs: string
+  }
+  common: {
+    planTrip: string
+    planJourney: string
+    talkToUs: string
+    search: string
+    explore: string
+    sendMessage: string
+    backHome: string
+    exploreDestinations: string
+  }
+  nav: {
+    flights: string
+    hotels: string
+    holidays: string
+    transfers: string
+    more: string
+    cruises: string
+    cabs: string
+    destinations: string
+    offers: string
+  }
+  hero: {
+    eyebrow: string
+    titleLine1: string
+    titleLine2: string
+    description: string
+    meta1: string
+    meta2: string
+    meta3: string
+    imageAlt: string
+  }
+  search: {
+    flights: string
+    hotels: string
+    holidays: string
+    transfers: string
+    from: string
+    to: string
+    departure: string
+    return: string
+    travellers: string
+    destination: string
+    checkIn: string
+    checkOut: string
+    guests: string
+    month: string
+    duration: string
+    pickup: string
+    dropoff: string
+    date: string
+    passengers: string
+    cityOrAirport: string
+    cityOrHotel: string
+    whereTo: string
+    pickupPlaceholder: string
+    dropoffPlaceholder: string
+    oneAdult: string
+    twoTravellers: string
+    threeTravellers: string
+    fourTravellers: string
+    threeNights: string
+    sevenNights: string
+    tenNights: string
+    fourteenNights: string
+    suggestions: string
+    searchingPlaces: string
+    noSuggestions: string
+    optional: string
+    swap: string
+    adults: string
+    adultsHint: string
+    children: string
+    childrenHint: string
+    done: string
+    partySummary: string
+    decrease: string
+    increase: string
+    errors: {
+      requiredFrom: string
+      requiredTo: string
+      sameRoute: string
+      requiredDeparture: string
+      pastDate: string
+      returnBefore: string
+      requiredDestination: string
+      requiredCheckIn: string
+      requiredCheckOut: string
+      checkOutBefore: string
+      requiredMonth: string
+      requiredPickup: string
+      requiredDropoff: string
+      sameTransfer: string
+      requiredDate: string
+      requiredParty: string
+    }
+  }
+  maintenance: {
+    eyebrow: string
+    title: string
+    copy: string
+    received: string
+    callCta: string
+    emailCta: string
+    adjust: string
+  }
+  services: {
+    eyebrow: string
+    title: string
+    copy: string
+    flights: NamedCopy
+    hotels: NamedCopy
+    holidays: NamedCopy
+    transfers: NamedCopy
+    cruises: NamedCopy
+    cabs: NamedCopy
+    activities: NamedCopy
+    insurance: NamedCopy
+  }
+  destinations: {
+    eyebrow: string
+    title: string
+    copy: string
+    paris: DestinationCopy
+    dubai: DestinationCopy
+    london: DestinationCopy
+    singapore: DestinationCopy
+    bali: DestinationCopy
+    newYork: DestinationCopy
+  }
+  whyUs: {
+    eyebrow: string
+    title: string
+    copy: string
+    together: NamedCopy
+    global: NamedCopy
+    simple: NamedCopy
+    support: NamedCopy
+    discover: NamedCopy
+    plan: NamedCopy
+    travel: NamedCopy
+  }
+  choose: {
+    eyebrow: string
+    title: string
+    copy: string
+    statement: string
+    networkEyebrow: string
+    networkTitle: string
+    networkCopy: string
+    satisfaction: string
+    satisfactionCopy: string
+    destinations: string
+    destinationsCopy: string
+    options: string
+    optionsCopy: string
+    support: string
+    supportCopy: string
+  }
+  stories: {
+    eyebrow: string
+    title: string
+    copy: string
+    prev: string
+    next: string
+    carouselLabel: string
+    slideOf: string
+    ratingLabel: string
+    goTo: string
+    trip: {
+      flights: string
+      hotels: string
+      holidays: string
+      transfers: string
+      international: string
+      family: string
+    }
+    items: {
+      flights: string
+      flightsReturn: string
+      flightsLongHaul: string
+      flightsTiming: string
+      flightsChange: string
+      hotels: string
+      holidays: string
+      transfers: string
+      international: string
+      family: string
+    }
+  }
+  promotion: {
+    title: string
+    copy: string
+  }
+  offers: {
+    live: string
+    eyebrow: string
+    title: string
+    copy: string
+    endsIn: string
+    days: string
+    hours: string
+    minutes: string
+    seconds: string
+    ended: string
+    soldOut: string
+    explore: string
+    onlyLeft: string
+    limitedAvailability: string
+    endingSoon: string
+    empty: string
+    prev: string
+    next: string
+    carouselLabel: string
+    slideOf: string
+    badges: {
+      limited: string
+      hot: string
+      flash: string
+      value: string
+      early: string
+    }
+    trust: {
+      secure: string
+      flexible: string
+      support: string
+    }
+    items: {
+      parisEscape: OfferItemCopy
+      maldivesAtoll: OfferItemCopy
+      dubaiSkyline: OfferItemCopy
+      baliRetreat: OfferItemCopy
+      swissAlps: OfferItemCopy
+      santoriniBlue: OfferItemCopy
+      tokyoNights: OfferItemCopy
+      londonTransfer: OfferItemCopy
+      singaporeStay: OfferItemCopy
+      newYorkLights: OfferItemCopy
+    }
+  }
+  footer: {
+    tagline: string
+    company: string
+    travel: string
+    support: string
+    about: string
+    contact: string
+    careers: string
+    blog: string
+    help: string
+    manageBooking: string
+    cancellation: string
+    terms: string
+    privacy: string
+    rights: string
+    explore: string
+    popularDestinations: string
+    inspiration: string
+    guides: string
+    tips: string
+    offers: string
+    creditBy: string
+    creditLove: string
+    creditLoveWord: string
+    contactHeading: string
+  }
+  reach: {
+    eyebrow: string
+    title: string
+    copy: string
+    call: string
+    callCopy: string
+    callCta: string
+    email: string
+    emailCopy: string
+    emailCta: string
+    visit: string
+    visitCopy: string
+    visitCta: string
+  }
+  contact: {
+    title: string
+    copy: string
+    name: string
+    namePlaceholder: string
+    email: string
+    emailPlaceholder: string
+    interest: string
+    other: string
+    message: string
+    messagePlaceholder: string
+    successTitle: string
+    successCopy: string
+  }
+  categories: {
+    bookingLead: string
+    bookingBody: string
+    flightsTitle: string
+    flightsCopy: string
+    flightsImageAlt: string
+    hotelsTitle: string
+    hotelsCopy: string
+    hotelsImageAlt: string
+    holidaysTitle: string
+    holidaysCopy: string
+    holidaysImageAlt: string
+    transfersTitle: string
+    transfersCopy: string
+    transfersImageAlt: string
+  }
+  comingSoon: {
+    eyebrow: string
+    cruisesTitle: string
+    cruisesCopy: string
+    cabsTitle: string
+    cabsCopy: string
+    activitiesTitle: string
+    activitiesCopy: string
+    insuranceTitle: string
+    insuranceCopy: string
+  }
+  pages: {
+    aboutTitle: string
+    aboutCopy: string
+    careersTitle: string
+    careersCopy: string
+    blogTitle: string
+    blogCopy: string
+    helpTitle: string
+    helpCopy: string
+    bookingTitle: string
+    bookingCopy: string
+    cancellationTitle: string
+    cancellationCopy: string
+    destinationsTitle: string
+    destinationsCopy: string
+    inspirationTitle: string
+    inspirationCopy: string
+    guidesTitle: string
+    guidesCopy: string
+    tipsTitle: string
+    tipsCopy: string
+    offersTitle: string
+    offersCopy: string
+    termsTitle: string
+    termsCopy: string
+    privacyTitle: string
+    privacyCopy: string
+  }
+  notFound: {
+    title: string
+    copy: string
+  }
+}

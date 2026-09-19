@@ -1,0 +1,71 @@
+.metric {
+  position: relative;
+  min-width: 0;
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 620ms var(--ease),
+    transform 620ms var(--ease);
+}
+
+.metric:nth-child(2) {
+  transition-delay: 70ms;
+}
+
+.metric:nth-child(3) {
+  transition-delay: 140ms;
+}
+
+.metric:nth-child(4) {
+  transition-delay: 210ms;
+}
+
+.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.value {
+  font-size: clamp(2.8rem, 5.2vw, 4.4rem);
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+  font-weight: 800;
+  color: var(--color-ink);
+}
+
+.rule {
+  display: block;
+  width: 36px;
+  height: 2px;
+  margin: 18px 0 16px;
+  border-radius: 999px;
+  background: var(--color-red);
+  transform: scaleX(0.35);
+  transform-origin: left center;
+  transition: transform 700ms var(--ease) 180ms;
+}
+
+.visible .rule {
+  transform: scaleX(1);
+}
+
+.metric h3 {
+  font-size: 1.02rem;
+  letter-spacing: -0.03em;
+}
+
+.copy {
+  margin-top: 8px;
+  max-width: 220px;
+  color: var(--color-slate);
+  font-size: 0.92rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .metric,
+  .rule {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
