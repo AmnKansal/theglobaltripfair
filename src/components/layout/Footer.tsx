@@ -80,7 +80,7 @@ export function Footer() {
         <p className={styles.copyright}>
           © {year} GlobalTripFairLLC. {t("footer.rights")}
         </p>
-        <p className={styles.credit}>
+        {/* <p className={styles.credit}>
           <span>{t("footer.creditBy")}</span>
           <a href="https://amankansal.in/" target="_blank" rel="noopener noreferrer">
             amankansal.in
@@ -95,7 +95,7 @@ export function Footer() {
             </span>
             <span className={styles.srOnly}>{t("footer.creditLoveWord")}</span>
           </span>
-        </p>
+        </p> */}
       </div>
     </footer>
   )
