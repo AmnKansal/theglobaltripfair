@@ -78,7 +78,7 @@ export function Footer() {
 
       <div className={`container ${styles.bottom}`}>
         <p className={styles.copyright}>
-          © {year} TheGlobalTripFair.com. {t("footer.rights")}
+          © {year} GlobalTripFairLLC. {t("footer.rights")}
         </p>
         <p className={styles.credit}>
           <span>{t("footer.creditBy")}</span>
