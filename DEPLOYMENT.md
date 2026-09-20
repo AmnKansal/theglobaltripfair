@@ -44,7 +44,7 @@ On Vercel, a `vercel.json` rewrite to `/index.html` is equivalent. Neither file 
 
 - Confirm `https://theglobaltripfair.com/` loads and the search form works.
 - Confirm `/flights`, `/contact`, `/privacy`, and an unknown URL (404) render.
-- Confirm `/search` after a valid search shows the maintenance page with 888-404-0651 and hello@theglobaltripfair.com.
+- Confirm `/search` after a valid search shows the maintenance page with 888-404-0651 and support@theglobaltripfair.com.
 - Submit the sitemap `https://theglobaltripfair.com/sitemap.xml` in Search Console when the domain is verified.
 - Add Google and Bing verification tokens in `src/config/seo.ts` only after those tokens are issued.
 

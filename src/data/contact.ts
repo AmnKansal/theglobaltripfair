@@ -1,8 +1,8 @@
 export const contactInfo = {
   phoneDisplay: "888-404-0651",
   phoneHref: "tel:+18884040651",
-  email: "hello@theglobaltripfair.com",
-  emailHref: "mailto:hello@theglobaltripfair.com",
+  email: "support@theglobaltripfair.com",
+  emailHref: "mailto:support@theglobaltripfair.com",
   address: {
     street: "980 Creek Way Lane",
     city: "Greenwood",

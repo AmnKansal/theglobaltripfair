@@ -35,7 +35,7 @@ export const fr: Messages = {
     contact: {
       title: "Contacter TheGlobalTripFair.com",
       description:
-        "Appelez le 888-404-0651, écrivez à hello@theglobaltripfair.com, ou rendez-vous au 980 Creek Way Lane, Greenwood, Indiana 46143.",
+        "Appelez le 888-404-0651, écrivez à support@theglobaltripfair.com, ou rendez-vous au 980 Creek Way Lane, Greenwood, Indiana 46143.",
     },
     about: {
       title: "À propos de TheGlobalTripFair.com",
@@ -72,7 +72,7 @@ export const fr: Messages = {
     maintenance: {
       title: "Réservation en maintenance | TheGlobalTripFair.com",
       description:
-        "Le moteur de réservation de TheGlobalTripFair.com est temporairement indisponible. Appelez le 888-404-0651 ou écrivez à hello@theglobaltripfair.com.",
+        "Le moteur de réservation de TheGlobalTripFair.com est temporairement indisponible. Appelez le 888-404-0651 ou écrivez à support@theglobaltripfair.com.",
     },
   },
   a11y: {
@@ -186,7 +186,7 @@ export const fr: Messages = {
   maintenance: {
     eyebrow: "Moteur de réservation",
     title: "Nous sommes actuellement en maintenance.",
-    copy: "La recherche et la réservation en ligne reviennent bientôt. Votre demande est prête — notre équipe peut la poursuivre maintenant au 888-404-0651 ou à hello@theglobaltripfair.com.",
+    copy: "La recherche et la réservation en ligne reviennent bientôt. Votre demande est prête — notre équipe peut la poursuivre maintenant au 888-404-0651 ou à support@theglobaltripfair.com.",
     received: "Votre recherche",
     callCta: "Appeler l’équipe voyage",
     emailCta: "Nous écrire",
@@ -495,7 +495,7 @@ export const fr: Messages = {
   categories: {
     bookingLead: "La réservation en ligne est en maintenance.",
     bookingBody:
-      "Recherchez {service} ici, puis notre équipe poursuit la réservation avec vous au 888-404-0651 ou à hello@theglobaltripfair.com.",
+      "Recherchez {service} ici, puis notre équipe poursuit la réservation avec vous au 888-404-0651 ou à support@theglobaltripfair.com.",
     flightsTitle: "Des vols, partout sur la carte.",
     flightsCopy:
       "Cherchez vos trajets dans une expérience plus calme et plus lisible. Inventaire et paiement arriveront ensuite — les fondations sont là.",

@@ -35,7 +35,7 @@ export const es: Messages = {
     contact: {
       title: "Contactar TheGlobalTripFair.com",
       description:
-        "Llame al 888-404-0651, escriba a hello@theglobaltripfair.com o visite 980 Creek Way Lane, Greenwood, Indiana 46143.",
+        "Llame al 888-404-0651, escriba a support@theglobaltripfair.com o visite 980 Creek Way Lane, Greenwood, Indiana 46143.",
     },
     about: {
       title: "Sobre TheGlobalTripFair.com",
@@ -72,7 +72,7 @@ export const es: Messages = {
     maintenance: {
       title: "Reserva en mantenimiento | TheGlobalTripFair.com",
       description:
-        "El motor de reservas de TheGlobalTripFair.com no está disponible temporalmente. Llame al 888-404-0651 o escriba a hello@theglobaltripfair.com.",
+        "El motor de reservas de TheGlobalTripFair.com no está disponible temporalmente. Llame al 888-404-0651 o escriba a support@theglobaltripfair.com.",
     },
   },
   a11y: {
@@ -186,7 +186,7 @@ export const es: Messages = {
   maintenance: {
     eyebrow: "Motor de reservas",
     title: "Estamos en mantenimiento.",
-    copy: "La búsqueda y reserva en línea volverán en breve. Su solicitud está lista — nuestro equipo de viajes puede continuarla ahora en el 888-404-0651 o en hello@theglobaltripfair.com.",
+    copy: "La búsqueda y reserva en línea volverán en breve. Su solicitud está lista — nuestro equipo de viajes puede continuarla ahora en el 888-404-0651 o en support@theglobaltripfair.com.",
     received: "Su búsqueda",
     callCta: "Llamar al equipo de viajes",
     emailCta: "Escribirnos",
@@ -483,7 +483,7 @@ export const es: Messages = {
   categories: {
     bookingLead: "La reserva en línea está en mantenimiento.",
     bookingBody:
-      "Busque {service} aquí y nuestro equipo de viajes continuará la reserva con usted en el 888-404-0651 o en hello@theglobaltripfair.com.",
+      "Busque {service} aquí y nuestro equipo de viajes continuará la reserva con usted en el 888-404-0651 o en support@theglobaltripfair.com.",
     flightsTitle: "Vuelos a lo largo del mapa.",
     flightsCopy:
       "Busque rutas con una reserva más serena y clara. Inventario y pago llegarán después — la base ya está.",

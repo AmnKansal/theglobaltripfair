@@ -88,5 +88,5 @@ Localized photographs in `public/images/` were obtained under the [Unsplash Lice
 ## Contact
 
 - Phone: 888-404-0651
-- Email: hello@theglobaltripfair.com
+- Email: support@theglobaltripfair.com
 - Address: 980 Creek Way Lane, Greenwood, Indiana 46143, United States

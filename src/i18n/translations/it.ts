@@ -35,7 +35,7 @@ export const it: Messages = {
     contact: {
       title: "Contatta TheGlobalTripFair.com",
       description:
-        "Chiama 888-404-0651, scrivi a hello@theglobaltripfair.com o visita 980 Creek Way Lane, Greenwood, Indiana 46143.",
+        "Chiama 888-404-0651, scrivi a support@theglobaltripfair.com o visita 980 Creek Way Lane, Greenwood, Indiana 46143.",
     },
     about: {
       title: "Chi è TheGlobalTripFair.com",
@@ -72,7 +72,7 @@ export const it: Messages = {
     maintenance: {
       title: "Prenotazione in manutenzione | TheGlobalTripFair.com",
       description:
-        "Il motore di prenotazione di TheGlobalTripFair.com è temporaneamente non disponibile. Chiama il 888-404-0651 o scrivi a hello@theglobaltripfair.com.",
+        "Il motore di prenotazione di TheGlobalTripFair.com è temporaneamente non disponibile. Chiama il 888-404-0651 o scrivi a support@theglobaltripfair.com.",
     },
   },
   a11y: {
@@ -200,7 +200,7 @@ export const it: Messages = {
   maintenance: {
     eyebrow: "Motore di prenotazione",
     title: "Siamo attualmente in manutenzione.",
-    copy: "La ricerca e la prenotazione online torneranno a breve. La tua richiesta è pronta — il nostro team di viaggio può continuarla ora al 888-404-0651 o a hello@theglobaltripfair.com.",
+    copy: "La ricerca e la prenotazione online torneranno a breve. La tua richiesta è pronta — il nostro team di viaggio può continuarla ora al 888-404-0651 o a support@theglobaltripfair.com.",
     received: "La tua ricerca",
     callCta: "Chiama il team di viaggio",
     emailCta: "Scrivici",
@@ -483,7 +483,7 @@ export const it: Messages = {
   categories: {
     bookingLead: "La prenotazione online è in manutenzione.",
     bookingBody:
-      "Cerca {service} qui: il nostro team di viaggio continuerà la prenotazione con te al 888-404-0651 o a hello@theglobaltripfair.com.",
+      "Cerca {service} qui: il nostro team di viaggio continuerà la prenotazione con te al 888-404-0651 o a support@theglobaltripfair.com.",
     flightsTitle: "Voli su tutta la mappa.",
     flightsCopy:
       "Cerca rotte in un’esperienza più calma e chiara. Inventario e pagamento arriveranno dopo — le fondamenta ci sono.",

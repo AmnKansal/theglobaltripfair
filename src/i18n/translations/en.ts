@@ -35,7 +35,7 @@ export const en: Messages = {
     contact: {
       title: "Contact TheGlobalTripFair.com",
       description:
-        "Call 888-404-0651, email hello@theglobaltripfair.com, or visit 980 Creek Way Lane, Greenwood, Indiana 46143.",
+        "Call 888-404-0651, email support@theglobaltripfair.com, or visit 980 Creek Way Lane, Greenwood, Indiana 46143.",
     },
     about: {
       title: "About TheGlobalTripFair.com",
@@ -74,7 +74,7 @@ export const en: Messages = {
     maintenance: {
       title: "Booking under maintenance | TheGlobalTripFair.com",
       description:
-        "The TheGlobalTripFair.com booking engine is temporarily unavailable. Call 888-404-0651 or email hello@theglobaltripfair.com.",
+        "The TheGlobalTripFair.com booking engine is temporarily unavailable. Call 888-404-0651 or email support@theglobaltripfair.com.",
     },
   },
   a11y: {
@@ -188,7 +188,7 @@ export const en: Messages = {
   maintenance: {
     eyebrow: "Booking engine",
     title: "We're currently under maintenance.",
-    copy: "Live search and booking will return shortly. Your request is ready — our travel team can continue it with you now on 888-404-0651 or hello@theglobaltripfair.com.",
+    copy: "Live search and booking will return shortly. Your request is ready — our travel team can continue it with you now on 888-404-0651 or support@theglobaltripfair.com.",
     received: "Your search",
     callCta: "Call the travel team",
     emailCta: "Write to us",
@@ -497,7 +497,7 @@ export const en: Messages = {
   categories: {
     bookingLead: "Online booking is under maintenance.",
     bookingBody:
-      "Search {service} here, then our travel team will continue the booking with you on 888-404-0651 or hello@theglobaltripfair.com.",
+      "Search {service} here, then our travel team will continue the booking with you on 888-404-0651 or support@theglobaltripfair.com.",
     flightsTitle: "Flights across the map.",
     flightsCopy:
       "Search routes with a quieter, clearer booking experience. Live inventory and checkout arrive in a later phase — the foundation is ready.",

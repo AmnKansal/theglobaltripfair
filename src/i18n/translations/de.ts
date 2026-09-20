@@ -35,7 +35,7 @@ export const de: Messages = {
     contact: {
       title: "Kontakt TheGlobalTripFair.com",
       description:
-        "Rufen Sie 888-404-0651 an, schreiben Sie an hello@theglobaltripfair.com oder besuchen Sie 980 Creek Way Lane, Greenwood, Indiana 46143.",
+        "Rufen Sie 888-404-0651 an, schreiben Sie an support@theglobaltripfair.com oder besuchen Sie 980 Creek Way Lane, Greenwood, Indiana 46143.",
     },
     about: {
       title: "Über TheGlobalTripFair.com",
@@ -72,7 +72,7 @@ export const de: Messages = {
     maintenance: {
       title: "Buchung in Wartung | TheGlobalTripFair.com",
       description:
-        "Die Buchungsmaschine von TheGlobalTripFair.com ist vorübergehend nicht verfügbar. Rufen Sie 888-404-0651 an oder schreiben Sie an hello@theglobaltripfair.com.",
+        "Die Buchungsmaschine von TheGlobalTripFair.com ist vorübergehend nicht verfügbar. Rufen Sie 888-404-0651 an oder schreiben Sie an support@theglobaltripfair.com.",
     },
   },
   a11y: {
@@ -186,7 +186,7 @@ export const de: Messages = {
   maintenance: {
     eyebrow: "Buchungsmaschine",
     title: "Wir befinden uns derzeit in Wartung.",
-    copy: "Live-Suche und Buchung kehren in Kürze zurück. Ihre Anfrage ist bereit — unser Reiseteam setzt sie jetzt unter 888-404-0651 oder hello@theglobaltripfair.com mit Ihnen fort.",
+    copy: "Live-Suche und Buchung kehren in Kürze zurück. Ihre Anfrage ist bereit — unser Reiseteam setzt sie jetzt unter 888-404-0651 oder support@theglobaltripfair.com mit Ihnen fort.",
     received: "Ihre Suche",
     callCta: "Reiseteam anrufen",
     emailCta: "Schreiben Sie uns",
@@ -483,7 +483,7 @@ export const de: Messages = {
   categories: {
     bookingLead: "Die Online-Buchung befindet sich in Wartung.",
     bookingBody:
-      "Suchen Sie {service} hier — unser Reiseteam setzt die Buchung mit Ihnen unter 888-404-0651 oder hello@theglobaltripfair.com fort.",
+      "Suchen Sie {service} hier — unser Reiseteam setzt die Buchung mit Ihnen unter 888-404-0651 oder support@theglobaltripfair.com fort.",
     flightsTitle: "Flüge über die Karte.",
     flightsCopy:
       "Suchen Sie Routen in einer ruhigeren, klareren Buchung. Inventar und Checkout kommen später — das Fundament steht.",
