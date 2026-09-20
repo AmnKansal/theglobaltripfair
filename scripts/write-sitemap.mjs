@@ -20,6 +20,10 @@ const indexable = [
   { path: "/about", changefreq: "monthly", priority: "0.6" },
   { path: "/privacy", changefreq: "monthly", priority: "0.4" },
   { path: "/terms", changefreq: "monthly", priority: "0.4" },
+  { path: "/cancellation", changefreq: "monthly", priority: "0.4" },
+  { path: "/cookies", changefreq: "monthly", priority: "0.3" },
+  { path: "/disclaimer", changefreq: "monthly", priority: "0.3" },
+  { path: "/advertising", changefreq: "monthly", priority: "0.3" },
 ]
 
 const loc = (path) => (path === "/" ? `${origin}/` : `${origin}${path}`)

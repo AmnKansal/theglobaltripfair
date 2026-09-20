@@ -3,6 +3,8 @@ import { Route, Routes, useLocation } from "react-router-dom"
 import { Layout } from "../components/layout/Layout"
 import { Contact } from "../pages/Contact/Contact"
 import { ContentPage } from "../pages/Content/ContentPage"
+import { AboutPage } from "../pages/Legal/AboutPage"
+import { LegalPage } from "../pages/Legal/LegalPage"
 import { Flights } from "../pages/Flights/Flights"
 import { Holidays } from "../pages/Holidays/Holidays"
 import { Home } from "../pages/Home/Home"
@@ -46,19 +48,22 @@ export function AppRoutes() {
           <Route path="/insurance" element={<ComingSoon kind="insurance" />} />
           <Route path="/search" element={<SearchMaintenance />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<ContentPage page="about" />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/careers" element={<ContentPage page="careers" />} />
           <Route path="/blog" element={<ContentPage page="blog" />} />
           <Route path="/help" element={<ContentPage page="help" />} />
           <Route path="/booking" element={<ContentPage page="booking" />} />
-          <Route path="/cancellation" element={<ContentPage page="cancellation" />} />
+          <Route path="/cancellation" element={<LegalPage slug="cancellation" />} />
           <Route path="/destinations" element={<ContentPage page="destinations" />} />
           <Route path="/inspiration" element={<ContentPage page="inspiration" />} />
           <Route path="/guides" element={<ContentPage page="guides" />} />
           <Route path="/tips" element={<ContentPage page="tips" />} />
           <Route path="/offers" element={<ContentPage page="offers" />} />
-          <Route path="/terms" element={<ContentPage page="terms" />} />
-          <Route path="/privacy" element={<ContentPage page="privacy" />} />
+          <Route path="/terms" element={<LegalPage slug="terms" />} />
+          <Route path="/privacy" element={<LegalPage slug="privacy" />} />
+          <Route path="/cookies" element={<LegalPage slug="cookies" />} />
+          <Route path="/disclaimer" element={<LegalPage slug="disclaimer" />} />
+          <Route path="/advertising" element={<LegalPage slug="advertising" />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

@@ -43,11 +43,27 @@ export const de: Messages = {
     },
     privacy: {
       title: "Datenschutz | TheGlobalTripFair.com",
-      description: "Wie TheGlobalTripFair.com Informationen von Reisenden behandelt.",
+      description: "Wie TheGlobalTripFair.com, betrieben von GlobalTripFair LLC, Informationen von Reisenden behandelt.",
     },
     terms: {
       title: "Bedingungen | TheGlobalTripFair.com",
-      description: "Reisebedingungen von TheGlobalTripFair.com zur Buchungsplattform.",
+      description: "Reisebedingungen von TheGlobalTripFair.com, betrieben von GlobalTripFair LLC.",
+    },
+    cancellation: {
+      title: "Storno und Erstattung | TheGlobalTripFair.com",
+      description: "Richtlinien zu Stornierung, Änderung und Erstattung bei TheGlobalTripFair.com.",
+    },
+    cookies: {
+      title: "Cookie-Richtlinie | TheGlobalTripFair.com",
+      description: "Wie TheGlobalTripFair.com Cookies und ähnliche Technologien verwendet.",
+    },
+    disclaimer: {
+      title: "Haftungsausschluss | TheGlobalTripFair.com",
+      description: "Wichtige Hinweise zu Informationen, Reiserisiken und Drittanbietern auf TheGlobalTripFair.com.",
+    },
+    advertising: {
+      title: "Werbehinweis | TheGlobalTripFair.com",
+      description: "Wie Werbung, Angebote und Partnerhinweise auf TheGlobalTripFair.com erscheinen können.",
     },
     notFound: {
       title: "Seite nicht gefunden | TheGlobalTripFair.com",
@@ -417,6 +433,12 @@ export const de: Messages = {
     cancellation: "Stornierung",
     terms: "Allgemeine Bedingungen",
     privacy: "Datenschutz",
+    legal: "Rechtliches",
+    cookies: "Cookie-Richtlinie",
+    disclaimer: "Haftungsausschluss",
+    advertising: "Werbehinweis",
+    operatorNote:
+      "TheGlobalTripFair wird von GlobalTripFair LLC betrieben und bietet unabhängige Reiseservices für Flüge, Hotels, Urlaubspakete und Transfers. Verfügbarkeit, Tarife, Zeiten und Anbieterrichtlinien können sich nach Airline- und Hotelregeln, Updates und Partnern ändern. Bitte prüfen Sie Buchungsdetails, Tarifbedingungen und Richtlinien vor der Bestätigung.",
     rights: "Alle Rechte vorbehalten.",
     explore: "Entdecken",
     popularDestinations: "Beliebte Reiseziele",
@@ -526,12 +548,26 @@ export const de: Messages = {
     offersTitle: "Angebote, wenn sie bereit sind.",
     offersCopy:
       "Saisonale Reisen und durchdachte Tarife erscheinen hier. Bis dahin sagen Sie uns, wohin Sie möchten.",
-    termsTitle: "Bedingungen der Reise.",
-    termsCopy:
-      "Die vollständigen Bedingungen begleiten die Live-Buchung. Diese Seite markiert bereits ihren Platz im Haus.",
-    privacyTitle: "Ihre Privatsphäre, mit Sorgfalt.",
-    privacyCopy:
-      "Eine vollständige Datenschutzerklärung sitzt hier mit der Live-Plattform. Wir behandeln Informationen so ruhig wie die Reise selbst.",
+    termsTitle: "Allgemeine Bedingungen",
+    termsCopy: "Die Nutzungsregeln von TheGlobalTripFair.com, betrieben von GlobalTripFair LLC.",
+    privacyTitle: "Datenschutz",
+    privacyCopy: "Wie TheGlobalTripFair.com Informationen von Reisenden erhebt, nutzt und schützt.",
+    cookiesTitle: "Cookie-Richtlinie",
+    cookiesCopy: "Wie TheGlobalTripFair.com Cookies und ähnliche Technologien verwendet.",
+    disclaimerTitle: "Haftungsausschluss",
+    disclaimerCopy: "Grenzen von Informationen, Preisen und Diensten Dritter auf TheGlobalTripFair.com.",
+    advertisingTitle: "Werbehinweis",
+    advertisingCopy: "Wie Werbung und Partnerschaften auf TheGlobalTripFair.com erscheinen können.",
+  },
+  legal: {
+    eyebrow: "Rechtliches",
+    onThisPage: "Auf dieser Seite",
+    lastUpdated: "Zuletzt aktualisiert",
+    operatedBy: "Betrieben von",
+    related: "Weitere Dokumente",
+    questions: "Fragen zu dieser Richtlinie?",
+    questionsCopy:
+      "Unser Reiseteam hilft bei Buchungen, Datenschutz und Richtlinien. Nutzen Sie dieselbe Telefonnummer, E-Mail und Adresse wie auf dieser Website.",
   },
   notFound: {
     title: "Seite nicht gefunden",

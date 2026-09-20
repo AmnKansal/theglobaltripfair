@@ -43,11 +43,27 @@ export const fr: Messages = {
     },
     privacy: {
       title: "Confidentialité | TheGlobalTripFair.com",
-      description: "Comment TheGlobalTripFair.com traite les informations des voyageurs.",
+      description: "Comment TheGlobalTripFair.com, opéré par GlobalTripFair LLC, traite les informations des voyageurs.",
     },
     terms: {
       title: "Conditions | TheGlobalTripFair.com",
-      description: "Les conditions de voyage de TheGlobalTripFair.com, avec la réservation en ligne.",
+      description: "Les conditions de voyage de TheGlobalTripFair.com, opéré par GlobalTripFair LLC.",
+    },
+    cancellation: {
+      title: "Annulation et remboursement | TheGlobalTripFair.com",
+      description: "Règles d’annulation, de modification et de remboursement pour TheGlobalTripFair.com.",
+    },
+    cookies: {
+      title: "Politique des cookies | TheGlobalTripFair.com",
+      description: "Comment TheGlobalTripFair.com utilise les cookies et technologies similaires.",
+    },
+    disclaimer: {
+      title: "Avertissement | TheGlobalTripFair.com",
+      description: "Limites d’information, risques de voyage et mentions importantes sur TheGlobalTripFair.com.",
+    },
+    advertising: {
+      title: "Mentions publicitaires | TheGlobalTripFair.com",
+      description: "Comment les publicités, promotions et affiliations peuvent apparaître sur TheGlobalTripFair.com.",
     },
     notFound: {
       title: "Page introuvable | TheGlobalTripFair.com",
@@ -429,6 +445,12 @@ export const fr: Messages = {
     cancellation: "Annulation",
     terms: "Conditions générales",
     privacy: "Politique de confidentialité",
+    legal: "Mentions légales",
+    cookies: "Politique des cookies",
+    disclaimer: "Avertissement",
+    advertising: "Mentions publicitaires",
+    operatorNote:
+      "TheGlobalTripFair est opéré par GlobalTripFair LLC et fournit des services de voyage indépendants pour aider les clients à rechercher et réserver vols, hôtels, forfaits et transferts. Disponibilités, tarifs, horaires et politiques des fournisseurs peuvent changer selon les règles des compagnies, hôtels, mises à jour et partenaires. Les clients sont invités à relire les détails, conditions tarifaires, termes et politiques avant de confirmer.",
     rights: "Tous droits réservés.",
     explore: "Explorer",
     popularDestinations: "Destinations prisées",
@@ -538,12 +560,26 @@ export const fr: Messages = {
     offersTitle: "Des offres, le moment venu.",
     offersCopy:
       "Les séjours de saison et les tarifs choisis apparaîtront ici. En attendant, dites-nous où vous voulez aller.",
-    termsTitle: "Les conditions du voyage.",
-    termsCopy:
-      "Les conditions générales accompagneront la réservation en ligne. Cette page marque déjà leur place dans la maison.",
-    privacyTitle: "Votre vie privée, traitée avec soin.",
-    privacyCopy:
-      "Une politique de confidentialité complète s’installera ici avec la plateforme. Nous traitons les informations des voyageurs avec le même calme que le voyage lui-même.",
+    termsTitle: "Conditions générales",
+    termsCopy: "Les règles d’utilisation de TheGlobalTripFair.com, opéré par GlobalTripFair LLC.",
+    privacyTitle: "Politique de confidentialité",
+    privacyCopy: "Comment TheGlobalTripFair.com collecte, utilise et protège les informations des voyageurs.",
+    cookiesTitle: "Politique des cookies",
+    cookiesCopy: "Comment TheGlobalTripFair.com utilise les cookies et technologies similaires.",
+    disclaimerTitle: "Avertissement",
+    disclaimerCopy: "Limites d’information, tarifs et services tiers sur TheGlobalTripFair.com.",
+    advertisingTitle: "Mentions publicitaires",
+    advertisingCopy: "Comment les publicités et affiliations peuvent apparaître sur TheGlobalTripFair.com.",
+  },
+  legal: {
+    eyebrow: "Mentions légales",
+    onThisPage: "Sur cette page",
+    lastUpdated: "Dernière mise à jour",
+    operatedBy: "Opéré par",
+    related: "Documents liés",
+    questions: "Une question sur cette politique ?",
+    questionsCopy:
+      "Notre équipe voyage peut vous aider pour les réservations, la confidentialité et les politiques. Utilisez le même téléphone, e-mail et adresse publiés sur ce site.",
   },
   notFound: {
     title: "Page introuvable",

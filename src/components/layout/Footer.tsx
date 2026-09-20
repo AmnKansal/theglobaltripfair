@@ -49,8 +49,15 @@ export function Footer() {
           <Link to="/help">{t("footer.help")}</Link>
           <Link to="/booking">{t("footer.manageBooking")}</Link>
           <Link to="/cancellation">{t("footer.cancellation")}</Link>
-          <Link to="/terms">{t("footer.terms")}</Link>
+        </div>
+
+        <div className={styles.column}>
+          <p className={styles.heading}>{t("footer.legal")}</p>
           <Link to="/privacy">{t("footer.privacy")}</Link>
+          <Link to="/terms">{t("footer.terms")}</Link>
+          <Link to="/cookies">{t("footer.cookies")}</Link>
+          <Link to="/disclaimer">{t("footer.disclaimer")}</Link>
+          <Link to="/advertising">{t("footer.advertising")}</Link>
         </div>
 
         <div className={`${styles.column} ${styles.contactColumn}`}>
@@ -77,6 +84,7 @@ export function Footer() {
       </div>
 
       <div className={`container ${styles.bottom}`}>
+        <p className={styles.operator}>{t("footer.operatorNote")}</p>
         <p className={styles.copyright}>
           © {year} GlobalTripFair LLC. {t("footer.rights")}
         </p>

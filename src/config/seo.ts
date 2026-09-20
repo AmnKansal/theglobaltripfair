@@ -40,6 +40,10 @@ export type SeoRouteKey =
   | "about"
   | "privacy"
   | "terms"
+  | "cancellation"
+  | "cookies"
+  | "disclaimer"
+  | "advertising"
   | "notFound"
   | "maintenance"
 
@@ -63,13 +67,16 @@ export const publicPaths: PublicPath[] = [
   { path: "/about", seoKey: "about", changefreq: "monthly", priority: "0.6", indexable: true },
   { path: "/privacy", seoKey: "privacy", changefreq: "monthly", priority: "0.4", indexable: true },
   { path: "/terms", seoKey: "terms", changefreq: "monthly", priority: "0.4", indexable: true },
+  { path: "/cancellation", seoKey: "cancellation", changefreq: "monthly", priority: "0.4", indexable: true },
+  { path: "/cookies", seoKey: "cookies", changefreq: "monthly", priority: "0.3", indexable: true },
+  { path: "/disclaimer", seoKey: "disclaimer", changefreq: "monthly", priority: "0.3", indexable: true },
+  { path: "/advertising", seoKey: "advertising", changefreq: "monthly", priority: "0.3", indexable: true },
   { path: "/search", seoKey: "maintenance", changefreq: "monthly", priority: "0.1", indexable: false },
   { path: "/offers", changefreq: "weekly", priority: "0.5", indexable: false },
   { path: "/careers", changefreq: "monthly", priority: "0.3", indexable: false },
   { path: "/blog", changefreq: "weekly", priority: "0.3", indexable: false },
   { path: "/help", changefreq: "monthly", priority: "0.3", indexable: false },
   { path: "/booking", changefreq: "monthly", priority: "0.3", indexable: false },
-  { path: "/cancellation", changefreq: "monthly", priority: "0.3", indexable: false },
   { path: "/inspiration", changefreq: "monthly", priority: "0.3", indexable: false },
   { path: "/guides", changefreq: "monthly", priority: "0.3", indexable: false },
   { path: "/tips", changefreq: "monthly", priority: "0.3", indexable: false },

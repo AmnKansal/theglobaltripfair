@@ -31,6 +31,10 @@ export type Messages = {
     about: { title: string; description: string }
     privacy: { title: string; description: string }
     terms: { title: string; description: string }
+    cancellation: { title: string; description: string }
+    cookies: { title: string; description: string }
+    disclaimer: { title: string; description: string }
+    advertising: { title: string; description: string }
     notFound: { title: string; description: string }
     maintenance: { title: string; description: string }
   }
@@ -298,6 +302,11 @@ export type Messages = {
     cancellation: string
     terms: string
     privacy: string
+    legal: string
+    cookies: string
+    disclaimer: string
+    advertising: string
+    operatorNote: string
     rights: string
     explore: string
     popularDestinations: string
@@ -392,6 +401,21 @@ export type Messages = {
     termsCopy: string
     privacyTitle: string
     privacyCopy: string
+    cookiesTitle: string
+    cookiesCopy: string
+    disclaimerTitle: string
+    disclaimerCopy: string
+    advertisingTitle: string
+    advertisingCopy: string
+  }
+  legal: {
+    eyebrow: string
+    onThisPage: string
+    lastUpdated: string
+    operatedBy: string
+    related: string
+    questions: string
+    questionsCopy: string
   }
   notFound: {
     title: string

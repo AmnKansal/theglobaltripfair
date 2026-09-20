@@ -39,15 +39,33 @@ export const en: Messages = {
     },
     about: {
       title: "About TheGlobalTripFair.com",
-      description: "TheGlobalTripFair.com is a global travel house for flights, hotels, holiday packages and transfers.",
+      description:
+        "TheGlobalTripFair.com, operated by GlobalTripFair LLC, is a travel house for flights, hotels, holiday packages and transfers.",
     },
     privacy: {
       title: "Privacy Policy | TheGlobalTripFair.com",
-      description: "How TheGlobalTripFair.com treats traveller information as the live platform takes shape.",
+      description:
+        "How TheGlobalTripFair.com, operated by GlobalTripFair LLC, collects, uses and protects traveller information.",
     },
     terms: {
       title: "Terms & Conditions | TheGlobalTripFair.com",
-      description: "Terms of travel for TheGlobalTripFair.com, accompanying the live booking platform.",
+      description: "Terms of travel for TheGlobalTripFair.com, operated by GlobalTripFair LLC.",
+    },
+    cancellation: {
+      title: "Cancellation & Refund Policy | TheGlobalTripFair.com",
+      description: "Cancellation, change and refund guidelines for bookings made with TheGlobalTripFair.com.",
+    },
+    cookies: {
+      title: "Cookie Policy | TheGlobalTripFair.com",
+      description: "How TheGlobalTripFair.com uses cookies and similar technologies on the website.",
+    },
+    disclaimer: {
+      title: "Disclaimer | TheGlobalTripFair.com",
+      description: "Important limits, travel risks and information notices for TheGlobalTripFair.com.",
+    },
+    advertising: {
+      title: "Advertisement Disclosure | TheGlobalTripFair.com",
+      description: "How advertisements, promotions and affiliate relationships may appear on TheGlobalTripFair.com.",
     },
     notFound: {
       title: "Page not found | TheGlobalTripFair.com",
@@ -429,6 +447,12 @@ export const en: Messages = {
     cancellation: "Cancellation",
     terms: "Terms & conditions",
     privacy: "Privacy policy",
+    legal: "Legal",
+    cookies: "Cookie policy",
+    disclaimer: "Disclaimer",
+    advertising: "Advertisement disclosure",
+    operatorNote:
+      "TheGlobalTripFair is operated by GlobalTripFair LLC and provides independent travel services to assist customers with flight, hotel, holiday and transfer search and booking support. Availability, fares, schedules and supplier policies are subject to change based on airline rules, hotel rules, updates and third-party travel providers. Customers are encouraged to review all booking details, fare conditions, terms and policies before confirming their reservations.",
     rights: "All rights reserved.",
     explore: "Explore",
     popularDestinations: "Popular destinations",
@@ -506,9 +530,9 @@ export const en: Messages = {
       "Travel cover will sit quietly in the booking flow, so unexpected turns on the road are easier to meet.",
   },
   pages: {
-    aboutTitle: "A travel house for the world.",
+    aboutTitle: "About Us",
     aboutCopy:
-      "TheGlobalTripFair.com is being built as a calm, global place to discover flights, stays, transfers and journeys — with the care of a private travel house.",
+      "TheGlobalTripFair.com, operated by GlobalTripFair LLC, helps travellers explore flights, stays, transfers and journeys with clear information and reliable support.",
     careersTitle: "Build what comes next.",
     careersCopy:
       "We are shaping a premium travel platform. Roles and opportunities will be published here as the team grows.",
@@ -520,9 +544,9 @@ export const en: Messages = {
     bookingTitle: "Manage your booking.",
     bookingCopy:
       "Itinerary changes, tickets and confirmations will be managed here once live booking is connected.",
-    cancellationTitle: "Cancellations, made clear.",
+    cancellationTitle: "Cancellation & Refund Policy",
     cancellationCopy:
-      "Cancellation policies and self-serve changes will sit here with the booking platform. Contact us if you need assistance now.",
+      "How cancellations, changes and refunds work for bookings made with TheGlobalTripFair.com, subject to airline and supplier rules.",
     destinationsTitle: "Cities waiting on the map.",
     destinationsCopy:
       "Paris, Dubai, London, Singapore, Bali and New York — a first collection chosen for atmosphere, access and the journeys they invite.",
@@ -538,12 +562,27 @@ export const en: Messages = {
     offersTitle: "Offers, when they are ready.",
     offersCopy:
       "Seasonal journeys and considered fares will appear here. Until then, tell us where you want to go.",
-    termsTitle: "Terms of travel.",
+    termsTitle: "Terms & Conditions",
     termsCopy:
-      "The full terms and conditions will accompany live booking. For now, this page marks their place in the house.",
-    privacyTitle: "Your privacy, held with care.",
+      "The rules and guidelines for using TheGlobalTripFair.com, operated by GlobalTripFair LLC.",
+    privacyTitle: "Privacy Policy",
     privacyCopy:
-      "A complete privacy policy will sit here with the live platform. We treat traveller information with the same calm we bring to the journey.",
+      "How TheGlobalTripFair.com collects, uses, shares and protects traveller information.",
+    cookiesTitle: "Cookie Policy",
+    cookiesCopy: "How TheGlobalTripFair.com uses cookies and similar technologies.",
+    disclaimerTitle: "Disclaimer",
+    disclaimerCopy: "Limits of information, pricing and third-party services on TheGlobalTripFair.com.",
+    advertisingTitle: "Advertisement Disclosure",
+    advertisingCopy: "How advertisements, promotions and affiliate relationships may appear on TheGlobalTripFair.com.",
+  },
+  legal: {
+    eyebrow: "Legal",
+    onThisPage: "On this page",
+    lastUpdated: "Last updated",
+    operatedBy: "Operated by",
+    related: "Related documents",
+    questions: "Questions about this policy?",
+    questionsCopy: "Our travel team can help with bookings, privacy and policy questions. Use the same phone number, email and address published on this website.",
   },
   notFound: {
     title: "Page not found",
