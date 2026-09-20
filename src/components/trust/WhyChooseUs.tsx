@@ -3,7 +3,7 @@ import { useInViewOnce } from "../../hooks/useInViewOnce"
 import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion"
 import { useTranslation } from "../../i18n"
 import { SectionHeading } from "../common/SectionHeading"
-import { AirlineMarquee } from "./AirlineMarquee"
+// import { AirlineMarquee } from "./AirlineMarquee"
 import { AnimatedMetric } from "./AnimatedMetric"
 import styles from "./WhyChooseUs.module.css"
 
@@ -43,14 +43,14 @@ export function WhyChooseUs() {
         <p className={styles.statement}>{t("choose.statement")}</p>
       </div>
 
-      <div className={styles.network}>
+      {/* <div className={styles.network}>
         <div className={`container ${styles.networkCopy}`}>
           <p className={styles.networkEyebrow}>{t("choose.networkEyebrow")}</p>
           <h3>{t("choose.networkTitle")}</h3>
           <p>{t("choose.networkCopy")}</p>
         </div>
         <AirlineMarquee />
-      </div>
+      </div> */}
     </section>
   )
 }
