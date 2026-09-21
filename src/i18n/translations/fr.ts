@@ -85,6 +85,7 @@ export const fr: Messages = {
     travelSearch: "Recherche de voyage",
     menu: "Menu",
     callUs: "Nous appeler",
+    close: "Fermer",
   },
   common: {
     planTrip: "Préparez votre voyage",

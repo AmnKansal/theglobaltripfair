@@ -85,6 +85,7 @@ export const it: Messages = {
     travelSearch: "Ricerca viaggio",
     menu: "Menu",
     callUs: "Chiamaci",
+    close: "Chiudi",
   },
   reach: {
     eyebrow: "Come raggiungerci",

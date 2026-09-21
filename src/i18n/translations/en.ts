@@ -87,6 +87,7 @@ export const en: Messages = {
     travelSearch: "Travel search",
     menu: "Menu",
     callUs: "Call us",
+    close: "Close",
   },
   common: {
     planTrip: "Plan your trip",

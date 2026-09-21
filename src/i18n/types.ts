@@ -48,6 +48,7 @@ export type Messages = {
     travelSearch: string
     menu: string
     callUs: string
+    close: string
   }
   common: {
     planTrip: string

@@ -1,15 +1,22 @@
-.bar {
+.spacer {
+  height: 88px;
+}
+
+.wrap {
   position: fixed;
   z-index: 40;
   left: 16px;
   right: 16px;
   bottom: 16px;
+}
+
+.bar {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
   min-height: 56px;
-  padding: 10px 20px;
+  padding: 10px 44px 10px 20px;
   border-radius: var(--radius-full);
   background: var(--color-red);
   color: #fff;
@@ -45,13 +52,36 @@
   letter-spacing: 0.08em;
 }
 
+.close {
+  position: absolute;
+  top: -8px;
+  right: -4px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 50%;
+  background: #161513;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+}
+
+.close:hover {
+  background: #2b2926;
+}
+
 @media (min-width: 861px) {
-  .bar {
+  .wrap {
     left: auto;
     right: 24px;
     bottom: 24px;
     width: auto;
     min-width: 280px;
-    padding-inline: 22px;
+  }
+
+  .bar {
+    padding-inline: 22px 44px;
   }
 }
