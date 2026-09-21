@@ -95,6 +95,7 @@ export const pt: Messages = {
     sendMessage: "Enviar mensagem",
     backHome: "Voltar ao início",
     exploreDestinations: "Explorar destinos",
+    tapToCall: "Toque para ligar",
   },
   nav: {
     flights: "Voos",

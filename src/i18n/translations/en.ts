@@ -97,6 +97,7 @@ export const en: Messages = {
     sendMessage: "Send message",
     backHome: "Back to home",
     exploreDestinations: "Explore destinations",
+    tapToCall: "Tap to call",
   },
   nav: {
     flights: "Flights",

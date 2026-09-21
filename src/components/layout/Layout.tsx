@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom"
 import { useTranslation } from "../../i18n"
 import { SeoHead } from "../seo/SeoHead"
 import { Navbar } from "../navigation/Navbar"
+import { FloatingCallButton } from "./FloatingCallButton"
 import { Footer } from "./Footer"
 import styles from "./Layout.module.css"
 
@@ -19,6 +20,7 @@ export function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <FloatingCallButton />
     </div>
   )
 }

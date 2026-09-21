@@ -58,6 +58,7 @@ export type Messages = {
     sendMessage: string
     backHome: string
     exploreDestinations: string
+    tapToCall: string
   }
   nav: {
     flights: string

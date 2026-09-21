@@ -1,0 +1,57 @@
+.bar {
+  position: fixed;
+  z-index: 40;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  background: var(--color-red);
+  color: #fff;
+  box-shadow: 0 12px 32px rgba(227, 27, 35, 0.35);
+}
+
+.bar:hover {
+  background: var(--color-red-deep);
+  color: #fff;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.copy {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.copy span {
+  letter-spacing: 0.08em;
+}
+
+@media (min-width: 861px) {
+  .bar {
+    left: auto;
+    right: 24px;
+    bottom: 24px;
+    width: auto;
+    min-width: 280px;
+    padding-inline: 22px;
+  }
+}
