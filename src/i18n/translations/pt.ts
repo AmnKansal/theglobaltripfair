@@ -2,23 +2,24 @@ import type { Messages } from "../types"
 
 export const pt: Messages = {
   meta: {
-    title: "TheGlobalTripFair.com | Voos, hotéis e viagens",
+    title: "TheGlobalTripFair.com | Voos, hotéis, carros, cruzeiros e comboios",
     description:
-      "TheGlobalTripFair.com é uma plataforma global para descobrir voos, hotéis, pacotes, transfers e destinos, com apoio a partir de Greenwood, Indiana.",
+      "TheGlobalTripFair.com é uma plataforma global para voos, hotéis, aluguer de carro, comboios nos EUA, cruzeiros, pacotes e transfers, com apoio a partir de Greenwood, Indiana.",
   },
   seo: {
     home: {
-      title: "TheGlobalTripFair.com | Voos, hotéis e viagens",
+      title: "TheGlobalTripFair.com | Voos, hotéis, carros, cruzeiros e comboios",
       description:
-        "TheGlobalTripFair.com é uma plataforma global para descobrir voos, hotéis, pacotes, transfers e destinos, com apoio a partir de Greenwood, Indiana.",
+        "Reserve hotéis, carros, comboios nos EUA, cruzeiros, voos e pacotes com TheGlobalTripFair.com — apoio a partir de Greenwood, Indiana.",
     },
     flights: {
       title: "Voos | TheGlobalTripFair.com",
       description: "Pesquise e planeie voos no mundo com TheGlobalTripFair.com — opções claras para viajar.",
     },
     hotels: {
-      title: "Hotéis | TheGlobalTripFair.com",
-      description: "Descubra hotéis e estadias com TheGlobalTripFair.com, de ícones urbanos a refúgios mais calmos.",
+      title: "Reserva de hotel | TheGlobalTripFair.com",
+      description:
+        "Reserve hotéis no mundo com TheGlobalTripFair.com. Compare quartos e regras tarifárias por telefone — 888-404-0651.",
     },
     holidays: {
       title: "Pacotes de férias | TheGlobalTripFair.com",
@@ -27,6 +28,21 @@ export const pt: Messages = {
     transfers: {
       title: "Transfers de aeroporto | TheGlobalTripFair.com",
       description: "Organize transfers de aeroporto e destino com TheGlobalTripFair.com, à volta da sua chegada.",
+    },
+    cars: {
+      title: "Aluguer de carro | TheGlobalTripFair.com",
+      description:
+        "Alugue um carro em qualquer cidade com TheGlobalTripFair.com. Veículo, total e horário do balcão, alinhados com o voo.",
+    },
+    cruises: {
+      title: "Cruzeiros | TheGlobalTripFair.com",
+      description:
+        "Planeie cruzeiros com voos, hotel na véspera e transfers com TheGlobalTripFair.com. Caribe, Alasca, Mediterrâneo e mais.",
+    },
+    trains: {
+      title: "Comboios nos EUA | TheGlobalTripFair.com",
+      description:
+        "Compare horários de comboio nos EUA e reserve com TheGlobalTripFair.com. Nordeste, Califórnia, Midwest e longa distância.",
     },
     destinations: {
       title: "Destinos | TheGlobalTripFair.com",
@@ -105,6 +121,8 @@ export const pt: Messages = {
     transfers: "Transfers",
     more: "Mais",
     cruises: "Cruzeiros",
+    cars: "Carros",
+    trains: "Comboios",
     cabs: "Táxis",
     destinations: "Destinos",
     offers: "Ofertas",
@@ -114,9 +132,9 @@ export const pt: Messages = {
     titleLine1: "Explore mais.",
     titleLine2: "Viaje mais longe.",
     description:
-      "TheGlobalTripFair.com reúne voos, hotéis, pacotes e transfers num só lugar de confiança — para descobrir e planear viagens no mundo.",
+      "TheGlobalTripFair.com reúne voos, hotéis, aluguer de carro, comboios nos EUA, cruzeiros, pacotes e transfers num só lugar de confiança — para descobrir e planear viagens no mundo.",
     meta1: "Destinos no mundo",
-    meta2: "Voos, estadias e transfers",
+    meta2: "Hotéis, carros, cruzeiros e comboios",
     meta3: "Apoio que viaja consigo",
     imageAlt: "Lago alpino e montanhas ao sol, vistos de um miradouro de viagem",
   },
@@ -197,14 +215,14 @@ export const pt: Messages = {
   services: {
     eyebrow: "Viajar, no mesmo lugar",
     title: "Uma plataforma para cada milha.",
-    copy: "Comece pela viagem de que precisa hoje. Cruzeiros, táxis, atividades e seguros já estão no mapa.",
+    copy: "Hotéis, carros, cruzeiros e comboios nos EUA estão agora junto a voos e pacotes — comece pela viagem de que precisa hoje.",
     flights: {
       title: "Voos",
       description: "Encontre voos para destinos em todo o mundo, com tarifas claras e datas flexíveis.",
     },
     hotels: {
       title: "Hotéis",
-      description: "De ícones urbanos a refúgios serenos, escolhidos pelo conforto e pelo carácter.",
+      description: "Estadias em cidade, resort ou aeroporto, com as regras da tarifa explicadas antes de pagar.",
     },
     holidays: {
       title: "Pacotes de férias",
@@ -214,10 +232,24 @@ export const pt: Messages = {
       title: "Transfers",
       description: "Transfers fiáveis de aeroporto e destino, alinhados com a sua chegada.",
     },
-    cruises: { title: "Cruzeiros", description: "Travessias no mar, em breve." },
+    cruises: { title: "Cruzeiros", description: "Viagens com voos, hotel na véspera e transfers num só itinerário." },
+    cars: { title: "Aluguer de carro", description: "Carros no aeroporto ou na cidade, à medida do grupo e da chegada." },
+    trains: { title: "Comboios EUA", description: "Nordeste, Califórnia, Midwest e longa distância, confirmados com o operador." },
     cabs: { title: "Táxis", description: "Corridas na cidade, em breve." },
     activities: { title: "Atividades", description: "Passeios, bilhetes e experiências, em breve." },
     insurance: { title: "Seguros", description: "Proteção de viagem para o imprevisto, em breve." },
+  },
+  servicePage: {
+    callNow: "Ligar",
+    requestQuote: "Pedir um orçamento",
+    featured: "Em destaque",
+    included: "O que está incluído",
+    includedTitle: "Em cada reserva que tratamos",
+    howItWorks: "Como funciona",
+    stepsTitle: "Da primeira chamada à confirmação",
+    goodToKnow: "Antes de reservar",
+    faq: "Perguntas frequentes",
+    related: "Outras formas de viajar",
   },
   destinations: {
     eyebrow: "Destinos",

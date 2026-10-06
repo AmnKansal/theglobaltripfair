@@ -35,6 +35,9 @@ export type SeoRouteKey =
   | "hotels"
   | "holidays"
   | "transfers"
+  | "cars"
+  | "cruises"
+  | "trains"
   | "destinations"
   | "contact"
   | "about"
@@ -60,8 +63,11 @@ export const publicPaths: PublicPath[] = [
   { path: "/", seoKey: "home", changefreq: "daily", priority: "1.0", indexable: true },
   { path: "/flights", seoKey: "flights", changefreq: "weekly", priority: "0.9", indexable: true },
   { path: "/hotels", seoKey: "hotels", changefreq: "weekly", priority: "0.9", indexable: true },
+  { path: "/cars", seoKey: "cars", changefreq: "weekly", priority: "0.9", indexable: true },
   { path: "/holidays", seoKey: "holidays", changefreq: "weekly", priority: "0.9", indexable: true },
   { path: "/transfers", seoKey: "transfers", changefreq: "weekly", priority: "0.8", indexable: true },
+  { path: "/cruises", seoKey: "cruises", changefreq: "weekly", priority: "0.9", indexable: true },
+  { path: "/trains", seoKey: "trains", changefreq: "weekly", priority: "0.9", indexable: true },
   { path: "/destinations", seoKey: "destinations", changefreq: "weekly", priority: "0.8", indexable: true },
   { path: "/contact", seoKey: "contact", changefreq: "monthly", priority: "0.8", indexable: true },
   { path: "/about", seoKey: "about", changefreq: "monthly", priority: "0.6", indexable: true },
@@ -80,8 +86,7 @@ export const publicPaths: PublicPath[] = [
   { path: "/inspiration", changefreq: "monthly", priority: "0.3", indexable: false },
   { path: "/guides", changefreq: "monthly", priority: "0.3", indexable: false },
   { path: "/tips", changefreq: "monthly", priority: "0.3", indexable: false },
-  { path: "/cruises", changefreq: "monthly", priority: "0.2", indexable: false },
-  { path: "/cabs", changefreq: "monthly", priority: "0.2", indexable: false },
+  { path: "/cabs", changefreq: "monthly", priority: "0.1", indexable: false },
   { path: "/activities", changefreq: "monthly", priority: "0.2", indexable: false },
   { path: "/insurance", changefreq: "monthly", priority: "0.2", indexable: false },
 ]

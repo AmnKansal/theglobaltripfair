@@ -26,6 +26,9 @@ export type Messages = {
     hotels: { title: string; description: string }
     holidays: { title: string; description: string }
     transfers: { title: string; description: string }
+    cars: { title: string; description: string }
+    cruises: { title: string; description: string }
+    trains: { title: string; description: string }
     destinations: { title: string; description: string }
     contact: { title: string; description: string }
     about: { title: string; description: string }
@@ -68,6 +71,8 @@ export type Messages = {
     transfers: string
     more: string
     cruises: string
+    cars: string
+    trains: string
     cabs: string
     destinations: string
     offers: string
@@ -165,9 +170,23 @@ export type Messages = {
     holidays: NamedCopy
     transfers: NamedCopy
     cruises: NamedCopy
+    cars: NamedCopy
+    trains: NamedCopy
     cabs: NamedCopy
     activities: NamedCopy
     insurance: NamedCopy
+  }
+  servicePage: {
+    callNow: string
+    requestQuote: string
+    featured: string
+    included: string
+    includedTitle: string
+    howItWorks: string
+    stepsTitle: string
+    goodToKnow: string
+    faq: string
+    related: string
   }
   destinations: {
     eyebrow: string

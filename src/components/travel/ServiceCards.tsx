@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { ArrowUpRight, CarFront, Hotel, Palmtree, Plane, ShieldCheck, Ship, Ticket } from "lucide-react"
+import { ArrowUpRight, CarFront, Hotel, Palmtree, Plane, ShieldCheck, Ship, Ticket, TrainFront } from "lucide-react"
 import { services, upcomingServices } from "../../data/services"
 import { useTranslation } from "../../i18n"
 import { Button } from "../common/Button"
@@ -11,11 +11,12 @@ const serviceIcons = {
   hotel: Hotel,
   palm: Palmtree,
   car: CarFront,
+  ship: Ship,
+  train: TrainFront,
 }
 
 const upcomingIcons = {
-  ship: Ship,
-  cab: CarFront,
+  car: CarFront,
   ticket: Ticket,
   shield: ShieldCheck,
 }

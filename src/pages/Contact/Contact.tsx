@@ -49,9 +49,12 @@ export function Contact() {
             </label>
             <label>
               {t("contact.interest")}
-              <select name="interest" defaultValue="holidays">
+              <select name="interest" defaultValue="hotels">
                 <option value="flights">{t("nav.flights")}</option>
                 <option value="hotels">{t("nav.hotels")}</option>
+                <option value="cars">{t("nav.cars")}</option>
+                <option value="cruises">{t("nav.cruises")}</option>
+                <option value="trains">{t("nav.trains")}</option>
                 <option value="holidays">{t("search.holidays")}</option>
                 <option value="transfers">{t("nav.transfers")}</option>
                 <option value="other">{t("contact.other")}</option>

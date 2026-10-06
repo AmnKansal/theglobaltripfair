@@ -13,7 +13,7 @@ export const aboutDoc: AboutDoc = {
       title: "That’s Where We Come In",
       paragraphs: [
         `${BRAND_NAME} was created with the vision of making travel search and travel planning a smoother experience for travelers worldwide.`,
-        "Whether you are planning a vacation, visiting family, traveling for business, or arranging a quick getaway, we help you explore flights, hotels, holiday packages, and transfers — and make informed travel decisions with greater ease.",
+        "Whether you are planning a vacation, visiting family, traveling for business, or arranging a quick getaway, we help you explore flights, hotels, car rentals, US train tickets, cruises, holiday packages, and transfers — and make informed travel decisions with greater ease.",
       ],
     },
     {
@@ -46,7 +46,7 @@ export const aboutDoc: AboutDoc = {
     },
   ],
   whatWeDo: [
-    "Explore different flight, hotel, holiday, and transfer options based on your travel requirements",
+    "Explore flight, hotel, car rental, US train, cruise, holiday, and transfer options based on your travel requirements",
     "Find suitable fares for domestic and international journeys",
     "Compare available choices before making travel decisions",
     "Get assistance with booking-related queries",

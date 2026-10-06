@@ -1,28 +1,29 @@
 import { media } from "./media"
 
 export type ServiceCard = {
-  id: "flights" | "hotels" | "holidays" | "transfers"
+  id: "flights" | "hotels" | "cars" | "cruises" | "trains" | "holidays"
   to: string
-  icon: "plane" | "hotel" | "palm" | "car"
+  icon: "plane" | "hotel" | "car" | "ship" | "train" | "palm"
   image: string
 }
 
 export type UpcomingService = {
-  id: "cruises" | "cabs" | "activities" | "insurance"
+  id: "transfers" | "activities" | "insurance"
   to: string
-  icon: "ship" | "cab" | "ticket" | "shield"
+  icon: "car" | "ticket" | "shield"
 }
 
 export const services: ServiceCard[] = [
   { id: "flights", to: "/flights", icon: "plane", image: media.flights },
   { id: "hotels", to: "/hotels", icon: "hotel", image: media.hotels },
+  { id: "cars", to: "/cars", icon: "car", image: media.carsSuv },
+  { id: "cruises", to: "/cruises", icon: "ship", image: media.cruises },
+  { id: "trains", to: "/trains", icon: "train", image: media.trains },
   { id: "holidays", to: "/holidays", icon: "palm", image: media.holidays },
-  { id: "transfers", to: "/transfers", icon: "car", image: media.transfers },
 ]
 
 export const upcomingServices: UpcomingService[] = [
-  { id: "cruises", to: "/cruises", icon: "ship" },
-  { id: "cabs", to: "/cabs", icon: "cab" },
+  { id: "transfers", to: "/transfers", icon: "car" },
   { id: "activities", to: "/activities", icon: "ticket" },
   { id: "insurance", to: "/insurance", icon: "shield" },
 ]

@@ -1,5 +1,5 @@
-import { CategoryPage } from "../category/CategoryPage"
+import { ServicePage } from "../Services/ServicePage"
 
 export function Hotels() {
-  return <CategoryPage kind="hotels" />
+  return <ServicePage slug="hotels" />
 }

@@ -6,15 +6,22 @@ export type NavLinkItem = {
 export const primaryNav: NavLinkItem[] = [
   { labelKey: "nav.flights", to: "/flights" },
   { labelKey: "nav.hotels", to: "/hotels" },
-  { labelKey: "nav.holidays", to: "/holidays" },
-  { labelKey: "nav.transfers", to: "/transfers" },
+  { labelKey: "nav.cars", to: "/cars" },
+  { labelKey: "nav.cruises", to: "/cruises" },
+  { labelKey: "nav.trains", to: "/trains" },
 ]
 
 export const moreNav: NavLinkItem[] = [
-  { labelKey: "nav.cruises", to: "/cruises" },
-  { labelKey: "nav.cabs", to: "/cabs" },
+  { labelKey: "nav.holidays", to: "/holidays" },
+  { labelKey: "nav.transfers", to: "/transfers" },
   { labelKey: "nav.destinations", to: "/destinations" },
   { labelKey: "nav.offers", to: "/offers" },
+]
+
+export const footerTravelNav: NavLinkItem[] = [
+  ...primaryNav,
+  { labelKey: "nav.holidays", to: "/holidays" },
+  { labelKey: "nav.transfers", to: "/transfers" },
 ]
 
 export const exploreNav: NavLinkItem[] = [

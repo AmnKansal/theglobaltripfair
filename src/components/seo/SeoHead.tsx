@@ -46,7 +46,7 @@ const fallbackTitle = (pathname: string, t: (key: string) => string) => {
   if (fromPages !== titleKey) return `${fromPages} | ${SITE_NAME}`
   const fromComing = t(comingKey)
   if (fromComing !== comingKey) return `${fromComing} | ${SITE_NAME}`
-  return `${SITE_NAME} | Flights, Hotels & Holiday Travel`
+  return `${SITE_NAME} | Flights, Hotels, Cars, Cruises & Trains`
 }
 
 const fallbackDescription = (pathname: string, t: (key: string) => string) => {

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { Mail, MapPin, Phone } from "lucide-react"
 import { contactCityLine, contactInfo, contactMapsHref } from "../../data/contact"
 import { Logo } from "../common/Logo"
-import { moreNav, primaryNav } from "../../data/navigation"
+import { footerTravelNav } from "../../data/navigation"
 import { useTranslation } from "../../i18n"
 import styles from "./Footer.module.css"
 
@@ -30,18 +30,11 @@ export function Footer() {
 
         <div className={styles.column}>
           <p className={styles.heading}>{t("footer.travel")}</p>
-          {primaryNav.map((item) => (
+          {footerTravelNav.map((item) => (
             <Link key={item.to} to={item.to}>
-              {item.to === "/holidays" ? t("search.holidays") : t(item.labelKey)}
+              {t(item.labelKey)}
             </Link>
           ))}
-          {moreNav
-            .filter((item) => item.to === "/cruises")
-            .map((item) => (
-              <Link key={item.to} to={item.to}>
-                {t(item.labelKey)}
-              </Link>
-            ))}
         </div>
 
         <div className={styles.column}>

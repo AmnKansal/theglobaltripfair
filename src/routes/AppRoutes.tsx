@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { Route, Routes, useLocation } from "react-router-dom"
+import { Navigate, Route, Routes, useLocation } from "react-router-dom"
 import { Layout } from "../components/layout/Layout"
 import { Contact } from "../pages/Contact/Contact"
 import { ContentPage } from "../pages/Content/ContentPage"
@@ -10,6 +10,7 @@ import { Holidays } from "../pages/Holidays/Holidays"
 import { Home } from "../pages/Home/Home"
 import { Hotels } from "../pages/Hotels/Hotels"
 import { Transfers } from "../pages/Transfers/Transfers"
+import { ServicePage } from "../pages/Services/ServicePage"
 import { ComingSoon } from "../pages/More/ComingSoon"
 import { NotFound } from "../pages/NotFound/NotFound"
 import { SearchMaintenance } from "../pages/Search/SearchMaintenance"
@@ -40,10 +41,12 @@ export function AppRoutes() {
           <Route path="/" element={<Home />} />
           <Route path="/flights" element={<Flights />} />
           <Route path="/hotels" element={<Hotels />} />
+          <Route path="/cars" element={<ServicePage slug="cars" />} />
           <Route path="/holidays" element={<Holidays />} />
           <Route path="/transfers" element={<Transfers />} />
-          <Route path="/cruises" element={<ComingSoon kind="cruises" />} />
-          <Route path="/cabs" element={<ComingSoon kind="cabs" />} />
+          <Route path="/cruises" element={<ServicePage slug="cruises" />} />
+          <Route path="/trains" element={<ServicePage slug="trains" />} />
+          <Route path="/cabs" element={<Navigate to="/cars" replace />} />
           <Route path="/activities" element={<ComingSoon kind="activities" />} />
           <Route path="/insurance" element={<ComingSoon kind="insurance" />} />
           <Route path="/search" element={<SearchMaintenance />} />

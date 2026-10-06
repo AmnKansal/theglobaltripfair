@@ -2,23 +2,24 @@ import type { Messages } from "../types"
 
 export const de: Messages = {
   meta: {
-    title: "TheGlobalTripFair.com | Flüge, Hotels und Reisen",
+    title: "TheGlobalTripFair.com | Flüge, Hotels, Autos, Kreuzfahrten und Züge",
     description:
-      "TheGlobalTripFair.com ist eine globale Reiseplattform für Flüge, Hotels, Urlaubspakete, Transfers und Reiseziele, mit Unterstützung aus Greenwood, Indiana.",
+      "TheGlobalTripFair.com ist eine globale Reiseplattform für Flüge, Hotels, Mietwagen, US-Zugtickets, Kreuzfahrten, Urlaubspakete und Transfers, mit Unterstützung aus Greenwood, Indiana.",
   },
   seo: {
     home: {
-      title: "TheGlobalTripFair.com | Flüge, Hotels und Reisen",
+      title: "TheGlobalTripFair.com | Flüge, Hotels, Autos, Kreuzfahrten und Züge",
       description:
-        "TheGlobalTripFair.com ist eine globale Reiseplattform für Flüge, Hotels, Urlaubspakete, Transfers und Reiseziele, mit Unterstützung aus Greenwood, Indiana.",
+        "Buchen Sie Hotels, Mietwagen, US-Züge, Kreuzfahrten, Flüge und Urlaubspakete mit TheGlobalTripFair.com — Unterstützung aus Greenwood, Indiana.",
     },
     flights: {
       title: "Flüge | TheGlobalTripFair.com",
       description: "Suchen und planen Sie Flüge weltweit mit TheGlobalTripFair.com — klare Optionen für Ihre Reise.",
     },
     hotels: {
-      title: "Hotels | TheGlobalTripFair.com",
-      description: "Entdecken Sie Hotels und Aufenthalte mit TheGlobalTripFair.com, von Stadthäusern bis zu ruhigeren Rückzugsorten.",
+      title: "Hotelbuchung | TheGlobalTripFair.com",
+      description:
+        "Buchen Sie Hotels weltweit mit TheGlobalTripFair.com. Zimmer und Tarifregeln telefonisch vergleichen — 888-404-0651.",
     },
     holidays: {
       title: "Pauschalreisen | TheGlobalTripFair.com",
@@ -27,6 +28,21 @@ export const de: Messages = {
     transfers: {
       title: "Flughafentransfers | TheGlobalTripFair.com",
       description: "Organisieren Sie Flughafen- und Destinationstransfers mit TheGlobalTripFair.com, passend zu Ihrer Ankunft.",
+    },
+    cars: {
+      title: "Mietwagen | TheGlobalTripFair.com",
+      description:
+        "Mieten Sie ein Auto in jeder Stadt mit TheGlobalTripFair.com. Fahrzeug, Gesamtpreis und Schalterzeiten — passend zu Ihrem Flug.",
+    },
+    cruises: {
+      title: "Kreuzfahrten | TheGlobalTripFair.com",
+      description:
+        "Planen Sie Kreuzfahrten mit Flügen, Hotel vor der Abfahrt und Transfers über TheGlobalTripFair.com. Karibik, Alaska, Mittelmeer und mehr.",
+    },
+    trains: {
+      title: "US-Zugtickets | TheGlobalTripFair.com",
+      description:
+        "Vergleichen Sie US-Zugfahrpläne und buchen Sie mit TheGlobalTripFair.com. Northeast Corridor, Kalifornien, Midwest und Fernverkehr.",
     },
     destinations: {
       title: "Reiseziele | TheGlobalTripFair.com",
@@ -105,6 +121,8 @@ export const de: Messages = {
     transfers: "Transfers",
     more: "Mehr",
     cruises: "Kreuzfahrten",
+    cars: "Autos",
+    trains: "Züge",
     cabs: "Taxis",
     destinations: "Reiseziele",
     offers: "Angebote",
@@ -114,9 +132,9 @@ export const de: Messages = {
     titleLine1: "Weiter reisen.",
     titleLine2: "Mehr entdecken.",
     description:
-      "TheGlobalTripFair.com versammelt Flüge, Hotels, Urlaubspakete und Transfers an einem vertrauenswürdigen Ort — zum Entdecken und Planen von Reisen weltweit.",
+      "TheGlobalTripFair.com versammelt Flüge, Hotels, Mietwagen, US-Züge, Kreuzfahrten, Urlaubspakete und Transfers an einem vertrauenswürdigen Ort — zum Entdecken und Planen von Reisen weltweit.",
     meta1: "Destinationen weltweit",
-    meta2: "Flüge, Aufenthalte und Transfers",
+    meta2: "Hotels, Autos, Kreuzfahrten und Züge",
     meta3: "Begleitung, die mitreist",
     imageAlt: "Alpiner See und Bergkette im Sonnenlicht, von einem Reisepanorama aus gesehen",
   },
@@ -197,14 +215,14 @@ export const de: Messages = {
   services: {
     eyebrow: "Reisen, zusammengeführt",
     title: "Eine Plattform für jede Meile.",
-    copy: "Beginnen Sie mit der Reise, die Sie heute brauchen. Kreuzfahrten, Taxis, Aktivitäten und Versicherung sind schon auf der Karte.",
+    copy: "Hotels, Autos, Kreuzfahrten und US-Züge stehen jetzt neben Flügen und Urlaub — beginnen Sie mit der Reise, die Sie heute brauchen.",
     flights: {
       title: "Flüge",
       description: "Flüge zu Zielen weltweit, mit klaren Preisen und flexiblen Daten.",
     },
     hotels: {
       title: "Hotels",
-      description: "Von Stadtikonen bis zu stillen Rückzugsorten — gewählt für Komfort und Charakter.",
+      description: "Stadt-, Resort- und Flughafenhotels, mit klar erklärten Tarifregeln vor der Zahlung.",
     },
     holidays: {
       title: "Urlaubspakete",
@@ -214,10 +232,24 @@ export const de: Messages = {
       title: "Transfers",
       description: "Zuverlässige Flughafen- und Destinationstransfers, abgestimmt auf Ihre Ankunft.",
     },
-    cruises: { title: "Kreuzfahrten", description: "Reisen auf dem Meer, in Kürze." },
+    cruises: { title: "Kreuzfahrten", description: "Fahrten mit Flügen, Hotel am Vorabend und Transfers auf einem Reiseplan." },
+    cars: { title: "Mietwagen", description: "Flughafen- und Stadtautos, passend zur Gruppe und zur Ankunftszeit." },
+    trains: { title: "US-Züge", description: "Nordosten, Kalifornien, Midwest und Fernverkehr, bestätigt beim Beförderer." },
     cabs: { title: "Taxis", description: "Fahrten in der Stadt, in Kürze." },
     activities: { title: "Aktivitäten", description: "Touren, Tickets und Erlebnisse, in Kürze." },
     insurance: { title: "Versicherung", description: "Reiseschutz für das Unerwartete, in Kürze." },
+  },
+  servicePage: {
+    callNow: "Anrufen",
+    requestQuote: "Angebot anfragen",
+    featured: "Im Fokus",
+    included: "Inbegriffen",
+    includedTitle: "Bei jeder Buchung, die wir betreuen",
+    howItWorks: "So läuft es",
+    stepsTitle: "Vom ersten Anruf bis zur Bestätigung",
+    goodToKnow: "Vor der Buchung",
+    faq: "Häufige Fragen",
+    related: "Weitere Reisearten",
   },
   destinations: {
     eyebrow: "Destinationen",

@@ -2,23 +2,24 @@ import type { Messages } from "../types"
 
 export const en: Messages = {
   meta: {
-    title: "TheGlobalTripFair.com | Flights, Hotels & Holiday Travel",
+    title: "TheGlobalTripFair.com | Flights, Hotels, Cars, Cruises & Trains",
     description:
-      "TheGlobalTripFair.com is a global travel platform for discovering flights, hotels, holiday packages, airport transfers and destinations, with travel support from Greenwood, Indiana.",
+      "TheGlobalTripFair.com is a global travel platform for flights, hotels, car rentals, US train tickets, cruises, holiday packages and transfers, with travel support from Greenwood, Indiana.",
   },
   seo: {
     home: {
-      title: "TheGlobalTripFair.com | Flights, Hotels & Holiday Travel",
+      title: "TheGlobalTripFair.com | Flights, Hotels, Cars, Cruises & Trains",
       description:
-        "TheGlobalTripFair.com is a global travel platform for discovering flights, hotels, holiday packages, airport transfers and destinations, with travel support from Greenwood, Indiana.",
+        "Book hotels, car rentals, US train tickets, cruises, flights and holiday packages with TheGlobalTripFair.com — travel support from Greenwood, Indiana.",
     },
     flights: {
       title: "Flights | TheGlobalTripFair.com",
       description: "Search and plan flights worldwide with TheGlobalTripFair.com — clear options for international and domestic travel.",
     },
     hotels: {
-      title: "Hotels | TheGlobalTripFair.com",
-      description: "Discover hotels and stays with TheGlobalTripFair.com, from city icons to quieter retreats.",
+      title: "Hotel Booking | TheGlobalTripFair.com",
+      description:
+        "Book hotels worldwide with TheGlobalTripFair.com. Compare rooms, rate rules and resort fees by phone — call 888-404-0651.",
     },
     holidays: {
       title: "Holiday Packages | TheGlobalTripFair.com",
@@ -27,6 +28,21 @@ export const en: Messages = {
     transfers: {
       title: "Airport Transfers | TheGlobalTripFair.com",
       description: "Arrange airport and destination transfers with TheGlobalTripFair.com, timed around your arrival.",
+    },
+    cars: {
+      title: "Car Rental | TheGlobalTripFair.com",
+      description:
+        "Rent a car in any city with TheGlobalTripFair.com. Compare vehicles, totals and pickup hours — timed to your flight.",
+    },
+    cruises: {
+      title: "Cruise Holidays | TheGlobalTripFair.com",
+      description:
+        "Plan cruise holidays with flights, a pre-cruise hotel and transfers through TheGlobalTripFair.com. Caribbean, Alaska, Mediterranean and more.",
+    },
+    trains: {
+      title: "US Train Tickets | TheGlobalTripFair.com",
+      description:
+        "Compare US train schedules and book tickets with TheGlobalTripFair.com. Northeast Corridor, California, Midwest and long-distance routes.",
     },
     destinations: {
       title: "Travel Destinations | TheGlobalTripFair.com",
@@ -107,6 +123,8 @@ export const en: Messages = {
     transfers: "Transfers",
     more: "More",
     cruises: "Cruises",
+    cars: "Cars",
+    trains: "Trains",
     cabs: "Cabs",
     destinations: "Destinations",
     offers: "Offers",
@@ -116,9 +134,9 @@ export const en: Messages = {
     titleLine1: "Explore more.",
     titleLine2: "Travel further.",
     description:
-      "TheGlobalTripFair.com gathers flights, hotels, holiday packages and transfers in one trusted place — so travellers can discover and plan journeys worldwide.",
+      "TheGlobalTripFair.com gathers flights, hotels, car rentals, US train tickets, cruises, holiday packages and transfers in one trusted place — so travellers can discover and plan journeys worldwide.",
     meta1: "Worldwide destinations",
-    meta2: "Flights, stays and transfers",
+    meta2: "Hotels, cars, cruises and trains",
     meta3: "Support that travels with you",
     imageAlt: "Sunlit alpine lake and mountain range, seen from a high travel vantage",
   },
@@ -199,14 +217,14 @@ export const en: Messages = {
   services: {
     eyebrow: "Travel, together",
     title: "One platform for every mile.",
-    copy: "Start with the journey you need today. Cruises, cabs, activities and insurance are already on the map.",
+    copy: "Hotels, cars, cruises and US trains now sit beside flights and holidays — start with the journey you need today.",
     flights: {
       title: "Flights",
       description: "Find flights across destinations worldwide, with fare clarity and flexible dates.",
     },
     hotels: {
       title: "Hotels",
-      description: "Discover stays from city icons to quiet retreats, chosen for comfort and character.",
+      description: "City, resort and airport stays compared for you, with rate rules explained before you pay.",
     },
     holidays: {
       title: "Holiday packages",
@@ -218,7 +236,15 @@ export const en: Messages = {
     },
     cruises: {
       title: "Cruises",
-      description: "Ocean journeys, coming soon.",
+      description: "Sailings with flights, a hotel the night before, and transfers on one itinerary.",
+    },
+    cars: {
+      title: "Car rental",
+      description: "Airport and city cars sized for your group, with pickup timed to your arrival.",
+    },
+    trains: {
+      title: "US trains",
+      description: "Northeast, California, Midwest and long-distance tickets, confirmed with the carrier.",
     },
     cabs: {
       title: "Cabs",
@@ -232,6 +258,18 @@ export const en: Messages = {
       title: "Insurance",
       description: "Travel cover for the unexpected, coming soon.",
     },
+  },
+  servicePage: {
+    callNow: "Call",
+    requestQuote: "Request a quote",
+    featured: "Featured",
+    included: "What's included",
+    includedTitle: "Handled with every booking",
+    howItWorks: "How it works",
+    stepsTitle: "From the first call to confirmation",
+    goodToKnow: "Before you book",
+    faq: "Questions travellers ask",
+    related: "More ways to travel",
   },
   destinations: {
     eyebrow: "Destinations",
@@ -504,9 +542,9 @@ export const en: Messages = {
     flightsCopy:
       "Search routes with a quieter, clearer booking experience. Live inventory and checkout arrive in a later phase — the foundation is ready.",
     flightsImageAlt: "Commercial aircraft on the tarmac at sunrise",
-    hotelsTitle: "Stays with a sense of place.",
+    hotelsTitle: "Hotel booking, with a person on the line.",
     hotelsCopy:
-      "From city landmarks to coastal retreats. Hotel search is in place so the booking journey can grow without redesigning the experience.",
+      "Share the city, dates and who is staying. We compare properties, explain the rate, and confirm the room — then stay reachable if plans change.",
     hotelsImageAlt: "A refined hotel pool terrace at dusk",
     holidaysTitle: "Journeys, not just tickets.",
     holidaysCopy:

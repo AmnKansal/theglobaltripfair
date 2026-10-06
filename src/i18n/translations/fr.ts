@@ -2,23 +2,24 @@ import type { Messages } from "../types"
 
 export const fr: Messages = {
   meta: {
-    title: "TheGlobalTripFair.com | Vols, hôtels et voyages",
+    title: "TheGlobalTripFair.com | Vols, hôtels, voitures, croisières et trains",
     description:
-      "TheGlobalTripFair.com est une plateforme de voyage mondiale pour découvrir vols, hôtels, forfaits, transferts et destinations, avec une assistance depuis Greenwood, Indiana.",
+      "TheGlobalTripFair.com est une plateforme de voyage mondiale pour vols, hôtels, locations de voiture, billets de train aux États-Unis, croisières, forfaits et transferts, avec une assistance depuis Greenwood, Indiana.",
   },
   seo: {
     home: {
-      title: "TheGlobalTripFair.com | Vols, hôtels et voyages",
+      title: "TheGlobalTripFair.com | Vols, hôtels, voitures, croisières et trains",
       description:
-        "TheGlobalTripFair.com est une plateforme de voyage mondiale pour découvrir vols, hôtels, forfaits, transferts et destinations, avec une assistance depuis Greenwood, Indiana.",
+        "Réservez hôtels, voitures, trains aux États-Unis, croisières, vols et forfaits avec TheGlobalTripFair.com — assistance depuis Greenwood, Indiana.",
     },
     flights: {
       title: "Vols | TheGlobalTripFair.com",
       description: "Recherchez et préparez des vols dans le monde avec TheGlobalTripFair.com — des options claires pour voyager.",
     },
     hotels: {
-      title: "Hôtels | TheGlobalTripFair.com",
-      description: "Découvrez hôtels et séjours avec TheGlobalTripFair.com, des adresses de ville aux retraites plus calmes.",
+      title: "Réservation d’hôtel | TheGlobalTripFair.com",
+      description:
+        "Réservez des hôtels dans le monde avec TheGlobalTripFair.com. Comparez chambres et conditions au 888-404-0651.",
     },
     holidays: {
       title: "Forfaits vacances | TheGlobalTripFair.com",
@@ -27,6 +28,21 @@ export const fr: Messages = {
     transfers: {
       title: "Transferts aéroport | TheGlobalTripFair.com",
       description: "Organisez des transferts aéroport et destination avec TheGlobalTripFair.com, autour de votre arrivée.",
+    },
+    cars: {
+      title: "Location de voiture | TheGlobalTripFair.com",
+      description:
+        "Louez une voiture dans n’importe quelle ville avec TheGlobalTripFair.com. Véhicule, total et horaires du comptoir, calés sur votre vol.",
+    },
+    cruises: {
+      title: "Croisières | TheGlobalTripFair.com",
+      description:
+        "Composez une croisière avec vols, hôtel la veille et transferts via TheGlobalTripFair.com. Caraïbes, Alaska, Méditerranée et plus.",
+    },
+    trains: {
+      title: "Trains aux États-Unis | TheGlobalTripFair.com",
+      description:
+        "Comparez les horaires ferroviaires américains et réservez avec TheGlobalTripFair.com. Nord-Est, Californie, Midwest et longues distances.",
     },
     destinations: {
       title: "Destinations | TheGlobalTripFair.com",
@@ -105,6 +121,8 @@ export const fr: Messages = {
     transfers: "Transferts",
     more: "Plus",
     cruises: "Croisières",
+    cars: "Voitures",
+    trains: "Trains",
     cabs: "VTC",
     destinations: "Destinations",
     offers: "Offres",
@@ -114,9 +132,9 @@ export const fr: Messages = {
     titleLine1: "Partez plus loin.",
     titleLine2: "Découvrez davantage.",
     description:
-      "TheGlobalTripFair.com réunit vols, hôtels, forfaits et transferts dans un seul lieu de confiance — pour découvrir et préparer des voyages dans le monde.",
+      "TheGlobalTripFair.com réunit vols, hôtels, locations de voiture, trains aux États-Unis, croisières, forfaits et transferts dans un seul lieu de confiance — pour découvrir et préparer des voyages dans le monde.",
     meta1: "Destinations dans le monde",
-    meta2: "Vols, séjours et transferts",
+    meta2: "Hôtels, voitures, croisières et trains",
     meta3: "Un accompagnement qui voyage avec vous",
     imageAlt: "Lac alpin et montagnes au soleil, vus d’un belvédère de voyage",
   },
@@ -197,14 +215,14 @@ export const fr: Messages = {
   services: {
     eyebrow: "Voyager, simplement",
     title: "Une plateforme pour chaque kilomètre.",
-    copy: "Commencez par le voyage dont vous avez besoin aujourd’hui. Croisières, VTC, activités et assurances sont déjà sur la carte.",
+    copy: "Hôtels, voitures, croisières et trains américains rejoignent vols et forfaits — commencez par le voyage dont vous avez besoin aujourd’hui.",
     flights: {
       title: "Vols",
       description: "Trouvez des vols vers le monde entier, avec des tarifs lisibles et des dates souples.",
     },
     hotels: {
       title: "Hôtels",
-      description: "Des adresses de ville aux retraites plus confidentielles, choisies pour le confort et le caractère.",
+      description: "Séjours en ville, à l’aéroport ou au resort, avec les règles tarifaires expliquées avant le paiement.",
     },
     holidays: {
       title: "Forfaits vacances",
@@ -216,7 +234,15 @@ export const fr: Messages = {
     },
     cruises: {
       title: "Croisières",
-      description: "Des traversées en mer, bientôt.",
+      description: "Traversées avec vols, hôtel la veille et transferts, sur un seul itinéraire.",
+    },
+    cars: {
+      title: "Location de voiture",
+      description: "Voitures à l’aéroport ou en ville, dimensionnées pour votre groupe et calées sur l’arrivée.",
+    },
+    trains: {
+      title: "Trains US",
+      description: "Nord-Est, Californie, Midwest et longues distances, confirmés auprès du transporteur.",
     },
     cabs: {
       title: "VTC",
@@ -230,6 +256,18 @@ export const fr: Messages = {
       title: "Assurance",
       description: "Une couverture voyage pour l’imprévu, bientôt.",
     },
+  },
+  servicePage: {
+    callNow: "Appeler",
+    requestQuote: "Demander un devis",
+    featured: "À la une",
+    included: "Inclus",
+    includedTitle: "Sur chaque réservation que nous gérons",
+    howItWorks: "Comment ça se passe",
+    stepsTitle: "Du premier appel à la confirmation",
+    goodToKnow: "Avant de réserver",
+    faq: "Questions fréquentes",
+    related: "D’autres façons de voyager",
   },
   destinations: {
     eyebrow: "Destinations",
