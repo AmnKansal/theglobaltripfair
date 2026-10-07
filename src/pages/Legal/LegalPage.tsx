@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react"
 import { Link } from "react-router-dom"
 import { Mail, MapPin, Phone } from "lucide-react"
-import { contactCityLine, contactInfo, contactMapsHref, hasCarsPhone } from "../../data/contact"
+import { contactCityLine, contactInfo, contactMapsHref, hasTrainsPhone } from "../../data/contact"
 import { BRAND_NAME, COMPANY_NAME, LEGAL_UPDATED, getLegalDoc, legalPageLinks, type LegalSlug } from "../../data/legal"
 import { useTranslation } from "../../i18n"
 import { Button } from "../../components/common/Button"
@@ -21,14 +21,14 @@ function ContactCard() {
           {contactInfo.phoneDisplay}
         </span>
       </a>
-      {hasCarsPhone ? (
-        <a href={contactInfo.carsPhoneHref}>
+      {hasTrainsPhone ? (
+        <a href={contactInfo.trainsPhoneHref}>
           <span className={styles.contactIcon}>
             <Phone size={16} strokeWidth={2.2} aria-hidden="true" />
           </span>
           <span>
-            <small>{t("common.carRentals")}</small>
-            {contactInfo.carsPhoneDisplay}
+            <small>{t("common.trainReservations")}</small>
+            {contactInfo.trainsPhoneDisplay}
           </span>
         </a>
       ) : null}

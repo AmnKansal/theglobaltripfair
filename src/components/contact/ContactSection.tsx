@@ -1,5 +1,5 @@
-import { CarFront, Mail, MapPin, Phone } from "lucide-react"
-import { contactCityLine, contactInfo, contactMapsHref, hasCarsPhone } from "../../data/contact"
+import { Mail, MapPin, Phone, TrainFront } from "lucide-react"
+import { contactCityLine, contactInfo, contactMapsHref, hasTrainsPhone } from "../../data/contact"
 import { useTranslation } from "../../i18n"
 import { SectionHeading } from "../common/SectionHeading"
 import { ContactCard } from "./ContactCard"
@@ -20,7 +20,7 @@ export function ContactSection() {
             tone="inverse"
           />
 
-          <div className={`${styles.grid} ${hasCarsPhone ? styles.gridFour : ""}`}>
+          <div className={`${styles.grid} ${hasTrainsPhone ? styles.gridFour : ""}`}>
             <ContactCard
               href={contactInfo.phoneHref}
               icon={<Phone size={20} strokeWidth={2.1} />}
@@ -29,14 +29,14 @@ export function ContactSection() {
               copy={t("reach.callCopy")}
               cta={t("reach.callCta")}
             />
-            {hasCarsPhone ? (
+            {hasTrainsPhone ? (
               <ContactCard
-                href={contactInfo.carsPhoneHref}
-                icon={<CarFront size={20} strokeWidth={2.1} />}
-                title={t("reach.callCars")}
-                value={contactInfo.carsPhoneDisplay}
-                copy={t("reach.callCarsCopy")}
-                cta={t("reach.callCarsCta")}
+                href={contactInfo.trainsPhoneHref}
+                icon={<TrainFront size={20} strokeWidth={2.1} />}
+                title={t("reach.callTrains")}
+                value={contactInfo.trainsPhoneDisplay}
+                copy={t("reach.callTrainsCopy")}
+                cta={t("reach.callTrainsCta")}
               />
             ) : null}
             <ContactCard

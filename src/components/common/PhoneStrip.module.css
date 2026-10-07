@@ -41,14 +41,14 @@
   background: var(--color-red-deep);
 }
 
-.hero .cars {
+.hero .trains {
   background: rgba(255, 255, 255, 0.16);
   color: #f6f3ee;
   border: 1px solid rgba(255, 255, 255, 0.28);
   box-shadow: none;
 }
 
-.hero .cars:hover {
+.hero .trains:hover {
   background: #fff;
   color: var(--color-ink);
 }
@@ -57,7 +57,7 @@
   color: rgba(255, 255, 255, 0.78);
 }
 
-.hero .cars:hover small {
+.hero .trains:hover small {
   color: var(--color-stone);
 }
 
@@ -70,13 +70,13 @@
   color: var(--color-red);
 }
 
-.dark .cars {
+.dark .trains {
   background: transparent;
   color: #f4f1ec;
   border: 1px solid rgba(255, 255, 255, 0.28);
 }
 
-.dark .cars:hover {
+.dark .trains:hover {
   background: #fff;
   color: var(--color-ink);
 }
@@ -85,11 +85,11 @@
   color: var(--color-stone);
 }
 
-.dark .cars small {
+.dark .trains small {
   color: rgba(244, 241, 236, 0.7);
 }
 
-.dark .cars:hover small {
+.dark .trains:hover small {
   color: var(--color-stone);
 }
 
@@ -103,13 +103,13 @@
   color: #fff;
 }
 
-.light .cars {
+.light .trains {
   background: var(--color-paper);
   color: var(--color-ink);
   border: 1px solid var(--color-line);
 }
 
-.light .cars:hover {
+.light .trains:hover {
   border-color: var(--color-red);
   color: var(--color-red);
 }

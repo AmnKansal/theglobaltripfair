@@ -1,6 +1,6 @@
 import { BRAND_NAME, COMPANY_NAME } from "../legal/brand"
 import { media } from "../media"
-import { contactInfo } from "../contact"
+import { contactInfo, trainsDeskPhoneDisplay } from "../contact"
 import type { ServiceDoc } from "./types"
 
 export const trainsPage: ServiceDoc = {
@@ -58,8 +58,8 @@ export const trainsPage: ServiceDoc = {
     { question: "Can I book a round trip with different return stations?", answer: "Yes. Open-jaw and multi-city rail trips are common. Share the full plan so we do not ticket a simple out-and-back when you actually need two different endpoints." },
     { question: "Do you cover only the Northeast?", answer: "No. The Northeast is the busiest ask, but we also ticket California, Midwest, Pacific Northwest and long-distance routes when the carrier still has space." },
     { question: "What if my train is delayed?", answer: "The carrier’s delay and missed-connection rules apply. Call us with your booking reference and we work the next available option under those rules, including hotels if we booked those too." },
-    { question: "Can I add a hotel or car at the other end?", answer: `Yes. Many travellers pair rail with a downtown hotel or a rental for the last stretch. Ask when you call ${contactInfo.phoneDisplay} and we keep it on one file.` },
+    { question: "Can I add a hotel or car at the other end?", answer: `Yes. Many travellers pair rail with a downtown hotel or a rental for the last stretch. Ask when you call ${trainsDeskPhoneDisplay} and we keep it on one file.` },
   ],
   ctaTitle: "Pick two cities. We will line up the trains.",
-  ctaCopy: `Call ${contactInfo.phoneDisplay} or email ${contactInfo.email}. ${COMPANY_NAME} confirms times and fares with the carrier before anything is ticketed.`,
+  ctaCopy: `Call the train desk on ${trainsDeskPhoneDisplay} or email ${contactInfo.email}. ${COMPANY_NAME} confirms times and fares with the carrier before anything is ticketed.`,
 }

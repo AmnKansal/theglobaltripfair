@@ -1,6 +1,6 @@
 import { BRAND_NAME, COMPANY_NAME } from "../legal/brand"
 import { media } from "../media"
-import { carsDeskPhoneDisplay, contactInfo } from "../contact"
+import { contactInfo } from "../contact"
 import type { ServiceDoc } from "./types"
 
 export const carsPage: ServiceDoc = {
@@ -56,8 +56,8 @@ export const carsPage: ServiceDoc = {
     { question: "Can I collect in one city and return in another?", answer: "Yes, on many US and international routes. Drop fees differ a lot. We compare one-way totals so you see the real cost before confirming." },
     { question: "Are child seats available?", answer: "Infant, toddler and booster seats can be reserved for a daily fee, subject to stock. Many families bring their own; we can also check the airline’s policy for gate-checking a seat." },
     { question: "What if my flight is late?", answer: "When we book the flight with the car, the flight number goes on the rental. For night arrivals we pick desks that stay open, or we move pickup to the morning." },
-    { question: "Can I extend after I have the keys?", answer: `Usually. Call ${carsDeskPhoneDisplay} as soon as plans change. Extensions depend on availability; we explain any rate difference before you agree.` },
+    { question: "Can I extend after I have the keys?", answer: `Usually. Call ${contactInfo.phoneDisplay} as soon as plans change. Extensions depend on availability; we explain any rate difference before you agree.` },
   ],
   ctaTitle: "Need the car waiting when you land?",
-  ctaCopy: `Call the car rental desk on ${carsDeskPhoneDisplay} or email ${contactInfo.email}. ${COMPANY_NAME} will match the vehicle to your group and the counter hours to your arrival.`,
+  ctaCopy: `Call ${contactInfo.phoneDisplay} or email ${contactInfo.email}. ${COMPANY_NAME} will match the vehicle to your group and the counter hours to your arrival.`,
 }

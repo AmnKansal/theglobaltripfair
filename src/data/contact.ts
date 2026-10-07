@@ -13,14 +13,14 @@ export function toTelHref(display: string): string {
 
 export const MAIN_PHONE_DISPLAY = "888-404-0651"
 
-/** Dedicated car-rental TFN. */
-export const CARS_PHONE_DISPLAY = "888-720-0121"
+/** Dedicated US train reservations TFN. */
+export const TRAINS_PHONE_DISPLAY = "888-720-0121"
 
 export const contactInfo = {
   phoneDisplay: MAIN_PHONE_DISPLAY,
   phoneHref: toTelHref(MAIN_PHONE_DISPLAY),
-  carsPhoneDisplay: CARS_PHONE_DISPLAY,
-  carsPhoneHref: toTelHref(CARS_PHONE_DISPLAY),
+  trainsPhoneDisplay: TRAINS_PHONE_DISPLAY,
+  trainsPhoneHref: toTelHref(TRAINS_PHONE_DISPLAY),
   email: "support@theglobaltripfair.com",
   emailHref: "mailto:support@theglobaltripfair.com",
   address: {
@@ -33,15 +33,15 @@ export const contactInfo = {
   },
 } as const
 
-export const hasCarsPhone = toE164(CARS_PHONE_DISPLAY).length >= 12
+export const hasTrainsPhone = toE164(TRAINS_PHONE_DISPLAY).length >= 12
 
-export const carsDeskPhoneDisplay = hasCarsPhone
-  ? contactInfo.carsPhoneDisplay
+export const trainsDeskPhoneDisplay = hasTrainsPhone
+  ? contactInfo.trainsPhoneDisplay
   : contactInfo.phoneDisplay
 
-export const carsDeskPhoneHref = hasCarsPhone ? contactInfo.carsPhoneHref : contactInfo.phoneHref
+export const trainsDeskPhoneHref = hasTrainsPhone ? contactInfo.trainsPhoneHref : contactInfo.phoneHref
 
-export const isCarsPath = (pathname: string) => pathname === "/cars" || pathname === "/cabs"
+export const isTrainsPath = (pathname: string) => pathname === "/trains"
 
 export const contactAddressQuery = `${contactInfo.address.street}, ${contactInfo.address.city}, ${contactInfo.address.state} ${contactInfo.address.zip}, ${contactInfo.address.country}`
 

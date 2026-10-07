@@ -1,4 +1,4 @@
-import { contactAddressQuery, contactInfo, hasCarsPhone, toE164 } from "../data/contact"
+import { contactAddressQuery, contactInfo, hasTrainsPhone, toE164 } from "../data/contact"
 
 export const SITE_NAME = "TheGlobalTripFair.com"
 export const SITE_ORIGIN = "https://theglobaltripfair.com"
@@ -17,7 +17,7 @@ export const business = {
   name: SITE_NAME,
   phoneDisplay: contactInfo.phoneDisplay,
   telephone: toE164(contactInfo.phoneDisplay),
-  carsTelephone: hasCarsPhone ? toE164(contactInfo.carsPhoneDisplay) : "",
+  trainsTelephone: hasTrainsPhone ? toE164(contactInfo.trainsPhoneDisplay) : "",
   email: contactInfo.email,
   url: SITE_URL,
   address: {

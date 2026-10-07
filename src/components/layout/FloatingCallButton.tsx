@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
-import { CarFront, Phone, X } from "lucide-react"
-import { contactInfo, hasCarsPhone, isCarsPath } from "../../data/contact"
+import { Phone, TrainFront, X } from "lucide-react"
+import { contactInfo, hasTrainsPhone, isTrainsPath } from "../../data/contact"
 import { useTranslation } from "../../i18n"
 import { classNames } from "../../utils/classNames"
 import styles from "./FloatingCallButton.module.css"
@@ -13,8 +13,8 @@ export function FloatingCallButton() {
   const { pathname } = useLocation()
   const [visible, setVisible] = useState(true)
   const onHome = pathname === "/"
-  const onCars = isCarsPath(pathname)
-  const showBoth = hasCarsPhone && (onHome || onCars)
+  const onTrains = isTrainsPath(pathname)
+  const showBoth = hasTrainsPhone && (onHome || onTrains)
 
   useEffect(() => {
     try {
@@ -39,7 +39,7 @@ export function FloatingCallButton() {
 
   const mainBar = (
     <a
-      className={classNames(styles.bar, showBoth && onCars && styles.secondary)}
+      className={classNames(styles.bar, showBoth && onTrains && styles.secondary)}
       href={contactInfo.phoneHref}
       aria-label={`${t("a11y.callUs")} ${contactInfo.phoneDisplay}`}
     >
@@ -53,18 +53,18 @@ export function FloatingCallButton() {
     </a>
   )
 
-  const carsBar = hasCarsPhone ? (
+  const trainsBar = hasTrainsPhone ? (
     <a
-      className={classNames(styles.bar, showBoth && !onCars && styles.secondary)}
-      href={contactInfo.carsPhoneHref}
-      aria-label={`${t("a11y.callCarRentals")} ${contactInfo.carsPhoneDisplay}`}
+      className={classNames(styles.bar, showBoth && !onTrains && styles.secondary)}
+      href={contactInfo.trainsPhoneHref}
+      aria-label={`${t("a11y.callTrains")} ${contactInfo.trainsPhoneDisplay}`}
     >
       <span className={styles.icon} aria-hidden="true">
-        <CarFront size={18} strokeWidth={2.2} />
+        <TrainFront size={18} strokeWidth={2.2} />
       </span>
       <span className={styles.copy}>
-        <strong>{t("common.carRentals")}</strong>
-        <span>{contactInfo.carsPhoneDisplay}</span>
+        <strong>{t("common.trainReservations")}</strong>
+        <span>{contactInfo.trainsPhoneDisplay}</span>
       </span>
     </a>
   ) : null
@@ -73,15 +73,15 @@ export function FloatingCallButton() {
     <>
       <div className={classNames(styles.spacer, showBoth && styles.spacerSplit)} aria-hidden="true" />
       <div className={classNames(styles.wrap, showBoth && styles.split)}>
-        {showBoth && onCars ? (
+        {showBoth && onTrains ? (
           <>
-            {carsBar}
+            {trainsBar}
             {mainBar}
           </>
         ) : showBoth ? (
           <>
             {mainBar}
-            {carsBar}
+            {trainsBar}
           </>
         ) : (
           mainBar

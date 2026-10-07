@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { Mail, MapPin, Phone } from "lucide-react"
-import { contactCityLine, contactInfo, contactMapsHref, hasCarsPhone } from "../../data/contact"
+import { contactCityLine, contactInfo, contactMapsHref, hasTrainsPhone } from "../../data/contact"
 import { Logo } from "../common/Logo"
 import { footerTravelNav } from "../../data/navigation"
 import { useTranslation } from "../../i18n"
@@ -62,15 +62,15 @@ export function Footer() {
               {contactInfo.phoneDisplay}
             </span>
           </a>
-          {hasCarsPhone ? (
+          {hasTrainsPhone ? (
             <a
-              href={contactInfo.carsPhoneHref}
-              aria-label={`${t("a11y.callCarRentals")} ${contactInfo.carsPhoneDisplay}`}
+              href={contactInfo.trainsPhoneHref}
+              aria-label={`${t("a11y.callTrains")} ${contactInfo.trainsPhoneDisplay}`}
             >
               <Phone size={14} strokeWidth={2.2} aria-hidden="true" />
               <span>
-                <small>{t("common.carRentals")}</small>
-                {contactInfo.carsPhoneDisplay}
+                <small>{t("common.trainReservations")}</small>
+                {contactInfo.trainsPhoneDisplay}
               </span>
             </a>
           ) : null}
