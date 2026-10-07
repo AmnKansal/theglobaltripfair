@@ -39,7 +39,7 @@ export function PhoneStrip({
       ) : null}
       {trains ? (
         <a
-          className={classNames(styles.line, styles.trains)}
+          className={classNames(styles.line, showMain && styles.trains)}
           href={contactInfo.trainsPhoneHref}
           aria-label={`${t("a11y.callTrains")} ${contactInfo.trainsPhoneDisplay}`}
         >

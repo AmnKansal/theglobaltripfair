@@ -1,7 +1,7 @@
 import { createPortal } from "react-dom"
-import { NavLink } from "react-router-dom"
+import { NavLink, useLocation } from "react-router-dom"
 import { Phone, X } from "lucide-react"
-import { contactInfo, hasTrainsPhone } from "../../data/contact"
+import { contactInfo, hasTrainsPhone, isTrainsPath } from "../../data/contact"
 import { moreNav, primaryNav } from "../../data/navigation"
 import { useTranslation } from "../../i18n"
 import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
@@ -16,6 +16,8 @@ type MobileMenuProps = {
 
 export function MobileMenu({ open, onClose }: MobileMenuProps) {
   const { t } = useTranslation()
+  const { pathname } = useLocation()
+  const trainsPrimary = hasTrainsPhone && isTrainsPath(pathname)
   useLockBodyScroll(open)
   if (!open) return null
 
@@ -57,22 +59,23 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
         </nav>
 
         <div className={styles.actions}>
-          <a className={styles.call} href={contactInfo.phoneHref} onClick={onClose}>
-            <span className={styles.callLabel}>
-              <Phone size={16} strokeWidth={2.2} aria-hidden="true" />
-              {t("common.reservations")}
-            </span>
-            <strong>{contactInfo.phoneDisplay}</strong>
-          </a>
-          {hasTrainsPhone ? (
-            <a className={`${styles.call} ${styles.callTrains}`} href={contactInfo.trainsPhoneHref} onClick={onClose}>
+          {trainsPrimary ? (
+            <a className={styles.call} href={contactInfo.trainsPhoneHref} onClick={onClose}>
               <span className={styles.callLabel}>
                 <Phone size={16} strokeWidth={2.2} aria-hidden="true" />
                 {t("common.trainReservations")}
               </span>
               <strong>{contactInfo.trainsPhoneDisplay}</strong>
             </a>
-          ) : null}
+          ) : (
+            <a className={styles.call} href={contactInfo.phoneHref} onClick={onClose}>
+              <span className={styles.callLabel}>
+                <Phone size={16} strokeWidth={2.2} aria-hidden="true" />
+                {t("a11y.callUs")}
+              </span>
+              <strong>{contactInfo.phoneDisplay}</strong>
+            </a>
+          )}
         </div>
 
         <div className={styles.language}>

@@ -34,7 +34,7 @@ export function ServicePage({ slug }: ServicePageProps) {
           <p className={styles.lead}>{doc.lead}</p>
           <div className={styles.actions}>
             {slug === "trains" ? (
-              <PhoneStrip variant="hero" showTrains />
+              <PhoneStrip variant="hero" showTrains showMain={false} />
             ) : (
               <a className={styles.call} href={contactInfo.phoneHref}>
                 <Phone size={16} strokeWidth={2.2} aria-hidden="true" />
@@ -155,7 +155,7 @@ export function ServicePage({ slug }: ServicePageProps) {
             <p>{doc.ctaCopy}</p>
             <div className={styles.actions}>
               {slug === "trains" ? (
-                <PhoneStrip variant="dark" showTrains />
+                <PhoneStrip variant="dark" showTrains showMain={false} />
               ) : (
                 <a className={styles.callLight} href={contactInfo.phoneHref}>
                   <Phone size={16} strokeWidth={2.2} aria-hidden="true" />

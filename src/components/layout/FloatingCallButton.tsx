@@ -14,7 +14,8 @@ export function FloatingCallButton() {
   const [visible, setVisible] = useState(true)
   const onHome = pathname === "/"
   const onTrains = isTrainsPath(pathname)
-  const showBoth = hasTrainsPhone && (onHome || onTrains)
+  const trainsOnly = hasTrainsPhone && onTrains
+  const showBoth = hasTrainsPhone && onHome
 
   useEffect(() => {
     try {
@@ -39,7 +40,7 @@ export function FloatingCallButton() {
 
   const mainBar = (
     <a
-      className={classNames(styles.bar, showBoth && onTrains && styles.secondary)}
+      className={styles.bar}
       href={contactInfo.phoneHref}
       aria-label={`${t("a11y.callUs")} ${contactInfo.phoneDisplay}`}
     >
@@ -55,7 +56,7 @@ export function FloatingCallButton() {
 
   const trainsBar = hasTrainsPhone ? (
     <a
-      className={classNames(styles.bar, showBoth && !onTrains && styles.secondary)}
+      className={classNames(styles.bar, showBoth && styles.secondary)}
       href={contactInfo.trainsPhoneHref}
       aria-label={`${t("a11y.callTrains")} ${contactInfo.trainsPhoneDisplay}`}
     >
@@ -73,11 +74,8 @@ export function FloatingCallButton() {
     <>
       <div className={classNames(styles.spacer, showBoth && styles.spacerSplit)} aria-hidden="true" />
       <div className={classNames(styles.wrap, showBoth && styles.split)}>
-        {showBoth && onTrains ? (
-          <>
-            {trainsBar}
-            {mainBar}
-          </>
+        {trainsOnly ? (
+          trainsBar
         ) : showBoth ? (
           <>
             {mainBar}

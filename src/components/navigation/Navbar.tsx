@@ -72,32 +72,10 @@ export function Navbar() {
         <div className={styles.right}>
           <div className={styles.desktopActions}>
             <LanguageMenu />
-            <div className={hasTrainsPhone ? styles.phoneStack : undefined}>
-              <a
-                className={styles.phone}
-                href={contactInfo.phoneHref}
-                aria-label={`${t("a11y.callUs")} ${contactInfo.phoneDisplay}`}
-              >
-                <Phone size={15} strokeWidth={2.2} aria-hidden="true" />
-                <span>
-                  {hasTrainsPhone ? <small>{t("common.reservations")}</small> : null}
-                  {contactInfo.phoneDisplay}
-                </span>
-              </a>
-              {hasTrainsPhone ? (
-                <a
-                  className={styles.phone}
-                  href={contactInfo.trainsPhoneHref}
-                  aria-label={`${t("a11y.callTrains")} ${contactInfo.trainsPhoneDisplay}`}
-                >
-                  <Phone size={15} strokeWidth={2.2} aria-hidden="true" />
-                  <span>
-                    <small>{t("common.trainReservations")}</small>
-                    {contactInfo.trainsPhoneDisplay}
-                  </span>
-                </a>
-              ) : null}
-            </div>
+            <a className={styles.phone} href={headerPhoneHref} aria-label={headerPhoneLabel}>
+              <Phone size={15} strokeWidth={2.2} aria-hidden="true" />
+              <span>{headerPhoneDisplay}</span>
+            </a>
           </div>
           <a
             className={styles.phoneIcon}
