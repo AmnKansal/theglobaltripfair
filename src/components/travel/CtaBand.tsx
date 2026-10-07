@@ -15,7 +15,7 @@ export function CtaBand() {
             <p>{t("promotion.copy")}</p>
           </div>
           <div className={styles.actions}>
-            <PhoneStrip variant="dark" showTrains />
+            <PhoneStrip variant="dark" />
             <Button to="/contact" variant="primary" size="lg">
               {t("common.planTrip")}
             </Button>

@@ -36,7 +36,7 @@ export function Hero() {
               <span>{t("hero.meta2")}</span>
               <span>{t("hero.meta3")}</span>
             </div>
-            <PhoneStrip variant="hero" showTrains className={styles.phones} />
+            <PhoneStrip variant="hero" className={styles.phones} />
           </div>
         </div>
         <div className={styles.searchWrap} id="plan">

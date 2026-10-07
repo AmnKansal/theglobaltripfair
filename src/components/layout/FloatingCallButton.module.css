@@ -2,21 +2,12 @@
   height: 88px;
 }
 
-.spacerSplit {
-  height: 150px;
-}
-
 .wrap {
   position: fixed;
   z-index: 40;
   left: 16px;
   right: 16px;
   bottom: 16px;
-}
-
-.split {
-  display: grid;
-  gap: 8px;
 }
 
 .bar {
@@ -35,15 +26,6 @@
 .bar:hover {
   background: var(--color-red-deep);
   color: #fff;
-}
-
-.secondary {
-  background: #161513;
-  box-shadow: 0 12px 32px rgba(22, 21, 19, 0.28);
-}
-
-.secondary:hover {
-  background: #2b2926;
 }
 
 .icon {
