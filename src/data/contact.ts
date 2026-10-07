@@ -13,8 +13,8 @@ export function toTelHref(display: string): string {
 
 export const MAIN_PHONE_DISPLAY = "888-404-0651"
 
-/** Dedicated car-rental TFN. Set this when the new number is confirmed. */
-export const CARS_PHONE_DISPLAY = ""
+/** Dedicated car-rental TFN. */
+export const CARS_PHONE_DISPLAY = "888-720-0121"
 
 export const contactInfo = {
   phoneDisplay: MAIN_PHONE_DISPLAY,
