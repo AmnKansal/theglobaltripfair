@@ -1,5 +1,6 @@
 import { media } from "../../data/media"
 import { useTranslation } from "../../i18n"
+import { PhoneStrip } from "../common/PhoneStrip"
 import { SearchCard } from "../travel/SearchCard"
 import styles from "./Hero.module.css"
 
@@ -35,6 +36,7 @@ export function Hero() {
               <span>{t("hero.meta2")}</span>
               <span>{t("hero.meta3")}</span>
             </div>
+            <PhoneStrip variant="hero" showCars className={styles.phones} />
           </div>
         </div>
         <div className={styles.searchWrap} id="plan">

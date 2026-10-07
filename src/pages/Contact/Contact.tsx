@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react"
 import { Button } from "../../components/common/Button"
-import { contactCityLine, contactInfo, contactMapsHref } from "../../data/contact"
+import { contactCityLine, contactInfo, contactMapsHref, hasCarsPhone } from "../../data/contact"
 import { useTranslation } from "../../i18n"
 import styles from "./Contact.module.css"
 
@@ -20,7 +20,14 @@ export function Contact() {
           <h1>{t("contact.title")}</h1>
           <p>{t("contact.copy")}</p>
           <div className={styles.details}>
-            <a href={contactInfo.phoneHref}>{contactInfo.phoneDisplay}</a>
+            <a href={contactInfo.phoneHref}>
+              {t("common.reservations")}: {contactInfo.phoneDisplay}
+            </a>
+            {hasCarsPhone ? (
+              <a href={contactInfo.carsPhoneHref}>
+                {t("common.carRentals")}: {contactInfo.carsPhoneDisplay}
+              </a>
+            ) : null}
             <a href={contactInfo.emailHref}>{contactInfo.email}</a>
             <a href={contactMapsHref} target="_blank" rel="noopener noreferrer">
               {contactInfo.address.street}

@@ -1,7 +1,7 @@
 import { useRef, useState } from "react"
 import { NavLink, useLocation } from "react-router-dom"
 import { ChevronDown, Menu, Phone } from "lucide-react"
-import { contactInfo } from "../../data/contact"
+import { contactInfo, hasCarsPhone, isCarsPath } from "../../data/contact"
 import { moreNav, primaryNav } from "../../data/navigation"
 import { useTranslation } from "../../i18n"
 import { useOnClickOutside } from "../../hooks/useOnClickOutside"
@@ -17,6 +17,12 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const moreRef = useRef<HTMLDivElement>(null)
   const moreActive = moreNav.some((item) => location.pathname === item.to)
+  const carsPrimary = hasCarsPhone && isCarsPath(location.pathname)
+  const headerPhoneHref = carsPrimary ? contactInfo.carsPhoneHref : contactInfo.phoneHref
+  const headerPhoneDisplay = carsPrimary ? contactInfo.carsPhoneDisplay : contactInfo.phoneDisplay
+  const headerPhoneLabel = carsPrimary
+    ? `${t("a11y.callCarRentals")} ${headerPhoneDisplay}`
+    : `${t("a11y.callUs")} ${headerPhoneDisplay}`
 
   useOnClickOutside(moreRef, () => setMoreOpen(false), moreOpen)
 
@@ -66,19 +72,37 @@ export function Navbar() {
         <div className={styles.right}>
           <div className={styles.desktopActions}>
             <LanguageMenu />
-            <a
-              className={styles.phone}
-              href={contactInfo.phoneHref}
-              aria-label={`${t("a11y.callUs")} ${contactInfo.phoneDisplay}`}
-            >
-              <Phone size={15} strokeWidth={2.2} aria-hidden="true" />
-              <span>{contactInfo.phoneDisplay}</span>
-            </a>
+            <div className={hasCarsPhone ? styles.phoneStack : undefined}>
+              <a
+                className={styles.phone}
+                href={contactInfo.phoneHref}
+                aria-label={`${t("a11y.callUs")} ${contactInfo.phoneDisplay}`}
+              >
+                <Phone size={15} strokeWidth={2.2} aria-hidden="true" />
+                <span>
+                  {hasCarsPhone ? <small>{t("common.reservations")}</small> : null}
+                  {contactInfo.phoneDisplay}
+                </span>
+              </a>
+              {hasCarsPhone ? (
+                <a
+                  className={styles.phone}
+                  href={contactInfo.carsPhoneHref}
+                  aria-label={`${t("a11y.callCarRentals")} ${contactInfo.carsPhoneDisplay}`}
+                >
+                  <Phone size={15} strokeWidth={2.2} aria-hidden="true" />
+                  <span>
+                    <small>{t("common.carRentals")}</small>
+                    {contactInfo.carsPhoneDisplay}
+                  </span>
+                </a>
+              ) : null}
+            </div>
           </div>
           <a
             className={styles.phoneIcon}
-            href={contactInfo.phoneHref}
-            aria-label={`${t("a11y.callUs")} ${contactInfo.phoneDisplay}`}
+            href={headerPhoneHref}
+            aria-label={headerPhoneLabel}
           >
             <Phone size={18} strokeWidth={2.1} aria-hidden="true" />
           </a>

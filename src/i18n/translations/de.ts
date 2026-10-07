@@ -101,6 +101,7 @@ export const de: Messages = {
     travelSearch: "Reisesuche",
     menu: "Menü",
     callUs: "Anrufen",
+    callCarRentals: "Autovermietung anrufen",
     close: "Schließen",
   },
   common: {
@@ -113,6 +114,8 @@ export const de: Messages = {
     backHome: "Zur Startseite",
     exploreDestinations: "Reiseziele entdecken",
     tapToCall: "Tippen zum Anrufen",
+    reservations: "Reservierungen",
+    carRentals: "Autovermietung",
   },
   nav: {
     flights: "Flüge",
@@ -241,6 +244,7 @@ export const de: Messages = {
   },
   servicePage: {
     callNow: "Anrufen",
+    callCars: "Autovermietung",
     requestQuote: "Angebot anfragen",
     featured: "Im Fokus",
     included: "Inbegriffen",
@@ -492,6 +496,9 @@ export const de: Messages = {
     call: "Rufen Sie uns an",
     callCopy: "Sprechen Sie mit unserem Reiseteam",
     callCta: "Jetzt anrufen",
+    callCars: "Autovermietung",
+    callCarsCopy: "Ein eigenes Team für Mietwagen am Flughafen und in der Stadt",
+    callCarsCta: "Autovermietung anrufen",
     email: "Schreiben Sie uns",
     emailCopy: "Wir beantworten Ihre Fragen gerne",
     emailCta: "E-Mail senden",

@@ -1,5 +1,5 @@
-import { Mail, MapPin, Phone } from "lucide-react"
-import { contactCityLine, contactInfo, contactMapsHref } from "../../data/contact"
+import { CarFront, Mail, MapPin, Phone } from "lucide-react"
+import { contactCityLine, contactInfo, contactMapsHref, hasCarsPhone } from "../../data/contact"
 import { useTranslation } from "../../i18n"
 import { SectionHeading } from "../common/SectionHeading"
 import { ContactCard } from "./ContactCard"
@@ -20,7 +20,7 @@ export function ContactSection() {
             tone="inverse"
           />
 
-          <div className={styles.grid}>
+          <div className={`${styles.grid} ${hasCarsPhone ? styles.gridFour : ""}`}>
             <ContactCard
               href={contactInfo.phoneHref}
               icon={<Phone size={20} strokeWidth={2.1} />}
@@ -29,6 +29,16 @@ export function ContactSection() {
               copy={t("reach.callCopy")}
               cta={t("reach.callCta")}
             />
+            {hasCarsPhone ? (
+              <ContactCard
+                href={contactInfo.carsPhoneHref}
+                icon={<CarFront size={20} strokeWidth={2.1} />}
+                title={t("reach.callCars")}
+                value={contactInfo.carsPhoneDisplay}
+                copy={t("reach.callCarsCopy")}
+                cta={t("reach.callCarsCta")}
+              />
+            ) : null}
             <ContactCard
               href={contactInfo.emailHref}
               icon={<Mail size={20} strokeWidth={2.1} />}

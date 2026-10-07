@@ -1,6 +1,7 @@
 import { useId, useState } from "react"
 import { Check, ChevronDown, Phone, MapPin, Shield, Clock, Users } from "lucide-react"
 import { Button } from "../../components/common/Button"
+import { PhoneStrip } from "../../components/common/PhoneStrip"
 import { SearchCard } from "../../components/travel/SearchCard"
 import { contactInfo } from "../../data/contact"
 import { getServicePage, servicePageLinks, type ServicePageSlug } from "../../data/servicePages"
@@ -32,10 +33,14 @@ export function ServicePage({ slug }: ServicePageProps) {
           <h1>{doc.title}</h1>
           <p className={styles.lead}>{doc.lead}</p>
           <div className={styles.actions}>
-            <a className={styles.call} href={contactInfo.phoneHref}>
-              <Phone size={16} strokeWidth={2.2} aria-hidden="true" />
-              {t("servicePage.callNow")} {contactInfo.phoneDisplay}
-            </a>
+            {slug === "cars" ? (
+              <PhoneStrip variant="hero" showCars />
+            ) : (
+              <a className={styles.call} href={contactInfo.phoneHref}>
+                <Phone size={16} strokeWidth={2.2} aria-hidden="true" />
+                {t("servicePage.callNow")} {contactInfo.phoneDisplay}
+              </a>
+            )}
             <Link to="/contact" className={styles.heroSecondary}>
               {t("servicePage.requestQuote")}
             </Link>
@@ -149,10 +154,14 @@ export function ServicePage({ slug }: ServicePageProps) {
             <h2>{doc.ctaTitle}</h2>
             <p>{doc.ctaCopy}</p>
             <div className={styles.actions}>
-              <a className={styles.callLight} href={contactInfo.phoneHref}>
-                <Phone size={16} strokeWidth={2.2} aria-hidden="true" />
-                {contactInfo.phoneDisplay}
-              </a>
+              {slug === "cars" ? (
+                <PhoneStrip variant="dark" showCars />
+              ) : (
+                <a className={styles.callLight} href={contactInfo.phoneHref}>
+                  <Phone size={16} strokeWidth={2.2} aria-hidden="true" />
+                  {contactInfo.phoneDisplay}
+                </a>
+              )}
               <Button to="/contact" variant="primary">
                 {t("servicePage.requestQuote")}
               </Button>

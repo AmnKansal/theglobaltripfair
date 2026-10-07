@@ -1,5 +1,6 @@
 import { useTranslation } from "../../i18n"
 import { Button } from "../common/Button"
+import { PhoneStrip } from "../common/PhoneStrip"
 import styles from "./CtaBand.module.css"
 
 export function CtaBand() {
@@ -13,9 +14,12 @@ export function CtaBand() {
             <h2>{t("promotion.title")}</h2>
             <p>{t("promotion.copy")}</p>
           </div>
-          <Button to="/contact" variant="primary" size="lg">
-            {t("common.planTrip")}
-          </Button>
+          <div className={styles.actions}>
+            <PhoneStrip variant="dark" showCars />
+            <Button to="/contact" variant="primary" size="lg">
+              {t("common.planTrip")}
+            </Button>
+          </div>
         </div>
       </div>
     </section>

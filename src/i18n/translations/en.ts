@@ -103,6 +103,7 @@ export const en: Messages = {
     travelSearch: "Travel search",
     menu: "Menu",
     callUs: "Call us",
+    callCarRentals: "Call car rentals",
     close: "Close",
   },
   common: {
@@ -115,6 +116,8 @@ export const en: Messages = {
     backHome: "Back to home",
     exploreDestinations: "Explore destinations",
     tapToCall: "Tap to call",
+    reservations: "Reservations",
+    carRentals: "Car rentals",
   },
   nav: {
     flights: "Flights",
@@ -261,6 +264,7 @@ export const en: Messages = {
   },
   servicePage: {
     callNow: "Call",
+    callCars: "Car rentals",
     requestQuote: "Request a quote",
     featured: "Featured",
     included: "What's included",
@@ -512,6 +516,9 @@ export const en: Messages = {
     call: "Call us",
     callCopy: "Speak with our travel team",
     callCta: "Call now",
+    callCars: "Car rentals",
+    callCarsCopy: "A dedicated desk for airport and city car hire",
+    callCarsCta: "Call car rentals",
     email: "Email us",
     emailCopy: "We're happy to answer your questions",
     emailCta: "Send an email",

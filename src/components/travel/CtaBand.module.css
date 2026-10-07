@@ -24,10 +24,22 @@
   max-width: 520px;
 }
 
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
 @media (max-width: 720px) {
   .inner {
     flex-direction: column;
     align-items: flex-start;
     padding: 28px 22px;
+  }
+
+  .actions {
+    justify-content: flex-start;
   }
 }

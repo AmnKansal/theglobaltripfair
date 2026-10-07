@@ -1,0 +1,120 @@
+.strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.line {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 8px 16px 8px 12px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+}
+
+.line span {
+  display: grid;
+  line-height: 1.15;
+}
+
+.line small {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.line strong {
+  font-size: 0.98rem;
+  letter-spacing: -0.03em;
+}
+
+.hero .line {
+  background: var(--color-red);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(227, 27, 35, 0.28);
+}
+
+.hero .line:hover {
+  background: var(--color-red-deep);
+}
+
+.hero .cars {
+  background: rgba(255, 255, 255, 0.16);
+  color: #f6f3ee;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: none;
+}
+
+.hero .cars:hover {
+  background: #fff;
+  color: var(--color-ink);
+}
+
+.hero .line small {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.hero .cars:hover small {
+  color: var(--color-stone);
+}
+
+.dark .line {
+  background: #fff;
+  color: var(--color-ink);
+}
+
+.dark .line:hover {
+  color: var(--color-red);
+}
+
+.dark .cars {
+  background: transparent;
+  color: #f4f1ec;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.dark .cars:hover {
+  background: #fff;
+  color: var(--color-ink);
+}
+
+.dark .line small {
+  color: var(--color-stone);
+}
+
+.dark .cars small {
+  color: rgba(244, 241, 236, 0.7);
+}
+
+.dark .cars:hover small {
+  color: var(--color-stone);
+}
+
+.light .line {
+  background: var(--color-red-soft);
+  color: var(--color-red-ink);
+}
+
+.light .line:hover {
+  background: var(--color-red);
+  color: #fff;
+}
+
+.light .cars {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  border: 1px solid var(--color-line);
+}
+
+.light .cars:hover {
+  border-color: var(--color-red);
+  color: var(--color-red);
+}
+
+.light .line small {
+  color: inherit;
+  opacity: 0.75;
+}

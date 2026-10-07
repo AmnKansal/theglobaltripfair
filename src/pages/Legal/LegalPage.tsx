@@ -1,13 +1,15 @@
 import { useEffect, useMemo, useState } from "react"
 import { Link } from "react-router-dom"
 import { Mail, MapPin, Phone } from "lucide-react"
-import { contactCityLine, contactInfo, contactMapsHref } from "../../data/contact"
+import { contactCityLine, contactInfo, contactMapsHref, hasCarsPhone } from "../../data/contact"
 import { BRAND_NAME, COMPANY_NAME, LEGAL_UPDATED, getLegalDoc, legalPageLinks, type LegalSlug } from "../../data/legal"
 import { useTranslation } from "../../i18n"
 import { Button } from "../../components/common/Button"
 import styles from "./LegalPage.module.css"
 
 function ContactCard() {
+  const { t } = useTranslation()
+
   return (
     <div className={styles.contactCard}>
       <a href={contactInfo.phoneHref}>
@@ -15,10 +17,21 @@ function ContactCard() {
           <Phone size={16} strokeWidth={2.2} aria-hidden="true" />
         </span>
         <span>
-          <small>Phone</small>
+          <small>{t("common.reservations")}</small>
           {contactInfo.phoneDisplay}
         </span>
       </a>
+      {hasCarsPhone ? (
+        <a href={contactInfo.carsPhoneHref}>
+          <span className={styles.contactIcon}>
+            <Phone size={16} strokeWidth={2.2} aria-hidden="true" />
+          </span>
+          <span>
+            <small>{t("common.carRentals")}</small>
+            {contactInfo.carsPhoneDisplay}
+          </span>
+        </a>
+      ) : null}
       <a href={contactInfo.emailHref}>
         <span className={styles.contactIcon}>
           <Mail size={16} strokeWidth={2.2} aria-hidden="true" />

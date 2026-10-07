@@ -110,6 +110,11 @@
   color: var(--color-ink);
 }
 
+.callCars {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
 .language {
   margin-top: 20px;
 }

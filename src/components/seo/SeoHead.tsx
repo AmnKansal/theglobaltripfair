@@ -123,7 +123,9 @@ export function SeoHead() {
         "@id": `${SITE_URL}#organization`,
         name: business.name,
         url: business.url,
-        telephone: business.telephone,
+        telephone: business.carsTelephone
+          ? [business.telephone, business.carsTelephone]
+          : business.telephone,
         email: business.email,
         image: DEFAULT_OG_IMAGE_ABS,
         address: {

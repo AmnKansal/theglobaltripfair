@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { Mail, MapPin, Phone } from "lucide-react"
-import { contactCityLine, contactInfo, contactMapsHref } from "../../data/contact"
+import { contactCityLine, contactInfo, contactMapsHref, hasCarsPhone } from "../../data/contact"
 import { Logo } from "../common/Logo"
 import { footerTravelNav } from "../../data/navigation"
 import { useTranslation } from "../../i18n"
@@ -55,10 +55,25 @@ export function Footer() {
 
         <div className={`${styles.column} ${styles.contactColumn}`}>
           <p className={styles.heading}>{t("footer.contactHeading")}</p>
-          <a href={contactInfo.phoneHref}>
+          <a href={contactInfo.phoneHref} aria-label={`${t("a11y.callUs")} ${contactInfo.phoneDisplay}`}>
             <Phone size={14} strokeWidth={2.2} aria-hidden="true" />
-            {contactInfo.phoneDisplay}
+            <span>
+              <small>{t("common.reservations")}</small>
+              {contactInfo.phoneDisplay}
+            </span>
           </a>
+          {hasCarsPhone ? (
+            <a
+              href={contactInfo.carsPhoneHref}
+              aria-label={`${t("a11y.callCarRentals")} ${contactInfo.carsPhoneDisplay}`}
+            >
+              <Phone size={14} strokeWidth={2.2} aria-hidden="true" />
+              <span>
+                <small>{t("common.carRentals")}</small>
+                {contactInfo.carsPhoneDisplay}
+              </span>
+            </a>
+          ) : null}
           <a href={contactInfo.emailHref}>
             <Mail size={14} strokeWidth={2.2} aria-hidden="true" />
             {contactInfo.email}

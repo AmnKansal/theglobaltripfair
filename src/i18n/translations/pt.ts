@@ -101,6 +101,7 @@ export const pt: Messages = {
     travelSearch: "Pesquisa de viagem",
     menu: "Menu",
     callUs: "Ligar-nos",
+    callCarRentals: "Ligar para o aluguer de carros",
     close: "Fechar",
   },
   common: {
@@ -113,6 +114,8 @@ export const pt: Messages = {
     backHome: "Voltar ao início",
     exploreDestinations: "Explorar destinos",
     tapToCall: "Toque para ligar",
+    reservations: "Reservas",
+    carRentals: "Aluguer de carros",
   },
   nav: {
     flights: "Voos",
@@ -241,6 +244,7 @@ export const pt: Messages = {
   },
   servicePage: {
     callNow: "Ligar",
+    callCars: "Aluguer de carros",
     requestQuote: "Pedir um orçamento",
     featured: "Em destaque",
     included: "O que está incluído",
@@ -492,6 +496,9 @@ export const pt: Messages = {
     call: "Ligue-nos",
     callCopy: "Fale com a nossa equipa de viagens",
     callCta: "Ligar agora",
+    callCars: "Aluguer de carros",
+    callCarsCopy: "Um balcão dedicado ao aluguer no aeroporto e na cidade",
+    callCarsCta: "Ligar para o aluguer",
     email: "Escreva-nos",
     emailCopy: "Temos gosto em responder às suas perguntas",
     emailCta: "Enviar um e-mail",

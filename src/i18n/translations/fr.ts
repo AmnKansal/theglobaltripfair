@@ -101,6 +101,7 @@ export const fr: Messages = {
     travelSearch: "Recherche de voyage",
     menu: "Menu",
     callUs: "Nous appeler",
+    callCarRentals: "Appeler la location de voiture",
     close: "Fermer",
   },
   common: {
@@ -113,6 +114,8 @@ export const fr: Messages = {
     backHome: "Retour à l’accueil",
     exploreDestinations: "Explorer les destinations",
     tapToCall: "Appuyez pour appeler",
+    reservations: "Réservations",
+    carRentals: "Location de voiture",
   },
   nav: {
     flights: "Vols",
@@ -259,6 +262,7 @@ export const fr: Messages = {
   },
   servicePage: {
     callNow: "Appeler",
+    callCars: "Location de voiture",
     requestQuote: "Demander un devis",
     featured: "À la une",
     included: "Inclus",
@@ -510,6 +514,9 @@ export const fr: Messages = {
     call: "Appelez-nous",
     callCopy: "Parlez à notre équipe voyage",
     callCta: "Appeler",
+    callCars: "Location de voiture",
+    callCarsCopy: "Un bureau dédié à la location en aéroport et en ville",
+    callCarsCta: "Appeler la location",
     email: "Écrivez-nous",
     emailCopy: "Nous répondons volontiers à vos questions",
     emailCta: "Envoyer un e-mail",

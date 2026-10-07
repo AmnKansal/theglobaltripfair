@@ -51,6 +51,7 @@ export type Messages = {
     travelSearch: string
     menu: string
     callUs: string
+    callCarRentals: string
     close: string
   }
   common: {
@@ -63,6 +64,8 @@ export type Messages = {
     backHome: string
     exploreDestinations: string
     tapToCall: string
+    reservations: string
+    carRentals: string
   }
   nav: {
     flights: string
@@ -178,6 +181,7 @@ export type Messages = {
   }
   servicePage: {
     callNow: string
+    callCars: string
     requestQuote: string
     featured: string
     included: string
@@ -347,6 +351,9 @@ export type Messages = {
     call: string
     callCopy: string
     callCta: string
+    callCars: string
+    callCarsCopy: string
+    callCarsCta: string
     email: string
     emailCopy: string
     emailCta: string

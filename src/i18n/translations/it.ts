@@ -101,6 +101,7 @@ export const it: Messages = {
     travelSearch: "Ricerca viaggio",
     menu: "Menu",
     callUs: "Chiamaci",
+    callCarRentals: "Chiama il noleggio auto",
     close: "Chiudi",
   },
   reach: {
@@ -110,6 +111,9 @@ export const it: Messages = {
     call: "Chiamateci",
     callCopy: "Parlate con il nostro team di viaggio",
     callCta: "Chiama ora",
+    callCars: "Noleggio auto",
+    callCarsCopy: "Uno sportello dedicato al noleggio in aeroporto e in città",
+    callCarsCta: "Chiama il noleggio",
     email: "Scriveteci",
     emailCopy: "Siamo lieti di rispondere alle vostre domande",
     emailCta: "Invia un'email",
@@ -127,6 +131,8 @@ export const it: Messages = {
     backHome: "Torna alla home",
     exploreDestinations: "Esplora le destinazioni",
     tapToCall: "Tocca per chiamare",
+    reservations: "Prenotazioni",
+    carRentals: "Noleggio auto",
   },
   nav: {
     flights: "Voli",
@@ -255,6 +261,7 @@ export const it: Messages = {
   },
   servicePage: {
     callNow: "Chiama",
+    callCars: "Noleggio auto",
     requestQuote: "Richiedi un preventivo",
     featured: "In evidenza",
     included: "Cosa è incluso",

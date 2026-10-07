@@ -1,7 +1,7 @@
 import { createPortal } from "react-dom"
 import { NavLink } from "react-router-dom"
 import { Phone, X } from "lucide-react"
-import { contactInfo } from "../../data/contact"
+import { contactInfo, hasCarsPhone } from "../../data/contact"
 import { moreNav, primaryNav } from "../../data/navigation"
 import { useTranslation } from "../../i18n"
 import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
@@ -60,10 +60,19 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           <a className={styles.call} href={contactInfo.phoneHref} onClick={onClose}>
             <span className={styles.callLabel}>
               <Phone size={16} strokeWidth={2.2} aria-hidden="true" />
-              {t("a11y.callUs")}
+              {t("common.reservations")}
             </span>
             <strong>{contactInfo.phoneDisplay}</strong>
           </a>
+          {hasCarsPhone ? (
+            <a className={`${styles.call} ${styles.callCars}`} href={contactInfo.carsPhoneHref} onClick={onClose}>
+              <span className={styles.callLabel}>
+                <Phone size={16} strokeWidth={2.2} aria-hidden="true" />
+                {t("common.carRentals")}
+              </span>
+              <strong>{contactInfo.carsPhoneDisplay}</strong>
+            </a>
+          ) : null}
         </div>
 
         <div className={styles.language}>

@@ -98,6 +98,10 @@
   background: var(--color-red);
 }
 
+.phones {
+  margin-top: 22px;
+}
+
 .searchWrap {
   position: relative;
   z-index: 2;
