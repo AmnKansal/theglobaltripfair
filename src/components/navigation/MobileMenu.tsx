@@ -2,7 +2,7 @@ import { createPortal } from "react-dom"
 import { NavLink, useLocation } from "react-router-dom"
 import { Phone, X } from "lucide-react"
 import { contactInfo, hasTrainsPhone, isTrainsPath } from "../../data/contact"
-import { moreNav, primaryNav } from "../../data/navigation"
+import { primaryNav } from "../../data/navigation"
 import { useTranslation } from "../../i18n"
 import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
 import { Logo } from "../common/Logo"
@@ -48,14 +48,6 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
               {t(item.labelKey)}
             </NavLink>
           ))}
-          <p className={styles.groupTitle}>{t("nav.more")}</p>
-          <div className={styles.sub}>
-            {moreNav.map((item) => (
-              <NavLink key={item.to} to={item.to} onClick={onClose}>
-                {t(item.labelKey)}
-              </NavLink>
-            ))}
-          </div>
         </nav>
 
         <div className={styles.actions}>

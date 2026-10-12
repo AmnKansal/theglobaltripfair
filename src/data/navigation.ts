@@ -11,13 +11,6 @@ export const primaryNav: NavLinkItem[] = [
   { labelKey: "nav.trains", to: "/trains" },
 ]
 
-export const moreNav: NavLinkItem[] = [
-  { labelKey: "nav.holidays", to: "/holidays" },
-  { labelKey: "nav.transfers", to: "/transfers" },
-  { labelKey: "nav.destinations", to: "/destinations" },
-  { labelKey: "nav.offers", to: "/offers" },
-]
-
 export const footerTravelNav: NavLinkItem[] = [
   ...primaryNav,
   { labelKey: "nav.holidays", to: "/holidays" },

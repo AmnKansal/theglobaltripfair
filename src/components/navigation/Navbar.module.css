@@ -64,37 +64,6 @@
   transform: scaleX(1);
 }
 
-.moreWrap {
-  position: relative;
-}
-
-.moreMenu {
-  position: absolute;
-  top: calc(100% + 10px);
-  left: 0;
-  z-index: 20;
-  min-width: 200px;
-  padding: 8px;
-  background: var(--color-white);
-  border: 1px solid var(--color-line);
-  border-radius: 16px;
-  box-shadow: var(--shadow-md);
-}
-
-.moreMenu a {
-  display: block;
-  padding: 10px 12px;
-  border-radius: 10px;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.moreMenu a:hover,
-.moreActive {
-  background: var(--color-paper);
-  color: var(--color-red);
-}
-
 .right {
   display: flex;
   justify-content: flex-end;
@@ -112,19 +81,49 @@
 .phone {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 6px 2px;
-  font-size: 0.92rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--color-red);
+  gap: 9px;
+  padding: 4px 18px 4px 4px;
+  border-radius: 999px;
+  color: var(--color-white);
+  background: var(--color-red);
   white-space: nowrap;
-  transition: color 180ms var(--ease);
+  transition: background-color 180ms var(--ease);
 }
 
 .phone:hover,
 .phone:focus-visible {
-  color: var(--color-red-ink);
+  background: var(--color-red-deep);
+}
+
+.phoneBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  color: var(--color-red);
+  background: var(--color-white);
+}
+
+.phoneText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.12;
+}
+
+.phoneLabel {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.phoneNumber {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  word-spacing: 0.14em;
 }
 
 .phoneIcon {
@@ -147,6 +146,17 @@
   justify-content: center;
   color: var(--color-ink);
   background: var(--color-paper);
+}
+
+/* Longer translations + the call button outgrow equal side columns here. */
+@media (max-width: 1280px) {
+  .inner {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .center {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 1080px) {

@@ -8,8 +8,17 @@ export function Contact() {
   const { t } = useTranslation()
   const [sent, setSent] = useState(false)
 
+  // No backend inbox yet: hand the message to the visitor's email app so it really reaches us.
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+    const form = event.currentTarget
+    const data = new FormData(form)
+    const field = (name: string) => String(data.get(name) ?? "").trim()
+    const interest = form.elements.namedItem("interest") as HTMLSelectElement | null
+    const topic = interest?.selectedOptions[0]?.text ?? ""
+    const subject = `${topic} — ${field("name")}`
+    const body = `${field("message")}\n\n${field("name")}\n${field("email")}`
+    window.location.href = `${contactInfo.emailHref}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
     setSent(true)
   }
 

@@ -27,9 +27,13 @@ export type ServiceKnowItem = {
   copy: string
 }
 
+export type ServiceScenario = {
+  title: string
+  copy: string
+}
+
 export type ServiceDoc = {
   slug: ServicePageSlug
-  eyebrow: string
   title: string
   lead: string
   intro: string[]
@@ -42,6 +46,9 @@ export type ServiceDoc = {
   picksTitle: string
   picksCopy: string
   picks: ServicePick[]
+  scenariosTitle?: string
+  scenariosCopy?: string
+  scenarios?: ServiceScenario[]
   knowTitle: string
   knowItems: ServiceKnowItem[]
   faqs: ServiceFaq[]

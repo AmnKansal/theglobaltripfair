@@ -1,75 +1,150 @@
+/* Sits right after the footer, so it shares the footer's colour instead of
+   leaving a white band under it. */
 .spacer {
-  height: 88px;
+  height: 84px;
+  background: var(--color-ink);
 }
 
+/* Inset on every side so neither the card, its tag nor the close button
+   reaches the screen edge. */
 .wrap {
   position: fixed;
   z-index: 40;
-  left: 16px;
-  right: 16px;
-  bottom: 16px;
+  left: 12px;
+  right: 12px;
+  bottom: calc(12px + env(safe-area-inset-bottom, 0px));
 }
 
-.bar {
+.card {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
+  gap: 10px;
   min-height: 56px;
-  padding: 10px 44px 10px 20px;
-  border-radius: var(--radius-full);
+  padding: 8px 8px 8px 10px;
+  border-radius: 20px;
   background: var(--color-red);
   color: #fff;
-  box-shadow: 0 12px 32px rgba(227, 27, 35, 0.35);
+  box-shadow: 0 14px 32px rgba(22, 21, 19, 0.24);
+  transition: background-color 0.2s var(--ease);
 }
 
-.bar:hover {
+.card:hover {
   background: var(--color-red-deep);
   color: #fff;
 }
 
-.icon {
+.tag {
+  position: absolute;
+  top: -12px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 22px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--color-ink);
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(22, 21, 19, 0.14);
+}
+
+.tag svg {
+  color: var(--color-red);
+}
+
+.avatar {
   display: grid;
   place-items: center;
-  width: 34px;
-  height: 34px;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.55);
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.16);
+  background: #fff;
+}
+
+.avatar img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
 .copy {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: center;
-  gap: 8px 12px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  display: grid;
+  gap: 0;
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
-.copy span {
-  letter-spacing: 0.08em;
+.copy small {
+  overflow: hidden;
+  font-size: 0.74rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.86);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.copy strong {
+  font-size: 1.12rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.call {
+  display: grid;
+  place-items: center;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--color-red);
 }
 
 .close {
   position: absolute;
-  top: -8px;
+  top: -10px;
   right: -4px;
   display: grid;
   place-items: center;
-  width: 28px;
-  height: 28px;
-  border: 0;
+  width: 26px;
+  height: 26px;
+  border: 2px solid #fff;
   border-radius: 50%;
-  background: #161513;
+  background: var(--color-ink);
   color: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 4px 10px rgba(22, 21, 19, 0.22);
   cursor: pointer;
+}
+
+/* Larger hit area than the visible dot. */
+.close::after {
+  content: "";
+  position: absolute;
+  inset: -9px;
 }
 
 .close:hover {
   background: #2b2926;
+}
+
+@media (max-width: 360px) {
+  .avatar {
+    display: none;
+  }
+
+  .copy strong {
+    font-size: 1.05rem;
+  }
 }
 
 @media (min-width: 861px) {
@@ -77,11 +152,14 @@
     left: auto;
     right: 24px;
     bottom: 24px;
-    width: auto;
-    min-width: 280px;
+    width: 360px;
   }
+}
 
-  .bar {
-    padding-inline: 22px 44px;
+/* Desktop has the call button in the navbar instead. */
+@media (min-width: 1081px) {
+  .spacer,
+  .wrap {
+    display: none;
   }
 }

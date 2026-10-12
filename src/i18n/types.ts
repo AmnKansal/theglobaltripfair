@@ -3,13 +3,6 @@ type NamedCopy = {
   description: string
 }
 
-type OfferItemCopy = {
-  location: string
-  title: string
-  description: string
-  alt: string
-}
-
 type DestinationCopy = {
   name: string
   country: string
@@ -63,7 +56,8 @@ export type Messages = {
     sendMessage: string
     backHome: string
     exploreDestinations: string
-    tapToCall: string
+    travelHelp: string
+    talkToSpecialist: string
     reservations: string
     trainReservations: string
   }
@@ -72,22 +66,19 @@ export type Messages = {
     hotels: string
     holidays: string
     transfers: string
-    more: string
     cruises: string
     cars: string
     trains: string
     cabs: string
     destinations: string
     offers: string
+    callForReservations: string
+    callForTrainReservations: string
   }
   hero: {
-    eyebrow: string
     titleLine1: string
     titleLine2: string
     description: string
-    meta1: string
-    meta2: string
-    meta3: string
     imageAlt: string
   }
   search: {
@@ -128,6 +119,7 @@ export type Messages = {
     noSuggestions: string
     optional: string
     swap: string
+    submit: string
     adults: string
     adultsHint: string
     children: string
@@ -223,14 +215,14 @@ export type Messages = {
     networkEyebrow: string
     networkTitle: string
     networkCopy: string
-    satisfaction: string
-    satisfactionCopy: string
-    destinations: string
-    destinationsCopy: string
-    options: string
-    optionsCopy: string
-    support: string
-    supportCopy: string
+    services: string
+    servicesCopy: string
+    team: string
+    teamCopy: string
+    lines: string
+    linesCopy: string
+    languages: string
+    languagesCopy: string
   }
   stories: {
     eyebrow: string
@@ -266,52 +258,6 @@ export type Messages = {
   promotion: {
     title: string
     copy: string
-  }
-  offers: {
-    live: string
-    eyebrow: string
-    title: string
-    copy: string
-    endsIn: string
-    days: string
-    hours: string
-    minutes: string
-    seconds: string
-    ended: string
-    soldOut: string
-    explore: string
-    onlyLeft: string
-    limitedAvailability: string
-    endingSoon: string
-    empty: string
-    prev: string
-    next: string
-    carouselLabel: string
-    slideOf: string
-    badges: {
-      limited: string
-      hot: string
-      flash: string
-      value: string
-      early: string
-    }
-    trust: {
-      secure: string
-      flexible: string
-      support: string
-    }
-    items: {
-      parisEscape: OfferItemCopy
-      maldivesAtoll: OfferItemCopy
-      dubaiSkyline: OfferItemCopy
-      baliRetreat: OfferItemCopy
-      swissAlps: OfferItemCopy
-      santoriniBlue: OfferItemCopy
-      tokyoNights: OfferItemCopy
-      londonTransfer: OfferItemCopy
-      singaporeStay: OfferItemCopy
-      newYorkLights: OfferItemCopy
-    }
   }
   footer: {
     tagline: string

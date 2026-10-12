@@ -10,13 +10,7 @@ type LogoProps = {
 export function Logo({ compact = false, theme = "dark" }: LogoProps) {
   const { t } = useTranslation()
   const light = theme === "light"
-  const src = compact
-    ? light
-      ? "/icon-white.svg"
-      : "/icon.svg"
-    : light
-      ? "/logo-white.svg"
-      : "/logo.svg"
+  const src = compact ? "/icon.png" : light ? "/logo-white.png" : "/logo.png"
 
   return (
     <Link
@@ -28,8 +22,8 @@ export function Logo({ compact = false, theme = "dark" }: LogoProps) {
         src={src}
         alt=""
         className={compact ? styles.icon : styles.logo}
-        height={compact ? 40 : 36}
-        width={compact ? 40 : 218}
+        height={compact ? 40 : 48}
+        width={compact ? 40 : 173}
       />
     </Link>
   )

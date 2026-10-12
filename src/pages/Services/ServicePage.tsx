@@ -1,5 +1,6 @@
 import { useId, useState } from "react"
 import { Check, ChevronDown, Phone, MapPin, Shield, Clock, Users } from "lucide-react"
+import { PageHero } from "../../components/hero/PageHero"
 import { Button } from "../../components/common/Button"
 import { PhoneStrip } from "../../components/common/PhoneStrip"
 import { SearchCard } from "../../components/travel/SearchCard"
@@ -22,34 +23,34 @@ export function ServicePage({ slug }: ServicePageProps) {
 
   return (
     <article className={styles.page}>
-      <header className={styles.hero}>
-        <img src={doc.heroImage} alt={doc.heroAlt} width={1920} height={1080} fetchPriority="high" />
-        <div className={styles.heroShade} />
-        <div className={`container ${styles.heroCopy}`}>
-          <p className={styles.eyebrow}>
-            <span className={styles.dot} />
-            {doc.eyebrow}
-          </p>
-          <h1>{doc.title}</h1>
-          <p className={styles.lead}>{doc.lead}</p>
-          <div className={styles.actions}>
+      <PageHero
+        title={doc.title}
+        copy={doc.lead}
+        image={doc.heroImage}
+        imageAlt={doc.heroAlt}
+        actions={
+          <>
             {slug === "trains" ? (
               <PhoneStrip variant="hero" showTrains showMain={false} />
             ) : (
-              <a className={styles.call} href={contactInfo.phoneHref}>
-                <Phone size={16} strokeWidth={2.2} aria-hidden="true" />
-                {t("servicePage.callNow")} {contactInfo.phoneDisplay}
-              </a>
+              <PhoneStrip variant="hero" />
             )}
             <Link to="/contact" className={styles.heroSecondary}>
               {t("servicePage.requestQuote")}
             </Link>
-          </div>
-        </div>
-      </header>
+          </>
+        }
+        search={doc.searchTab ? <SearchCard defaultTab={doc.searchTab} /> : undefined}
+      />
 
       <div className={styles.body}>
         <div className="container">
+          {doc.searchTab ? (
+            <p className={styles.searchNote}>
+              <strong>{t("categories.bookingLead")}</strong> {t("categories.bookingBody", { service: t(`nav.${slug}`) })}
+            </p>
+          ) : null}
+
           <ul className={styles.highlights}>
             {doc.highlights.map((item, index) => {
               const Icon = extraIcons[index] ?? MapPin
@@ -72,15 +73,6 @@ export function ServicePage({ slug }: ServicePageProps) {
             {doc.notice ? <p className={styles.notice}>{doc.notice}</p> : null}
           </div>
 
-          {doc.searchTab ? (
-            <div className={styles.search}>
-              <SearchCard defaultTab={doc.searchTab} />
-              <p className={styles.searchNote}>
-                <strong>{t("categories.bookingLead")}</strong> {t("categories.bookingBody", { service: t(`nav.${slug}`) })}
-              </p>
-            </div>
-          ) : null}
-
           <section className={styles.picks} aria-labelledby={`${slug}-picks`}>
             <div className={styles.sectionHead}>
               <p className={styles.kicker}>{t("servicePage.featured")}</p>
@@ -99,6 +91,23 @@ export function ServicePage({ slug }: ServicePageProps) {
               ))}
             </div>
           </section>
+
+          {doc.scenarios?.length ? (
+            <section className={styles.scenarios} aria-labelledby={`${slug}-scenarios`}>
+              <div className={styles.scenariosHead}>
+                <h2 id={`${slug}-scenarios`}>{doc.scenariosTitle}</h2>
+                {doc.scenariosCopy ? <p>{doc.scenariosCopy}</p> : null}
+              </div>
+              <ul className={styles.scenarioList}>
+                {doc.scenarios.map((item) => (
+                  <li key={item.title}>
+                    <h3>{item.title}</h3>
+                    <p>{item.copy}</p>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
 
           <div className={styles.split}>
             <section className={styles.panel} aria-labelledby={`${slug}-included`}>

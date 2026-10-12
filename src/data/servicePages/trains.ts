@@ -5,8 +5,7 @@ import type { ServiceDoc } from "./types"
 
 export const trainsPage: ServiceDoc = {
   slug: "trains",
-  eyebrow: "US train tickets",
-  title: "City-centre to city-centre, without the airport shuffle.",
+  title: "US train tickets,\nbooked for you by phone.",
   lead: `Tell us two stations and a date. ${BRAND_NAME} compares published US rail schedules, confirms fares with the carrier, and tickets the journey for you.`,
   intro: [
     "Rail is often the calmer way to move between US cities: you board downtown, skip TSA lines, and watch the corridor go by instead of driving it. Northeast business trips, California coastal hops and longer scenic routes all sit on the same conversation.",

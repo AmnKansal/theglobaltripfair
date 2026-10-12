@@ -5,8 +5,7 @@ import type { ServiceDoc } from "./types"
 
 export const hotelsPage: ServiceDoc = {
   slug: "hotels",
-  eyebrow: "Hotel booking",
-  title: "The right room, without the booking-site maze.",
+  title: "Hotels worldwide,\nwith the real total up front.",
   lead: `Share the city, dates and who is staying. ${BRAND_NAME} compares properties, explains the rate in plain language, and confirms the stay over the phone.`,
   intro: [
     `${COMPANY_NAME} books hotels and resorts worldwide from Greenwood, Indiana. We look past the headline price: neighbourhood, room type, board basis, taxes and the last day you can cancel without a penalty.`,
@@ -15,6 +14,7 @@ export const hotelsPage: ServiceDoc = {
   heroImage: media.hotels,
   heroAlt: "A hotel terrace beside a still pool at dusk",
   searchTab: "hotels",
+  notice: `${BRAND_NAME} is an independent booking service operated by ${COMPANY_NAME} and is not affiliated with any hotel or hotel chain. Rates and availability are confirmed with the property when you book, and any service fee is included in the total we quote before you pay.`,
   highlights: [
     { title: "City, resort and airport stays", copy: "From a one-night layover to a week on the water, we match the property to the trip — not the other way around." },
     { title: "The real total, up front", copy: "Resort fees, occupancy tax and parking are quoted before you pay, so the folio should match what you heard on the call." },
@@ -59,7 +59,7 @@ export const hotelsPage: ServiceDoc = {
     { question: "How far ahead should I book?", answer: "Two to four months is wise for holidays and popular islands. For a routine city stay, a few weeks is often enough, and same-week rooms still appear — call and we look." },
     { question: "Can you hold rooms for a reunion or group?", answer: "For larger parties we set up a room block so the group stays together until a cutoff date. Flights can sit on the same file if you want everyone arriving together." },
     { question: "What if I land late?", answer: `Call ${contactInfo.phoneDisplay} and we notify the hotel so the room is held past the usual cutoff. If we also booked the flights, we handle both pieces together.` },
-    { question: "Can I start with the search on this page?", answer: "Yes — use the hotel search above, then our team continues the booking by phone or email while live checkout is under maintenance." },
+    { question: "Can I start with the form on this page?", answer: "Yes — enter your hotel details above, then call or email our team. We check current rates and complete the booking with you." },
   ],
   ctaTitle: "Tell us the city. We will bring the shortlist.",
   ctaCopy: `Call ${contactInfo.phoneDisplay} or write to ${contactInfo.email}. ${COMPANY_NAME} will compare stays for your dates and send confirmation once you choose.`,

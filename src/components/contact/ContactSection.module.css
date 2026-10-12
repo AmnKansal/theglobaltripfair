@@ -3,9 +3,10 @@
 }
 
 .panel {
+  --panel-pad: 40px;
   display: grid;
   gap: 28px;
-  padding: 48px 40px;
+  padding: 48px var(--panel-pad);
   border-radius: 32px;
   background:
     radial-gradient(ellipse 70% 80% at 100% 0%, rgba(227, 27, 35, 0.28), transparent 52%),
@@ -79,6 +80,10 @@
   white-space: nowrap;
 }
 
+.dots {
+  display: none;
+}
+
 @media (min-width: 1100px) {
   .gridFour {
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -86,9 +91,50 @@
 }
 
 @media (max-width: 860px) {
+  /* Swipe row: cards run to the panel edges and the next one peeks in. */
   .grid,
   .gridFour {
-    grid-template-columns: 1fr;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: min(84%, 340px);
+    gap: 12px;
+    margin: -8px calc(var(--panel-pad) * -1) -28px;
+    padding: 8px var(--panel-pad) 28px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--panel-pad);
+    scrollbar-width: none;
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .grid > * {
+    scroll-snap-align: start;
+  }
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: -8px;
+  }
+
+  .dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(247, 243, 238, 0.3);
+    transition:
+      width 240ms var(--ease),
+      background-color 240ms var(--ease);
+  }
+
+  .dots .dotActive {
+    width: 20px;
+    background: #f7f3ee;
   }
 
   .location {
@@ -106,12 +152,14 @@
   }
 
   .panel {
-    padding: 32px 22px;
+    --panel-pad: 22px;
+    padding: 32px var(--panel-pad);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .location {
+  .location,
+  .dots span {
     transition: none;
   }
 }

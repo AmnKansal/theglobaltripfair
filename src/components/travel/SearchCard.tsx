@@ -1,6 +1,6 @@
 import { useEffect, useState, type FormEvent, type ReactNode } from "react"
 import { useNavigate } from "react-router-dom"
-import { ArrowLeftRight, Building2, CalendarDays, CarFront, Palmtree, Plane, Search } from "lucide-react"
+import { ArrowLeftRight, ArrowRight, Building2, CalendarDays, CarFront, Palmtree, Plane } from "lucide-react"
 import {
   currentMonthISO,
   emptyHoliday,
@@ -364,8 +364,8 @@ export function SearchCard({ defaultTab = "flights" }: SearchCardProps) {
         ) : null}
 
         <Button type="submit" className={styles.searchBtn} variant="primary" disabled={submitting}>
-          <Search size={16} />
-          {t("common.search")}
+          {t("search.submit")}
+          <ArrowRight size={16} />
         </Button>
       </form>
     </div>

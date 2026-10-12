@@ -1,3 +1,4 @@
+import { useRef, useState } from "react"
 import { Mail, MapPin, Phone, TrainFront } from "lucide-react"
 import { contactCityLine, contactInfo, contactMapsHref, hasTrainsPhone } from "../../data/contact"
 import { useTranslation } from "../../i18n"
@@ -7,6 +8,19 @@ import styles from "./ContactSection.module.css"
 
 export function ContactSection() {
   const { t } = useTranslation()
+  const gridRef = useRef<HTMLDivElement>(null)
+  const [activeCard, setActiveCard] = useState(0)
+  const cardCount = hasTrainsPhone ? 4 : 3
+
+  // Mobile only: the grid becomes a swipe row, and the dots follow the card in view.
+  const handleScroll = () => {
+    const grid = gridRef.current
+    const first = grid?.firstElementChild as HTMLElement | null
+    if (!grid || !first) return
+    const step = first.offsetWidth + parseFloat(getComputedStyle(grid).columnGap || "0")
+    const atEnd = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 2
+    setActiveCard(atEnd ? cardCount - 1 : Math.round(grid.scrollLeft / step))
+  }
 
   return (
     <section className={styles.section} id="how-to-reach-us" aria-labelledby="reach-title">
@@ -20,7 +34,11 @@ export function ContactSection() {
             tone="inverse"
           />
 
-          <div className={`${styles.grid} ${hasTrainsPhone ? styles.gridFour : ""}`}>
+          <div
+            ref={gridRef}
+            className={`${styles.grid} ${hasTrainsPhone ? styles.gridFour : ""}`}
+            onScroll={handleScroll}
+          >
             <ContactCard
               href={contactInfo.phoneHref}
               icon={<Phone size={20} strokeWidth={2.1} />}
@@ -64,6 +82,12 @@ export function ContactSection() {
               cta={t("reach.visitCta")}
               external
             />
+          </div>
+
+          <div className={styles.dots} aria-hidden="true">
+            {Array.from({ length: cardCount }, (_, i) => (
+              <span key={i} className={i === activeCard ? styles.dotActive : undefined} />
+            ))}
           </div>
 
           <a className={styles.location} href={contactMapsHref} target="_blank" rel="noopener noreferrer">

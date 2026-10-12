@@ -5,8 +5,7 @@ import type { ServiceDoc } from "./types"
 
 export const cruisesPage: ServiceDoc = {
   slug: "cruises",
-  eyebrow: "Cruise holidays",
-  title: "Unpack once. Wake up somewhere new.",
+  title: "Your cruise, flights and hotel\non one itinerary.",
   lead: `Book the sailing with ${BRAND_NAME} and we can add flights into the home port, a hotel the night before, and the transfers in between — priced as one itinerary.`,
   intro: [
     "A cruise suits first-time travellers, mixed-age families and anyone who would rather not change hotels every other night. Meals, shows and most onboard time sit in the fare; the ship moves while you sleep.",
@@ -14,6 +13,7 @@ export const cruisesPage: ServiceDoc = {
   ],
   heroImage: media.cruises,
   heroAlt: "A cruise ship on open water at sunset",
+  notice: `${BRAND_NAME} is an independent booking service operated by ${COMPANY_NAME} and is not affiliated with any cruise line. Fares and cabin availability are confirmed with the cruise line when you book, and any service fee is included in the total we quote before you pay.`,
   highlights: [
     { title: "Fly, sleep, sail", copy: "Round-trip flights, a pre-cruise night near the pier, and transfers so embarkation morning is not a scramble." },
     { title: "The cabin that matches the trip", copy: "Inside, ocean-view, balcony or suite — we explain what you actually gain on that itinerary." },

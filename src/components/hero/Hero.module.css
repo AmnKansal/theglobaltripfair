@@ -1,13 +1,27 @@
 .hero {
-  padding: 20px 0 0;
+  /* Lifts the search dropdowns above the sections that follow. */
+  position: relative;
+  z-index: 2;
+  padding: 20px 0 8px;
 }
 
+/* No overflow clipping here, so search suggestions can extend past the image. */
 .stage {
   position: relative;
-  overflow: hidden;
-  min-height: min(78vh, 760px);
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  min-height: min(84vh, 780px);
+  padding: 80px 32px 32px;
   border-radius: 32px;
   background: #1d241c;
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
 }
 
 .image {
@@ -22,43 +36,24 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(16, 17, 14, 0.72) 0%, rgba(16, 17, 14, 0.28) 52%, rgba(16, 17, 14, 0.12) 100%),
-    linear-gradient(180deg, rgba(16, 17, 14, 0.18) 0%, rgba(16, 17, 14, 0.08) 40%, rgba(16, 17, 14, 0.45) 100%);
+    linear-gradient(90deg, rgba(16, 17, 14, 0.7) 0%, rgba(16, 17, 14, 0.3) 52%, rgba(16, 17, 14, 0.1) 100%),
+    linear-gradient(180deg, rgba(16, 17, 14, 0.16) 0%, rgba(16, 17, 14, 0.04) 45%, rgba(16, 17, 14, 0.4) 100%);
 }
 
 .content {
   position: relative;
   z-index: 1;
-  max-width: 680px;
-  padding: 88px 64px 180px;
+  max-width: 900px;
+  padding-inline: 18px;
   color: #f7f4ee;
 }
 
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 18px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #f0d7d3;
-}
-
-.dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--color-red);
-  box-shadow: 0 0 0 4px rgba(193, 53, 44, 0.28);
-}
-
 .title {
-  font-size: clamp(3rem, 7vw, 5.4rem);
-  line-height: 0.95;
-  letter-spacing: -0.055em;
+  font-size: clamp(2.6rem, 6vw, 4.75rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
   font-weight: 800;
+  text-wrap: balance;
   overflow-wrap: break-word;
 }
 
@@ -66,60 +61,58 @@
   display: block;
 }
 
+/* Inner-page headlines run longer than the home line, so they sit one step smaller. */
+.pageTitle {
+  font-size: clamp(2.1rem, 4.6vw, 3.75rem);
+  line-height: 1.04;
+}
+
 .copy {
-  max-width: 520px;
+  max-width: 34rem;
   margin-top: 22px;
   font-size: 1.12rem;
-  line-height: 1.65;
-  color: rgba(247, 244, 238, 0.86);
+  line-height: 1.6;
+  color: rgba(247, 244, 238, 0.88);
+  text-wrap: pretty;
 }
 
-.meta {
+.actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 22px;
-  margin-top: 32px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: rgba(247, 244, 238, 0.8);
-}
-
-.meta span {
-  display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  margin-top: 28px;
 }
 
-.meta span::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--color-red);
-}
-
-.phones {
-  margin-top: 22px;
+/* Pages without a search card: the stage only needs to hold the copy. */
+.compact {
+  min-height: min(62vh, 560px);
+  padding-bottom: 72px;
 }
 
 .searchWrap {
   position: relative;
   z-index: 2;
-  margin-top: -92px;
-  padding-bottom: 8px;
+  margin-top: auto;
 }
 
 @media (max-width: 860px) {
   .stage {
-    min-height: 620px;
+    gap: 36px;
+    min-height: 0;
+    padding: 48px 12px 12px;
     border-radius: 24px;
   }
 
-  .content {
-    padding: 56px 28px 170px;
+  .compact {
+    padding-bottom: 48px;
   }
 
-  .searchWrap {
-    margin-top: -110px;
+  .content {
+    padding-inline: 14px;
+  }
+
+  .copy {
+    font-size: 1rem;
   }
 }

@@ -7,7 +7,7 @@
 
 .logo {
   display: block;
-  height: 36px;
+  height: 48px;
   width: auto;
   max-width: min(220px, 100%);
   object-fit: contain;
@@ -19,20 +19,21 @@
   width: 40px;
   height: 40px;
   flex-shrink: 0;
+  object-fit: contain;
 }
 
 .light .logo {
-  height: 40px;
+  height: 56px;
 }
 
 @media (max-width: 720px) {
   .logo {
-    height: 32px;
+    height: 44px;
   }
 }
 
 @media (max-width: 420px) {
   .logo {
-    height: 28px;
+    height: 40px;
   }
 }

@@ -11,6 +11,11 @@ export function toTelHref(display: string): string {
   return e164 ? `tel:${e164}` : ""
 }
 
+/** "888-404-0651" -> "+1 888-404-0651" for US numbers. */
+export function toInternationalDisplay(display: string): string {
+  return display.replace(/\D/g, "").length === 10 ? `+1 ${display}` : display
+}
+
 export const MAIN_PHONE_DISPLAY = "888-404-0651"
 
 /** Dedicated US train reservations TFN. */

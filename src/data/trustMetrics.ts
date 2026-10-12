@@ -1,4 +1,4 @@
-/** Configurable marketing metrics. Replace from the API when verified figures exist. */
+/** Homepage metrics. Every figure must be checkable on the site itself — no unverified marketing numbers. */
 export type TrustMetric = {
   id: string
   value: number
@@ -12,31 +12,27 @@ export type TrustMetric = {
 
 export const trustMetrics: TrustMetric[] = [
   {
-    id: "satisfaction",
-    value: 98,
-    suffix: "%",
-    labelKey: "choose.satisfaction",
-    descriptionKey: "choose.satisfactionCopy",
+    id: "services",
+    value: 7,
+    labelKey: "choose.services",
+    descriptionKey: "choose.servicesCopy",
   },
   {
-    id: "destinations",
-    value: 120,
-    suffix: "+",
-    labelKey: "choose.destinations",
-    descriptionKey: "choose.destinationsCopy",
+    id: "team",
+    value: 1,
+    labelKey: "choose.team",
+    descriptionKey: "choose.teamCopy",
   },
   {
-    id: "options",
-    value: 150,
-    suffix: "+",
-    labelKey: "choose.options",
-    descriptionKey: "choose.optionsCopy",
+    id: "lines",
+    value: 2,
+    labelKey: "choose.lines",
+    descriptionKey: "choose.linesCopy",
   },
   {
-    id: "support",
-    value: 24,
-    suffix: "/7",
-    labelKey: "choose.support",
-    descriptionKey: "choose.supportCopy",
+    id: "languages",
+    value: 6,
+    labelKey: "choose.languages",
+    descriptionKey: "choose.languagesCopy",
   },
 ]
