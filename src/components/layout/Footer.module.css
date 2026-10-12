@@ -70,6 +70,42 @@
   color: #fff;
 }
 
+.flightLinks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px 56px;
+  padding: 36px 0 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.flightGroup .heading {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9f998f;
+  margin-bottom: 16px;
+}
+
+.flightGroup ul {
+  columns: 3;
+  column-gap: 24px;
+}
+
+.flightGroup li {
+  break-inside: avoid;
+  margin-bottom: 10px;
+}
+
+.flightGroup a {
+  color: #ddd8cf;
+  font-size: 0.92rem;
+  transition: color 180ms var(--ease);
+}
+
+.flightGroup a:hover {
+  color: #fff;
+}
+
 .bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 20px 0 28px;
@@ -184,7 +220,18 @@
   }
 }
 
+@media (max-width: 1100px) {
+  .flightLinks {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
 @media (max-width: 640px) {
+  .flightGroup ul {
+    columns: 2;
+  }
+
   .top {
     grid-template-columns: 1fr;
     gap: 28px;

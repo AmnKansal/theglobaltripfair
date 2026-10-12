@@ -292,6 +292,8 @@ export type Messages = {
     creditLove: string
     creditLoveWord: string
     contactHeading: string
+    flightDestinations: string
+    flightTypes: string
   }
   reach: {
     eyebrow: string

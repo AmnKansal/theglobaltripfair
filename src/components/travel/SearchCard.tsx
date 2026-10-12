@@ -11,6 +11,7 @@ import {
   type FlightSearch,
   type HolidaySearch,
   type HotelSearch,
+  type PlaceRef,
   type SearchRequest,
   type SearchTab,
   type TransferSearch,
@@ -27,6 +28,8 @@ export type { SearchTab }
 
 type SearchCardProps = {
   defaultTab?: SearchTab
+  /** Prefills the flight "To" field, e.g. on a destination page. */
+  flightTo?: PlaceRef
 }
 
 type Drafts = {
@@ -43,12 +46,12 @@ const tabs: { id: SearchTab; icon: ReactNode }[] = [
   { id: "transfers", icon: <CarFront size={16} /> },
 ]
 
-export function SearchCard({ defaultTab = "flights" }: SearchCardProps) {
+export function SearchCard({ defaultTab = "flights", flightTo }: SearchCardProps) {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const [activeSearchType, setActiveSearchType] = useState<SearchTab>(defaultTab)
   const [drafts, setDrafts] = useState<Drafts>({
-    flights: emptyFlight(),
+    flights: { ...emptyFlight(), to: flightTo ?? null },
     hotels: emptyHotel(),
     holidays: emptyHoliday(),
     transfers: emptyTransfer(),

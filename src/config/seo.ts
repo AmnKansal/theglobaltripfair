@@ -1,4 +1,10 @@
 import { contactAddressQuery, contactInfo, hasTrainsPhone, toE164 } from "../data/contact"
+import {
+  destinationFlightPages,
+  destinationFlightPath,
+  flightTypePages,
+  flightTypePath,
+} from "../data/flightPages"
 
 export const SITE_NAME = "TheGlobalTripFair.com"
 export const SITE_ORIGIN = "https://theglobaltripfair.com"
@@ -54,15 +60,41 @@ export type SeoRouteKey =
 export type PublicPath = {
   path: string
   seoKey?: SeoRouteKey
+  /** English-only pages carry their own title, description and share image. */
+  title?: string
+  description?: string
+  image?: string
   changefreq: "daily" | "weekly" | "monthly"
   priority: string
   indexable: boolean
 }
 
+const flightPagePaths: PublicPath[] = [
+  ...destinationFlightPages.map((doc) => ({
+    path: destinationFlightPath(doc.slug),
+    title: doc.seoTitle,
+    description: doc.seoDescription,
+    image: doc.heroImage,
+    changefreq: "weekly" as const,
+    priority: "0.8",
+    indexable: true,
+  })),
+  ...flightTypePages.map((doc) => ({
+    path: flightTypePath(doc.slug),
+    title: doc.seoTitle,
+    description: doc.seoDescription,
+    image: doc.heroImage,
+    changefreq: "weekly" as const,
+    priority: "0.8",
+    indexable: true,
+  })),
+]
+
 /** Canonical public routes. Keep sitemap.xml in sync when this list changes. */
 export const publicPaths: PublicPath[] = [
   { path: "/", seoKey: "home", changefreq: "daily", priority: "1.0", indexable: true },
   { path: "/flights", seoKey: "flights", changefreq: "weekly", priority: "0.9", indexable: true },
+  ...flightPagePaths,
   { path: "/hotels", seoKey: "hotels", changefreq: "weekly", priority: "0.9", indexable: true },
   { path: "/cars", seoKey: "cars", changefreq: "weekly", priority: "0.9", indexable: true },
   { path: "/holidays", seoKey: "holidays", changefreq: "weekly", priority: "0.9", indexable: true },

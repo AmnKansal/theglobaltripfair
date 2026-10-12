@@ -9,9 +9,44 @@ import { fileURLToPath } from "node:url"
 const origin = "https://theglobaltripfair.com"
 const today = new Date().toISOString().slice(0, 10)
 
+/** Keep in sync with src/data/flightPages (destinations.ts and flightTypes.ts). */
+const destinationFlightSlugs = [
+  "new-york-city",
+  "los-angeles",
+  "las-vegas",
+  "san-francisco",
+  "miami",
+  "orlando",
+  "london",
+  "paris",
+  "rome",
+  "dubai",
+  "istanbul",
+  "tokyo",
+]
+const flightTypeSlugs = [
+  "domestic",
+  "international",
+  "first-class",
+  "business-class",
+  "one-way",
+  "round-trip",
+  "last-minute",
+  "student",
+  "family-holiday",
+  "multi-city",
+  "cheap-flights",
+  "holiday-deals",
+]
+const flightPages = [
+  ...destinationFlightSlugs.map((slug) => ({ path: `/flights/cheap-flights-to-${slug}`, changefreq: "weekly", priority: "0.8" })),
+  ...flightTypeSlugs.map((slug) => ({ path: `/flights/${slug}`, changefreq: "weekly", priority: "0.8" })),
+]
+
 const indexable = [
   { path: "/", changefreq: "daily", priority: "1.0" },
   { path: "/flights", changefreq: "weekly", priority: "0.9" },
+  ...flightPages,
   { path: "/hotels", changefreq: "weekly", priority: "0.9" },
   { path: "/cars", changefreq: "weekly", priority: "0.9" },
   { path: "/holidays", changefreq: "weekly", priority: "0.9" },

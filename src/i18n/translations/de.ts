@@ -394,6 +394,8 @@ export const de: Messages = {
     creditLove: "Gemacht mit",
     creditLoveWord: "Liebe",
     contactHeading: "Kontakt",
+    flightDestinations: "Flüge zu beliebten Städten",
+    flightTypes: "Flugarten",
   },
   reach: {
     eyebrow: "So erreichen Sie uns",

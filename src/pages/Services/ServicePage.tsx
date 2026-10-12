@@ -198,7 +198,7 @@ export function ServicePage({ slug }: ServicePageProps) {
   )
 }
 
-function FaqList({
+export function FaqList({
   slug,
   faqs,
   title,

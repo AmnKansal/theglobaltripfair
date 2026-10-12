@@ -1,0 +1,634 @@
+.page {
+  background: var(--color-white);
+}
+
+.page ::selection {
+  background: var(--color-red-mist);
+  color: var(--color-ink);
+}
+
+.body {
+  padding: 0 0 88px;
+}
+
+.section {
+  margin-top: 72px;
+}
+
+.sectionTitle {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+.sectionLead {
+  margin-top: 10px;
+  max-width: 62ch;
+  color: var(--color-slate);
+  text-wrap: pretty;
+}
+
+.head {
+  max-width: 680px;
+  margin-bottom: 24px;
+}
+
+/* Opening: intro prose beside a side panel (airports or reasons to book). */
+.opening {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+  margin-top: 56px;
+}
+
+.prose {
+  display: grid;
+  gap: 16px;
+  max-width: 68ch;
+  color: var(--color-slate);
+  font-size: 1.05rem;
+  text-wrap: pretty;
+}
+
+.prose p:first-child {
+  color: var(--color-charcoal);
+  font-size: 1.15rem;
+  line-height: 1.55;
+}
+
+/* Boarding-pass panel: codes on the left, perforated rows between airports. */
+.ticket {
+  padding: 26px 26px 10px;
+  border-radius: 24px;
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+}
+
+.ticketHead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ticketHead svg {
+  flex-shrink: 0;
+  color: var(--color-red);
+}
+
+.ticketHead h2 {
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.ticket > p {
+  margin-top: 8px;
+  color: var(--color-slate);
+  font-size: 0.92rem;
+}
+
+.airportList {
+  margin-top: 14px;
+}
+
+.airportList li {
+  display: grid;
+  grid-template-columns: 4.4rem minmax(0, 1fr);
+  gap: 14px;
+  align-items: baseline;
+  padding: 14px 0;
+  border-top: 1px dashed var(--color-line-strong);
+}
+
+.code {
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--color-ink);
+}
+
+.airportList strong {
+  display: block;
+  font-size: 0.95rem;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.airportList small {
+  display: block;
+  margin-top: 2px;
+  color: var(--color-slate);
+  font-size: 0.84rem;
+}
+
+/* Reasons-to-book panel on flight type pages. */
+.whyPanel {
+  padding: 28px;
+  border-radius: 24px;
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+}
+
+.whyPanel h2 {
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.whyPanel > p {
+  margin-top: 8px;
+  color: var(--color-slate);
+  font-size: 0.94rem;
+}
+
+.checks {
+  margin-top: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.checks li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.checks span {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  margin-top: 1px;
+  border-radius: 999px;
+  background: var(--color-red-soft);
+  color: var(--color-red);
+}
+
+/* Editorial split: the heading holds its place while the copy scrolls past. */
+.editorial {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr);
+  gap: 48px;
+  align-items: start;
+}
+
+.editorialHead {
+  position: sticky;
+  top: calc(var(--nav-height) + 24px);
+}
+
+.editorialBody {
+  display: grid;
+  gap: 16px;
+  color: var(--color-slate);
+  font-size: 1.02rem;
+  max-width: 70ch;
+  text-wrap: pretty;
+}
+
+.subTitle {
+  margin-top: 16px;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+
+.placeList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 28px;
+  border-top: 1px solid var(--color-line);
+}
+
+.placeList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-line);
+  color: var(--color-ink);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.placeList svg {
+  flex-shrink: 0;
+  color: var(--color-red);
+}
+
+/* Seasons: one band, four columns. */
+.seasons {
+  padding: 36px;
+  border-radius: 28px;
+  background: var(--color-paper);
+}
+
+.seasonList {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.seasonList li {
+  padding: 4px 22px 4px 0;
+}
+
+.seasonList li + li {
+  padding-left: 22px;
+  border-left: 1px solid var(--color-line-strong);
+}
+
+.seasonIcon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 14px;
+  border-radius: 12px;
+  background: var(--color-white);
+  color: var(--color-red);
+}
+
+.seasonList p {
+  color: var(--color-slate);
+  font-size: 0.94rem;
+  text-wrap: pretty;
+}
+
+.seasonList strong {
+  color: var(--color-ink);
+}
+
+.seasonLabel {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+/* Ruled tip lists. */
+.tipList {
+  border-top: 1px solid var(--color-line);
+}
+
+.tipList li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-line);
+  color: var(--color-charcoal);
+}
+
+.tipList svg {
+  flex-shrink: 0;
+  margin-top: 4px;
+  color: var(--color-red);
+}
+
+/* Subgrid keeps both lists starting on the same line when one title wraps. */
+.twoLists {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: auto auto auto;
+  column-gap: 48px;
+}
+
+.twoLists > div {
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  align-content: start;
+}
+
+.twoLists .sectionTitle {
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+}
+
+.twoLists .sectionLead {
+  margin-bottom: 18px;
+}
+
+/* Fare types: a single strip split into columns. */
+.deals {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-radius: 24px;
+  border: 1px solid var(--color-line);
+  background: var(--color-white);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.deal {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px 22px;
+}
+
+.deal + .deal {
+  border-left: 1px solid var(--color-line);
+}
+
+.deal h3 {
+  font-size: 1.02rem;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.deal p {
+  color: var(--color-slate);
+  font-size: 0.9rem;
+}
+
+.dealLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 6px;
+  width: fit-content;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-red);
+}
+
+.dealLink svg {
+  transition: transform 180ms var(--ease);
+}
+
+.dealLink:hover svg {
+  transform: translateX(3px);
+}
+
+/* Departures board: codes joined by a dashed leg and a plane. */
+.board {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 32px;
+  padding: 10px 28px;
+  border-radius: 24px;
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+}
+
+.route {
+  border-bottom: 1px dashed var(--color-line-strong);
+}
+
+.board .route:nth-last-child(-n + 2):nth-child(odd),
+.board .route:last-child {
+  border-bottom: 0;
+}
+
+.routeInner {
+  display: block;
+  padding: 18px 0;
+}
+
+a.routeInner {
+  transition: color 180ms var(--ease);
+}
+
+a.routeInner:hover .routeCities {
+  color: var(--color-red);
+}
+
+.routeCodes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.routeCodes .code {
+  font-size: 1.4rem;
+}
+
+.leg {
+  position: relative;
+  flex: 1;
+  min-width: 28px;
+  height: 1px;
+  border-top: 1px dashed var(--color-stone);
+}
+
+.leg svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  padding: 0 4px;
+  box-sizing: content-box;
+  background: var(--color-paper);
+  color: var(--color-red);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.routeCities {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  color: var(--color-slate);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: color 180ms var(--ease);
+}
+
+.routeCities svg {
+  color: var(--color-red);
+}
+
+/* Destination chips. */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip,
+a.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-line);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  background: var(--color-white);
+}
+
+a.chip {
+  border-color: var(--color-line-strong);
+  color: var(--color-ink);
+  transition:
+    border-color 180ms var(--ease),
+    color 180ms var(--ease);
+}
+
+a.chip svg {
+  color: var(--color-red);
+}
+
+a.chip:hover {
+  border-color: var(--color-red);
+  color: var(--color-red);
+}
+
+.chipCode {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-stone);
+}
+
+.noticeWrap {
+  margin-top: 16px;
+}
+
+/* Related guides. */
+.related {
+  margin-top: 40px;
+  display: grid;
+  gap: 18px;
+}
+
+.related h2 {
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+
+.relatedLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.relatedLinks a {
+  padding: 9px 15px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-line);
+  font-size: 0.86rem;
+  font-weight: 600;
+  transition:
+    border-color 180ms var(--ease),
+    color 180ms var(--ease);
+}
+
+.relatedLinks a:hover {
+  border-color: var(--color-red);
+  color: var(--color-red);
+}
+
+@media (max-width: 1080px) {
+  .opening,
+  .editorial,
+  .twoLists {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .twoLists {
+    row-gap: 0;
+  }
+
+  .twoLists > div + div {
+    margin-top: 40px;
+  }
+
+  .editorialHead {
+    position: static;
+  }
+
+  .seasonList,
+  .deals {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 24px;
+  }
+
+  .seasonList li:nth-child(odd) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .deal + .deal {
+    border-left: 0;
+  }
+
+  .deal:nth-child(even) {
+    border-left: 1px solid var(--color-line);
+  }
+
+  .deal:nth-child(n + 3) {
+    border-top: 1px solid var(--color-line);
+  }
+
+  .deals {
+    row-gap: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .section {
+    margin-top: 56px;
+  }
+
+  .opening {
+    margin-top: 40px;
+  }
+
+  .seasons {
+    padding: 24px 20px;
+  }
+
+  .seasonList,
+  .deals,
+  .board,
+  .placeList {
+    grid-template-columns: 1fr;
+  }
+
+  .seasonList li,
+  .seasonList li + li {
+    padding: 0;
+    border-left: 0;
+  }
+
+  .deal:nth-child(even) {
+    border-left: 0;
+  }
+
+  .deal + .deal {
+    border-top: 1px solid var(--color-line);
+  }
+
+  .board {
+    padding: 4px 20px;
+  }
+
+  .board .route:nth-last-child(-n + 2):nth-child(odd) {
+    border-bottom: 1px dashed var(--color-line-strong);
+  }
+
+  .board .route:last-child {
+    border-bottom: 0;
+  }
+
+  .ticket,
+  .whyPanel {
+    padding: 22px 18px 8px;
+  }
+
+  .whyPanel {
+    padding-bottom: 22px;
+  }
+}

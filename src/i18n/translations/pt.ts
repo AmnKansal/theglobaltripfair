@@ -394,6 +394,8 @@ export const pt: Messages = {
     creditLove: "Feito com",
     creditLoveWord: "amor",
     contactHeading: "Contacto",
+    flightDestinations: "Voos para cidades populares",
+    flightTypes: "Tipos de voo",
   },
   reach: {
     eyebrow: "Como nos contactar",
