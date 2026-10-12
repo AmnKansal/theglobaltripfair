@@ -32,6 +32,8 @@ export function ServicePage({ slug }: ServicePageProps) {
           <>
             {slug === "trains" ? (
               <PhoneStrip variant="hero" showTrains showMain={false} />
+            ) : slug === "cars" ? (
+              <PhoneStrip variant="hero" showCars showMain={false} />
             ) : (
               <PhoneStrip variant="hero" />
             )}
@@ -165,6 +167,8 @@ export function ServicePage({ slug }: ServicePageProps) {
             <div className={styles.actions}>
               {slug === "trains" ? (
                 <PhoneStrip variant="dark" showTrains showMain={false} />
+              ) : slug === "cars" ? (
+                <PhoneStrip variant="dark" showCars showMain={false} />
               ) : (
                 <a className={styles.callLight} href={contactInfo.phoneHref}>
                   <Phone size={16} strokeWidth={2.2} aria-hidden="true" />

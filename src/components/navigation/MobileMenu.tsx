@@ -1,7 +1,7 @@
 import { createPortal } from "react-dom"
 import { NavLink, useLocation } from "react-router-dom"
 import { Phone, X } from "lucide-react"
-import { contactInfo, hasTrainsPhone, isTrainsPath } from "../../data/contact"
+import { contactInfo, hasCarsPhone, hasTrainsPhone, isCarsPath, isTrainsPath } from "../../data/contact"
 import { primaryNav } from "../../data/navigation"
 import { useTranslation } from "../../i18n"
 import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
@@ -18,6 +18,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
   const { t } = useTranslation()
   const { pathname } = useLocation()
   const trainsPrimary = hasTrainsPhone && isTrainsPath(pathname)
+  const carsPrimary = hasCarsPhone && isCarsPath(pathname)
   useLockBodyScroll(open)
   if (!open) return null
 
@@ -58,6 +59,14 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
                 {t("common.trainReservations")}
               </span>
               <strong>{contactInfo.trainsPhoneDisplay}</strong>
+            </a>
+          ) : carsPrimary ? (
+            <a className={styles.call} href={contactInfo.carsPhoneHref} onClick={onClose}>
+              <span className={styles.callLabel}>
+                <Phone size={16} strokeWidth={2.2} aria-hidden="true" />
+                {t("common.carRentals")}
+              </span>
+              <strong>{contactInfo.carsPhoneDisplay}</strong>
             </a>
           ) : (
             <a className={styles.call} href={contactInfo.phoneHref} onClick={onClose}>

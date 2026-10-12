@@ -102,6 +102,7 @@ export const de: Messages = {
     menu: "Menü",
     callUs: "Anrufen",
     callTrains: "Zugreservierungen anrufen",
+    callCarRentals: "Autovermietung anrufen",
     close: "Schließen",
   },
   common: {
@@ -117,6 +118,7 @@ export const de: Messages = {
     talkToSpecialist: "Mit einem Reiseexperten sprechen",
     reservations: "Reservierungen",
     trainReservations: "Zugreservierungen",
+    carRentals: "Autovermietung",
   },
   nav: {
     flights: "Flüge",
@@ -131,6 +133,7 @@ export const de: Messages = {
     offers: "Angebote",
     callForReservations: "Für Reservierungen anrufen",
     callForTrainReservations: "Für Zugreservierungen anrufen",
+    callForCarRentals: "Für Mietwagen anrufen",
   },
   hero: {
     titleLine1: "Ihre ganze Reise,",

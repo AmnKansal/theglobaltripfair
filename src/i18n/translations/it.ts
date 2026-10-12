@@ -102,6 +102,7 @@ export const it: Messages = {
     menu: "Menu",
     callUs: "Chiamaci",
     callTrains: "Chiama le prenotazioni treno",
+    callCarRentals: "Chiama il noleggio auto",
     close: "Chiudi",
   },
   reach: {
@@ -134,6 +135,7 @@ export const it: Messages = {
     talkToSpecialist: "Parla con un esperto di viaggi",
     reservations: "Prenotazioni",
     trainReservations: "Prenotazioni treno",
+    carRentals: "Noleggio auto",
   },
   nav: {
     flights: "Voli",
@@ -148,6 +150,7 @@ export const it: Messages = {
     offers: "Offerte",
     callForReservations: "Chiama per prenotare",
     callForTrainReservations: "Chiama per prenotare il treno",
+    callForCarRentals: "Chiama per noleggiare un’auto",
   },
   hero: {
     titleLine1: "Tutto il tuo viaggio,",

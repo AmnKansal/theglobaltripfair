@@ -1,6 +1,6 @@
 import { BRAND_NAME, COMPANY_NAME } from "../legal/brand"
 import { media } from "../media"
-import { contactInfo } from "../contact"
+import { carsDeskPhoneDisplay, contactInfo } from "../contact"
 import type { ServiceDoc } from "./types"
 
 export const carsPage: ServiceDoc = {
@@ -73,8 +73,8 @@ export const carsPage: ServiceDoc = {
     { question: "Are child seats available?", answer: "Infant, toddler and booster seats can be reserved for a daily fee, subject to availability. Many families bring their own, and we can check the airline’s policy for checking a seat at the gate." },
     { question: "How does full-to-full fuel work?", answer: "You collect the car with a full tank and return it full. If it comes back lower, the company refuels it at its own rate plus a service charge, so a quick stop near the return location is worth it." },
     { question: "What if my flight is late?", answer: "When we book the flight with the car, the flight number goes on the rental. For late arrivals we choose counters that stay open, or we move pickup to the next morning." },
-    { question: "Can I extend or change my rental?", answer: `Usually, yes. Call ${contactInfo.phoneDisplay} as soon as plans change. Extensions, return-city changes and vehicle swaps depend on availability, and we explain any rate difference before you agree.` },
+    { question: "Can I extend or change my rental?", answer: `Usually, yes. Call ${carsDeskPhoneDisplay} as soon as plans change. Extensions, return-city changes and vehicle swaps depend on availability, and we explain any rate difference before you agree.` },
   ],
   ctaTitle: "Tell us where you are driving. We will find the right car.",
-  ctaCopy: `Call ${contactInfo.phoneDisplay} or email ${contactInfo.email}. ${COMPANY_NAME} will match the car to your group and the pickup to your schedule.`,
+  ctaCopy: `Call ${carsDeskPhoneDisplay} or email ${contactInfo.email}. ${COMPANY_NAME} will match the car to your group and the pickup to your schedule.`,
 }

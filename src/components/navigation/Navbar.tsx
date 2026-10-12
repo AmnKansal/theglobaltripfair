@@ -1,7 +1,14 @@
 import { useState } from "react"
 import { NavLink, useLocation } from "react-router-dom"
 import { Menu, Phone } from "lucide-react"
-import { contactInfo, hasTrainsPhone, isTrainsPath, toInternationalDisplay } from "../../data/contact"
+import {
+  contactInfo,
+  hasCarsPhone,
+  hasTrainsPhone,
+  isCarsPath,
+  isTrainsPath,
+  toInternationalDisplay,
+} from "../../data/contact"
 import { primaryNav } from "../../data/navigation"
 import { useTranslation } from "../../i18n"
 import { Logo } from "../common/Logo"
@@ -14,13 +21,30 @@ export function Navbar() {
   const location = useLocation()
   const [mobileOpen, setMobileOpen] = useState(false)
   const trainsPrimary = hasTrainsPhone && isTrainsPath(location.pathname)
-  const headerPhoneHref = trainsPrimary ? contactInfo.trainsPhoneHref : contactInfo.phoneHref
-  const headerPhoneDisplay = toInternationalDisplay(
-    trainsPrimary ? contactInfo.trainsPhoneDisplay : contactInfo.phoneDisplay,
-  )
-  const headerPhoneLabel = trainsPrimary
-    ? `${t("a11y.callTrains")} ${headerPhoneDisplay}`
-    : `${t("a11y.callUs")} ${headerPhoneDisplay}`
+  const carsPrimary = hasCarsPhone && isCarsPath(location.pathname)
+  const headerPhone = trainsPrimary
+    ? {
+        href: contactInfo.trainsPhoneHref,
+        display: contactInfo.trainsPhoneDisplay,
+        a11y: t("a11y.callTrains"),
+        label: t("nav.callForTrainReservations"),
+      }
+    : carsPrimary
+      ? {
+          href: contactInfo.carsPhoneHref,
+          display: contactInfo.carsPhoneDisplay,
+          a11y: t("a11y.callCarRentals"),
+          label: t("nav.callForCarRentals"),
+        }
+      : {
+          href: contactInfo.phoneHref,
+          display: contactInfo.phoneDisplay,
+          a11y: t("a11y.callUs"),
+          label: t("nav.callForReservations"),
+        }
+  const headerPhoneHref = headerPhone.href
+  const headerPhoneDisplay = toInternationalDisplay(headerPhone.display)
+  const headerPhoneLabel = `${headerPhone.a11y} ${headerPhoneDisplay}`
 
   return (
     <header className={styles.bar}>
@@ -47,9 +71,7 @@ export function Navbar() {
                 <Phone size={16} strokeWidth={2.2} />
               </span>
               <span className={styles.phoneText}>
-                <span className={styles.phoneLabel}>
-                  {trainsPrimary ? t("nav.callForTrainReservations") : t("nav.callForReservations")}
-                </span>
+                <span className={styles.phoneLabel}>{headerPhone.label}</span>
                 <span className={styles.phoneNumber}>{headerPhoneDisplay}</span>
               </span>
             </a>
