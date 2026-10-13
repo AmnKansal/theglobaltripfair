@@ -412,6 +412,8 @@ export const fr: Messages = {
     creditLove: "Fait avec",
     creditLoveWord: "amour",
     contactHeading: "Contact",
+    flightDestinations: "Vols vers les villes populaires",
+    flightTypes: "Types de vols",
   },
   reach: {
     eyebrow: "Nous joindre",

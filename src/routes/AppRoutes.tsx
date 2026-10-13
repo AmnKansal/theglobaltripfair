@@ -6,6 +6,14 @@ import { ContentPage } from "../pages/Content/ContentPage"
 import { AboutPage } from "../pages/Legal/AboutPage"
 import { LegalPage } from "../pages/Legal/LegalPage"
 import { Flights } from "../pages/Flights/Flights"
+import {
+  destinationFlightPages,
+  destinationFlightPath,
+  flightTypePages,
+  flightTypePath,
+} from "../data/flightPages"
+import { DestinationFlightsPage } from "../pages/FlightPages/DestinationFlightsPage"
+import { FlightTypePage } from "../pages/FlightPages/FlightTypePage"
 import { Holidays } from "../pages/Holidays/Holidays"
 import { Home } from "../pages/Home/Home"
 import { Hotels } from "../pages/Hotels/Hotels"
@@ -40,6 +48,17 @@ export function AppRoutes() {
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/flights" element={<Flights />} />
+          {/* Keyed by slug so the quote form resets when moving between flight pages. */}
+          {destinationFlightPages.map((doc) => (
+            <Route
+              key={doc.slug}
+              path={destinationFlightPath(doc.slug)}
+              element={<DestinationFlightsPage key={doc.slug} doc={doc} />}
+            />
+          ))}
+          {flightTypePages.map((doc) => (
+            <Route key={doc.slug} path={flightTypePath(doc.slug)} element={<FlightTypePage key={doc.slug} doc={doc} />} />
+          ))}
           <Route path="/hotels" element={<Hotels />} />
           <Route path="/cars" element={<ServicePage slug="cars" />} />
           <Route path="/holidays" element={<Holidays />} />

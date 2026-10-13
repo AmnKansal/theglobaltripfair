@@ -414,6 +414,8 @@ export const en: Messages = {
     creditLove: "Made with",
     creditLoveWord: "love",
     contactHeading: "Contact",
+    flightDestinations: "Flights to popular cities",
+    flightTypes: "Ways to fly",
   },
   reach: {
     eyebrow: "How to reach us",

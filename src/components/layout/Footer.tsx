@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import { Mail, MapPin, Phone } from "lucide-react"
 import { contactCityLine, contactInfo, contactMapsHref, hasTrainsPhone } from "../../data/contact"
 import { Logo } from "../common/Logo"
+import { destinationFlightLinks, flightTypeLinks } from "../../data/flightPages"
 import { footerTravelNav } from "../../data/navigation"
 import { useTranslation } from "../../i18n"
 import styles from "./Footer.module.css"
@@ -89,6 +90,29 @@ export function Footer() {
             </span>
           </a>
         </div>
+      </div>
+
+      <div className={`container ${styles.flightLinks}`}>
+        <nav className={styles.flightGroup} aria-label={t("footer.flightDestinations")}>
+          <p className={styles.heading}>{t("footer.flightDestinations")}</p>
+          <ul>
+            {destinationFlightLinks.map((item) => (
+              <li key={item.to}>
+                <Link to={item.to}>{item.city}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <nav className={styles.flightGroup} aria-label={t("footer.flightTypes")}>
+          <p className={styles.heading}>{t("footer.flightTypes")}</p>
+          <ul>
+            {flightTypeLinks.map((item) => (
+              <li key={item.to}>
+                <Link to={item.to}>{item.label}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
 
       <div className={`container ${styles.bottom}`}>

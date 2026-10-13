@@ -199,6 +199,126 @@
       "source": "Unsplash",
       "license": "Unsplash License",
       "usage": "US trains featured corridor — Midwest"
+    },
+    {
+      "file": "destinations/los-angeles.webp",
+      "originalUrl": "https://images.unsplash.com/photo-1676336011653-4a0421dffc8a?auto=format&fit=crop&w=1920&h=1200&q=66&fm=webp",
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "usage": "Flights to Los Angeles page hero",
+      "downloadedAt": "2026-10-12"
+    },
+    {
+      "file": "destinations/las-vegas.webp",
+      "originalUrl": "https://images.unsplash.com/photo-1581351721010-8cf859cb14a4?auto=format&fit=crop&w=1920&h=1200&q=66&fm=webp",
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "usage": "Flights to Las Vegas page hero",
+      "downloadedAt": "2026-10-12"
+    },
+    {
+      "file": "destinations/miami.webp",
+      "originalUrl": "https://images.unsplash.com/photo-1589083130544-0d6a2926e519?auto=format&fit=crop&w=1920&h=1200&q=66&fm=webp",
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "usage": "Flights to Miami page hero",
+      "downloadedAt": "2026-10-12"
+    },
+    {
+      "file": "destinations/orlando.webp",
+      "originalUrl": "https://images.unsplash.com/photo-1609184889233-eff6dd93def4?auto=format&fit=crop&w=1920&h=1200&q=66&fm=webp",
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "usage": "Flights to Orlando page hero",
+      "downloadedAt": "2026-10-12"
+    },
+    {
+      "file": "destinations/rome.webp",
+      "originalUrl": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1920&h=1200&q=66&fm=webp",
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "usage": "Flights to Rome page hero",
+      "downloadedAt": "2026-10-12"
+    },
+    {
+      "file": "destinations/istanbul.webp",
+      "originalUrl": "https://images.unsplash.com/photo-1623439844752-524658b16ce6?auto=format&fit=crop&w=1920&h=1200&q=66&fm=webp",
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "usage": "Flights to Istanbul page hero",
+      "downloadedAt": "2026-10-12"
+    },
+    {
+      "file": "flights/international.webp",
+      "originalUrl": "https://images.unsplash.com/photo-1655722724451-0df658a2ab23?auto=format&fit=crop&w=1920&h=1200&q=66&fm=webp",
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "usage": "International flights page hero",
+      "downloadedAt": "2026-10-12"
+    },
+    {
+      "file": "flights/first-class.webp",
+      "originalUrl": "https://images.unsplash.com/photo-1570970580763-7993ca30d726?auto=format&fit=crop&w=1920&h=1200&q=66&fm=webp",
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "usage": "First class flights page hero",
+      "downloadedAt": "2026-10-12"
+    },
+    {
+      "file": "flights/business-class.webp",
+      "originalUrl": "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&fit=crop&w=1920&h=1200&q=66&fm=webp",
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "usage": "Business class flights page hero",
+      "downloadedAt": "2026-10-12"
+    },
+    {
+      "file": "flights/one-way.webp",
+      "originalUrl": "https://images.unsplash.com/photo-1519012505673-26635fc56af3?auto=format&fit=crop&w=1920&h=1200&q=66&fm=webp",
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "usage": "One way flights page hero",
+      "downloadedAt": "2026-10-12"
+    },
+    {
+      "file": "flights/last-minute.webp",
+      "originalUrl": "https://images.unsplash.com/photo-1561131668-f63504fc549d?auto=format&fit=crop&w=1920&h=1200&q=66&fm=webp",
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "usage": "Last minute flights page hero",
+      "downloadedAt": "2026-10-12"
+    },
+    {
+      "file": "flights/student.webp",
+      "originalUrl": "https://images.unsplash.com/photo-1581656702382-9ae90e68e7b7?auto=format&fit=crop&w=1920&h=1200&q=66&fm=webp",
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "usage": "Student flights page hero",
+      "downloadedAt": "2026-10-12"
+    },
+    {
+      "file": "flights/family-holiday.webp",
+      "originalUrl": "https://images.unsplash.com/photo-1597524678053-5e6fef52d8a3?auto=format&fit=crop&w=1920&h=1200&q=66&fm=webp",
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "usage": "Family holiday flights page hero",
+      "downloadedAt": "2026-10-12"
+    },
+    {
+      "file": "flights/multi-city.webp",
+      "originalUrl": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1920&h=1200&q=66&fm=webp",
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "usage": "Multi-city flights page hero",
+      "downloadedAt": "2026-10-12"
+    },
+    {
+      "file": "flights/cheap-deals.webp",
+      "originalUrl": "https://images.unsplash.com/photo-1593182440709-4b7b56482c55?auto=format&fit=crop&w=1920&h=1200&q=66&fm=webp",
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "usage": "Cheap flight deals page hero",
+      "downloadedAt": "2026-10-12"
     }
   ]
 }

@@ -68,17 +68,22 @@ export function SeoHead() {
   const indexable = route?.indexable ?? false
   const seoKey = route?.seoKey
   const canonical = isKnown ? absoluteUrl(pathname) : SITE_URL
-  const title = seoKey
+  const title = route?.title
+    ? route.title
+    : seoKey
     ? t(pageTitleKey(seoKey))
     : isKnown
       ? fallbackTitle(pathname, t)
       : t("seo.notFound.title")
-  const description = seoKey
+  const description = route?.description
+    ? route.description
+    : seoKey
     ? t(pageDescriptionKey(seoKey))
     : isKnown
       ? fallbackDescription(pathname, t)
       : t("seo.notFound.description")
   const ogLocale = ogLocales[locale] ?? "en_US"
+  const ogImage = route?.image ? absoluteUrl(route.image) : DEFAULT_OG_IMAGE_ABS
 
   useLayoutEffect(() => {
     document.title = title
@@ -95,14 +100,14 @@ export function SeoHead() {
     upsertMeta('meta[property="og:description"]', { property: "og:description", content: description })
     upsertMeta('meta[property="og:type"]', { property: "og:type", content: "website" })
     upsertMeta('meta[property="og:url"]', { property: "og:url", content: canonical })
-    upsertMeta('meta[property="og:image"]', { property: "og:image", content: DEFAULT_OG_IMAGE_ABS })
+    upsertMeta('meta[property="og:image"]', { property: "og:image", content: ogImage })
     upsertMeta('meta[property="og:site_name"]', { property: "og:site_name", content: SITE_NAME })
     upsertMeta('meta[property="og:locale"]', { property: "og:locale", content: ogLocale })
 
     upsertMeta('meta[name="twitter:card"]', { name: "twitter:card", content: "summary_large_image" })
     upsertMeta('meta[name="twitter:title"]', { name: "twitter:title", content: title })
     upsertMeta('meta[name="twitter:description"]', { name: "twitter:description", content: description })
-    upsertMeta('meta[name="twitter:image"]', { name: "twitter:image", content: DEFAULT_OG_IMAGE_ABS })
+    upsertMeta('meta[name="twitter:image"]', { name: "twitter:image", content: ogImage })
 
     if (searchVerification.google) {
       upsertMeta('meta[name="google-site-verification"]', {
@@ -168,7 +173,7 @@ export function SeoHead() {
       "@context": "https://schema.org",
       "@graph": graph,
     })
-  }, [canonical, description, indexable, locale, ogLocale, title])
+  }, [canonical, description, indexable, locale, ogImage, ogLocale, title])
 
   return null
 }

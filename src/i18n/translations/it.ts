@@ -411,6 +411,8 @@ export const it: Messages = {
     creditLove: "Fatto con",
     creditLoveWord: "amore",
     contactHeading: "Contatto",
+    flightDestinations: "Voli per le città più amate",
+    flightTypes: "Tipi di volo",
   },
   contact: {
     title: "Raccontaci dove deve andare il viaggio.",
