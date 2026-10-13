@@ -38,7 +38,7 @@ On Netlify, add `public/_redirects` only if you move the redirect file into `pub
 /*    /index.html   200
 ```
 
-On Vercel, a `vercel.json` rewrite to `/index.html` is equivalent. Neither file is required if the host already has SPA fallback enabled.
+On Vercel (the current host), the root `vercel.json` rewrites every route to `/index.html`. Keep it: without it, Vercel returns HTTP 404 for direct visits to `/trains`, `/flights` and the other pages, and Google Ads disapproves ads that land on them.
 
 ## After deploy
 
