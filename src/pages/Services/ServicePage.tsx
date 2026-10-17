@@ -4,7 +4,7 @@ import { PageHero } from "../../components/hero/PageHero"
 import { Button } from "../../components/common/Button"
 import { PhoneStrip } from "../../components/common/PhoneStrip"
 import { SearchCard } from "../../components/travel/SearchCard"
-import { contactInfo } from "../../data/contact"
+import { contactInfo, hotelsDeskPhoneDisplay } from "../../data/contact"
 import { getServicePage, servicePageLinks, type ServicePageSlug } from "../../data/servicePages"
 import { useTranslation } from "../../i18n"
 import { Link } from "react-router-dom"
@@ -34,6 +34,8 @@ export function ServicePage({ slug }: ServicePageProps) {
               <PhoneStrip variant="hero" showTrains showMain={false} />
             ) : slug === "cars" ? (
               <PhoneStrip variant="hero" showCars showMain={false} />
+            ) : slug === "hotels" ? (
+              <PhoneStrip variant="hero" showHotels showMain={false} />
             ) : (
               <PhoneStrip variant="hero" />
             )}
@@ -49,7 +51,10 @@ export function ServicePage({ slug }: ServicePageProps) {
         <div className="container">
           {doc.searchTab ? (
             <p className={styles.searchNote}>
-              <strong>{t("categories.bookingLead")}</strong> {t("categories.bookingBody", { service: t(`nav.${slug}`) })}
+              <strong>{t("categories.bookingLead")}</strong> {t("categories.bookingBody", {
+                service: t(`nav.${slug}`),
+                phone: slug === "hotels" ? hotelsDeskPhoneDisplay : contactInfo.phoneDisplay,
+              })}
             </p>
           ) : null}
 
@@ -169,6 +174,8 @@ export function ServicePage({ slug }: ServicePageProps) {
                 <PhoneStrip variant="dark" showTrains showMain={false} />
               ) : slug === "cars" ? (
                 <PhoneStrip variant="dark" showCars showMain={false} />
+              ) : slug === "hotels" ? (
+                <PhoneStrip variant="dark" showHotels showMain={false} />
               ) : (
                 <a className={styles.callLight} href={contactInfo.phoneHref}>
                   <Phone size={16} strokeWidth={2.2} aria-hidden="true" />

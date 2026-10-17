@@ -46,6 +46,7 @@ export type Messages = {
     callUs: string
     callTrains: string
     callCarRentals: string
+    callHotels: string
     close: string
   }
   common: {
@@ -62,6 +63,7 @@ export type Messages = {
     reservations: string
     trainReservations: string
     carRentals: string
+    hotelReservations: string
   }
   nav: {
     flights: string
@@ -77,6 +79,7 @@ export type Messages = {
     callForReservations: string
     callForTrainReservations: string
     callForCarRentals: string
+    callForHotelReservations: string
   }
   hero: {
     titleLine1: string

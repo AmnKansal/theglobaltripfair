@@ -19,7 +19,7 @@ export const es: Messages = {
     hotels: {
       title: "Reserva de hotel | TheGlobalTripFair.com",
       description:
-        "Reserve hoteles en el mundo con TheGlobalTripFair.com. Compare habitaciones y condiciones por teléfono — 888-404-0651.",
+        "Reserve hoteles en el mundo con TheGlobalTripFair.com. Compare habitaciones y condiciones por teléfono — +1 (888) 647-0631.",
     },
     holidays: {
       title: "Paquetes vacacionales | TheGlobalTripFair.com",
@@ -103,6 +103,7 @@ export const es: Messages = {
     callUs: "Llámenos",
     callTrains: "Llamar a reservas de tren",
     callCarRentals: "Llamar al alquiler de coches",
+    callHotels: "Llamar a reservas de hotel",
     close: "Cerrar",
   },
   common: {
@@ -119,6 +120,7 @@ export const es: Messages = {
     reservations: "Reservas",
     trainReservations: "Reservas de tren",
     carRentals: "Alquiler de coches",
+    hotelReservations: "Reservas de hotel",
   },
   nav: {
     flights: "Vuelos",
@@ -134,6 +136,7 @@ export const es: Messages = {
     callForReservations: "Llame para reservar",
     callForTrainReservations: "Llame para reservar trenes",
     callForCarRentals: "Llame para alquilar un coche",
+    callForHotelReservations: "Llame para reservar hoteles",
   },
   hero: {
     titleLine1: "Todo su viaje,",
@@ -432,7 +435,7 @@ export const es: Messages = {
   categories: {
     bookingLead: "Reservado para usted por nuestro equipo de viajes.",
     bookingBody:
-      "Indique arriba los datos de su viaje y luego llame al 888-404-0651 o escriba a support@theglobaltripfair.com — revisamos precios y disponibilidad actuales y completamos la reserva con usted.",
+      "Indique arriba los datos de su viaje y luego llame al {phone} o escriba a support@theglobaltripfair.com — revisamos precios y disponibilidad actuales y completamos la reserva con usted.",
     flightsTitle: "Vuelos a todo el mundo,\ncomparados y reservados para usted.",
     flightsCopy:
       "Indique abajo su ruta y sus fechas. Nuestro equipo de viajes revisa las tarifas actuales y completa la reserva con usted por teléfono.",

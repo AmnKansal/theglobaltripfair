@@ -1,7 +1,15 @@
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
-import { CarFront, Headset, Phone, TrainFront, X } from "lucide-react"
-import { contactInfo, hasCarsPhone, hasTrainsPhone, isCarsPath, isTrainsPath } from "../../data/contact"
+import { CarFront, Headset, Hotel, Phone, TrainFront, X } from "lucide-react"
+import {
+  contactInfo,
+  hasCarsPhone,
+  hasHotelsPhone,
+  hasTrainsPhone,
+  isCarsPath,
+  isHotelsPath,
+  isTrainsPath,
+} from "../../data/contact"
 import { useTranslation } from "../../i18n"
 import styles from "./FloatingCallButton.module.css"
 
@@ -13,6 +21,7 @@ export function FloatingCallButton() {
   const [visible, setVisible] = useState(true)
   const trainsOnly = hasTrainsPhone && isTrainsPath(pathname)
   const carsOnly = hasCarsPhone && isCarsPath(pathname)
+  const hotelsOnly = hasHotelsPhone && isHotelsPath(pathname)
 
   useEffect(() => {
     try {
@@ -51,13 +60,21 @@ export function FloatingCallButton() {
           tag: t("common.carRentals"),
           tagIcon: <CarFront size={14} strokeWidth={2.2} />,
         }
-      : {
-          href: contactInfo.phoneHref,
-          display: contactInfo.phoneDisplay,
-          label: t("a11y.callUs"),
-          tag: t("common.travelHelp"),
-          tagIcon: <Headset size={14} strokeWidth={2.2} />,
-        }
+      : hotelsOnly
+        ? {
+            href: contactInfo.hotelsPhoneHref,
+            display: contactInfo.hotelsPhoneDisplay,
+            label: t("a11y.callHotels"),
+            tag: t("common.hotelReservations"),
+            tagIcon: <Hotel size={14} strokeWidth={2.2} />,
+          }
+        : {
+            href: contactInfo.phoneHref,
+            display: contactInfo.phoneDisplay,
+            label: t("a11y.callUs"),
+            tag: t("common.travelHelp"),
+            tagIcon: <Headset size={14} strokeWidth={2.2} />,
+          }
 
   return (
     <>

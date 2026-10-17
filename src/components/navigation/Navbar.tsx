@@ -4,8 +4,10 @@ import { Menu, Phone } from "lucide-react"
 import {
   contactInfo,
   hasCarsPhone,
+  hasHotelsPhone,
   hasTrainsPhone,
   isCarsPath,
+  isHotelsPath,
   isTrainsPath,
   toInternationalDisplay,
 } from "../../data/contact"
@@ -22,6 +24,7 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const trainsPrimary = hasTrainsPhone && isTrainsPath(location.pathname)
   const carsPrimary = hasCarsPhone && isCarsPath(location.pathname)
+  const hotelsPrimary = hasHotelsPhone && isHotelsPath(location.pathname)
   const headerPhone = trainsPrimary
     ? {
         href: contactInfo.trainsPhoneHref,
@@ -36,12 +39,19 @@ export function Navbar() {
           a11y: t("a11y.callCarRentals"),
           label: t("nav.callForCarRentals"),
         }
-      : {
-          href: contactInfo.phoneHref,
-          display: contactInfo.phoneDisplay,
-          a11y: t("a11y.callUs"),
-          label: t("nav.callForReservations"),
-        }
+      : hotelsPrimary
+        ? {
+            href: contactInfo.hotelsPhoneHref,
+            display: contactInfo.hotelsPhoneDisplay,
+            a11y: t("a11y.callHotels"),
+            label: t("nav.callForHotelReservations"),
+          }
+        : {
+            href: contactInfo.phoneHref,
+            display: contactInfo.phoneDisplay,
+            a11y: t("a11y.callUs"),
+            label: t("nav.callForReservations"),
+          }
   const headerPhoneHref = headerPhone.href
   const headerPhoneDisplay = toInternationalDisplay(headerPhone.display)
   const headerPhoneLabel = `${headerPhone.a11y} ${headerPhoneDisplay}`

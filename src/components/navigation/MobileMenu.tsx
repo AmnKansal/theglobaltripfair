@@ -1,7 +1,15 @@
 import { createPortal } from "react-dom"
 import { NavLink, useLocation } from "react-router-dom"
 import { Phone, X } from "lucide-react"
-import { contactInfo, hasCarsPhone, hasTrainsPhone, isCarsPath, isTrainsPath } from "../../data/contact"
+import {
+  contactInfo,
+  hasCarsPhone,
+  hasHotelsPhone,
+  hasTrainsPhone,
+  isCarsPath,
+  isHotelsPath,
+  isTrainsPath,
+} from "../../data/contact"
 import { primaryNav } from "../../data/navigation"
 import { useTranslation } from "../../i18n"
 import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
@@ -19,6 +27,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
   const { pathname } = useLocation()
   const trainsPrimary = hasTrainsPhone && isTrainsPath(pathname)
   const carsPrimary = hasCarsPhone && isCarsPath(pathname)
+  const hotelsPrimary = hasHotelsPhone && isHotelsPath(pathname)
   useLockBodyScroll(open)
   if (!open) return null
 
@@ -67,6 +76,14 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
                 {t("common.carRentals")}
               </span>
               <strong>{contactInfo.carsPhoneDisplay}</strong>
+            </a>
+          ) : hotelsPrimary ? (
+            <a className={styles.call} href={contactInfo.hotelsPhoneHref} onClick={onClose}>
+              <span className={styles.callLabel}>
+                <Phone size={16} strokeWidth={2.2} aria-hidden="true" />
+                {t("common.hotelReservations")}
+              </span>
+              <strong>{contactInfo.hotelsPhoneDisplay}</strong>
             </a>
           ) : (
             <a className={styles.call} href={contactInfo.phoneHref} onClick={onClose}>

@@ -1,6 +1,6 @@
 import { BRAND_NAME, COMPANY_NAME } from "../legal/brand"
 import { media } from "../media"
-import { contactInfo } from "../contact"
+import { contactInfo, hotelsDeskPhoneDisplay } from "../contact"
 import type { ServiceDoc } from "./types"
 
 export const hotelsPage: ServiceDoc = {
@@ -58,9 +58,9 @@ export const hotelsPage: ServiceDoc = {
     { question: "Can you request connecting or accessible rooms?", answer: "We place those requests with the hotel and note them on the reservation. Availability is confirmed at check-in; we will not pretend a request is a guarantee." },
     { question: "How far ahead should I book?", answer: "Two to four months is wise for holidays and popular islands. For a routine city stay, a few weeks is often enough, and same-week rooms still appear — call and we look." },
     { question: "Can you hold rooms for a reunion or group?", answer: "For larger parties we set up a room block so the group stays together until a cutoff date. Flights can sit on the same file if you want everyone arriving together." },
-    { question: "What if I land late?", answer: `Call ${contactInfo.phoneDisplay} and we notify the hotel so the room is held past the usual cutoff. If we also booked the flights, we handle both pieces together.` },
+    { question: "What if I land late?", answer: `Call ${hotelsDeskPhoneDisplay} and we notify the hotel so the room is held past the usual cutoff. If we also booked the flights, we handle both pieces together.` },
     { question: "Can I start with the form on this page?", answer: "Yes — enter your hotel details above, then call or email our team. We check current rates and complete the booking with you." },
   ],
   ctaTitle: "Tell us the city. We will bring the shortlist.",
-  ctaCopy: `Call ${contactInfo.phoneDisplay} or write to ${contactInfo.email}. ${COMPANY_NAME} will compare stays for your dates and send confirmation once you choose.`,
+  ctaCopy: `Call ${hotelsDeskPhoneDisplay} or write to ${contactInfo.email}. ${COMPANY_NAME} will compare stays for your dates and send confirmation once you choose.`,
 }

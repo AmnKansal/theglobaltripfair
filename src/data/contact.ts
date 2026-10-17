@@ -24,6 +24,9 @@ export const TRAINS_PHONE_DISPLAY = "888-720-0121"
 /** Dedicated car rentals TFN, shown in international format on the car rental page. */
 export const CARS_PHONE_DISPLAY = "+1 (888) 737-0661"
 
+/** Dedicated hotel reservations TFN, shown in international format on the hotels page. */
+export const HOTELS_PHONE_DISPLAY = "+1 (888) 647-0631"
+
 export const contactInfo = {
   phoneDisplay: MAIN_PHONE_DISPLAY,
   phoneHref: toTelHref(MAIN_PHONE_DISPLAY),
@@ -31,6 +34,8 @@ export const contactInfo = {
   trainsPhoneHref: toTelHref(TRAINS_PHONE_DISPLAY),
   carsPhoneDisplay: CARS_PHONE_DISPLAY,
   carsPhoneHref: toTelHref(CARS_PHONE_DISPLAY),
+  hotelsPhoneDisplay: HOTELS_PHONE_DISPLAY,
+  hotelsPhoneHref: toTelHref(HOTELS_PHONE_DISPLAY),
   email: "support@theglobaltripfair.com",
   emailHref: "mailto:support@theglobaltripfair.com",
   address: {
@@ -58,6 +63,12 @@ export const hasCarsPhone = toE164(CARS_PHONE_DISPLAY).length >= 12
 export const carsDeskPhoneDisplay = hasCarsPhone ? contactInfo.carsPhoneDisplay : contactInfo.phoneDisplay
 
 export const isCarsPath = (pathname: string) => pathname === "/cars"
+
+export const hasHotelsPhone = toE164(HOTELS_PHONE_DISPLAY).length >= 12
+
+export const hotelsDeskPhoneDisplay = hasHotelsPhone ? contactInfo.hotelsPhoneDisplay : contactInfo.phoneDisplay
+
+export const isHotelsPath = (pathname: string) => pathname === "/hotels"
 
 export const contactAddressQuery = `${contactInfo.address.street}, ${contactInfo.address.city}, ${contactInfo.address.state} ${contactInfo.address.zip}, ${contactInfo.address.country}`
 

@@ -19,7 +19,7 @@ export const pt: Messages = {
     hotels: {
       title: "Reserva de hotel | TheGlobalTripFair.com",
       description:
-        "Reserve hotéis no mundo com TheGlobalTripFair.com. Compare quartos e regras tarifárias por telefone — 888-404-0651.",
+        "Reserve hotéis no mundo com TheGlobalTripFair.com. Compare quartos e regras tarifárias por telefone — +1 (888) 647-0631.",
     },
     holidays: {
       title: "Pacotes de férias | TheGlobalTripFair.com",
@@ -103,6 +103,7 @@ export const pt: Messages = {
     callUs: "Ligar-nos",
     callTrains: "Ligar para reservas de comboio",
     callCarRentals: "Ligar para o aluguer de carros",
+    callHotels: "Ligar para reservas de hotel",
     close: "Fechar",
   },
   common: {
@@ -119,6 +120,7 @@ export const pt: Messages = {
     reservations: "Reservas",
     trainReservations: "Reservas de comboio",
     carRentals: "Aluguer de carros",
+    hotelReservations: "Reservas de hotel",
   },
   nav: {
     flights: "Voos",
@@ -134,6 +136,7 @@ export const pt: Messages = {
     callForReservations: "Ligue para reservar",
     callForTrainReservations: "Ligue para reservar comboios",
     callForCarRentals: "Ligue para alugar um carro",
+    callForHotelReservations: "Ligue para reservar hotéis",
   },
   hero: {
     titleLine1: "Toda a sua viagem,",
@@ -432,7 +435,7 @@ export const pt: Messages = {
   categories: {
     bookingLead: "Reservado para si pela nossa equipa de viagens.",
     bookingBody:
-      "Indique acima os dados da sua viagem e depois ligue para o 888-404-0651 ou escreva para support@theglobaltripfair.com — verificamos preços e disponibilidade atuais e concluímos a reserva consigo.",
+      "Indique acima os dados da sua viagem e depois ligue para o {phone} ou escreva para support@theglobaltripfair.com — verificamos preços e disponibilidade atuais e concluímos a reserva consigo.",
     flightsTitle: "Voos para todo o mundo,\ncomparados e reservados para si.",
     flightsCopy:
       "Indique abaixo a sua rota e as datas. A nossa equipa verifica as tarifas atuais e conclui a reserva consigo por telefone.",

@@ -19,7 +19,7 @@ export const it: Messages = {
     hotels: {
       title: "Prenotazione hotel | TheGlobalTripFair.com",
       description:
-        "Prenota hotel nel mondo con TheGlobalTripFair.com. Confronta camere e condizioni al telefono — 888-404-0651.",
+        "Prenota hotel nel mondo con TheGlobalTripFair.com. Confronta camere e condizioni al telefono — +1 (888) 647-0631.",
     },
     holidays: {
       title: "Pacchetti vacanza | TheGlobalTripFair.com",
@@ -103,6 +103,7 @@ export const it: Messages = {
     callUs: "Chiamaci",
     callTrains: "Chiama le prenotazioni treno",
     callCarRentals: "Chiama il noleggio auto",
+    callHotels: "Chiama le prenotazioni hotel",
     close: "Chiudi",
   },
   reach: {
@@ -136,6 +137,7 @@ export const it: Messages = {
     reservations: "Prenotazioni",
     trainReservations: "Prenotazioni treno",
     carRentals: "Noleggio auto",
+    hotelReservations: "Prenotazioni hotel",
   },
   nav: {
     flights: "Voli",
@@ -151,6 +153,7 @@ export const it: Messages = {
     callForReservations: "Chiama per prenotare",
     callForTrainReservations: "Chiama per prenotare il treno",
     callForCarRentals: "Chiama per noleggiare un’auto",
+    callForHotelReservations: "Chiama per prenotare un hotel",
   },
   hero: {
     titleLine1: "Tutto il tuo viaggio,",
@@ -432,7 +435,7 @@ export const it: Messages = {
   categories: {
     bookingLead: "Prenotato per te dal nostro team di viaggio.",
     bookingBody:
-      "Inserisci sopra i dettagli del viaggio, poi chiama il 888-404-0651 o scrivi a support@theglobaltripfair.com — verifichiamo prezzi e disponibilità attuali e completiamo la prenotazione con te.",
+      "Inserisci sopra i dettagli del viaggio, poi chiama il {phone} o scrivi a support@theglobaltripfair.com — verifichiamo prezzi e disponibilità attuali e completiamo la prenotazione con te.",
     flightsTitle: "Voli in tutto il mondo,\nconfrontati e prenotati per te.",
     flightsCopy:
       "Inserisci qui sotto la tua tratta e le date. Il nostro team verifica le tariffe del momento e completa la prenotazione con te al telefono.",

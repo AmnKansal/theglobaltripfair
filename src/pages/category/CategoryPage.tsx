@@ -2,6 +2,7 @@ import { PhoneStrip } from "../../components/common/PhoneStrip"
 import { PageHero } from "../../components/hero/PageHero"
 import { SearchCard } from "../../components/travel/SearchCard"
 import { categories, type CategoryKind } from "../../data/categories"
+import { contactInfo } from "../../data/contact"
 import { useTranslation } from "../../i18n"
 import styles from "./CategoryPage.module.css"
 
@@ -26,7 +27,7 @@ export function CategoryPage({ kind }: CategoryPageProps) {
       <div className="container">
         <p className={styles.note}>
           <strong>{t("categories.bookingLead")}</strong>{" "}
-          {t("categories.bookingBody", { service: t(`nav.${kind}`) })}
+          {t("categories.bookingBody", { service: t(`nav.${kind}`), phone: contactInfo.phoneDisplay })}
         </p>
       </div>
     </div>

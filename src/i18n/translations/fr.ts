@@ -19,7 +19,7 @@ export const fr: Messages = {
     hotels: {
       title: "Réservation d’hôtel | TheGlobalTripFair.com",
       description:
-        "Réservez des hôtels dans le monde avec TheGlobalTripFair.com. Comparez chambres et conditions au 888-404-0651.",
+        "Réservez des hôtels dans le monde avec TheGlobalTripFair.com. Comparez chambres et conditions au +1 (888) 647-0631.",
     },
     holidays: {
       title: "Forfaits vacances | TheGlobalTripFair.com",
@@ -103,6 +103,7 @@ export const fr: Messages = {
     callUs: "Nous appeler",
     callTrains: "Appeler les réservations train",
     callCarRentals: "Appeler la location de voiture",
+    callHotels: "Appeler les réservations hôtel",
     close: "Fermer",
   },
   common: {
@@ -119,6 +120,7 @@ export const fr: Messages = {
     reservations: "Réservations",
     trainReservations: "Réservations train",
     carRentals: "Location de voiture",
+    hotelReservations: "Réservations hôtel",
   },
   nav: {
     flights: "Vols",
@@ -134,6 +136,7 @@ export const fr: Messages = {
     callForReservations: "Appelez pour réserver",
     callForTrainReservations: "Appelez pour réserver un train",
     callForCarRentals: "Appelez pour louer une voiture",
+    callForHotelReservations: "Appelez pour réserver un hôtel",
   },
   hero: {
     titleLine1: "Tout votre voyage,",
@@ -450,7 +453,7 @@ export const fr: Messages = {
   categories: {
     bookingLead: "Réservé pour vous par notre équipe voyage.",
     bookingBody:
-      "Indiquez les détails de votre voyage ci-dessus, puis appelez le 888-404-0651 ou écrivez à support@theglobaltripfair.com — nous vérifions les prix et disponibilités du moment et finalisons la réservation avec vous.",
+      "Indiquez les détails de votre voyage ci-dessus, puis appelez le {phone} ou écrivez à support@theglobaltripfair.com — nous vérifions les prix et disponibilités du moment et finalisons la réservation avec vous.",
     flightsTitle: "Des vols dans le monde entier,\ncomparés et réservés pour vous.",
     flightsCopy:
       "Indiquez votre trajet et vos dates ci-dessous. Notre équipe vérifie les tarifs du moment et finalise la réservation avec vous par téléphone.",

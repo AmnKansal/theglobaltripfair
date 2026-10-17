@@ -19,7 +19,7 @@ export const en: Messages = {
     hotels: {
       title: "Hotel Booking | TheGlobalTripFair.com",
       description:
-        "Book hotels worldwide with TheGlobalTripFair.com. Compare rooms, rate rules and resort fees by phone — call 888-404-0651.",
+        "Book hotels worldwide with TheGlobalTripFair.com. Compare rooms, rate rules and resort fees by phone — call +1 (888) 647-0631.",
     },
     holidays: {
       title: "Holiday Packages | TheGlobalTripFair.com",
@@ -105,6 +105,7 @@ export const en: Messages = {
     callUs: "Call us",
     callTrains: "Call train reservations",
     callCarRentals: "Call car rentals",
+    callHotels: "Call hotel reservations",
     close: "Close",
   },
   common: {
@@ -121,6 +122,7 @@ export const en: Messages = {
     reservations: "Reservations",
     trainReservations: "Train reservations",
     carRentals: "Car rentals",
+    hotelReservations: "Hotel reservations",
   },
   nav: {
     flights: "Flights",
@@ -136,6 +138,7 @@ export const en: Messages = {
     callForReservations: "Call for reservations",
     callForTrainReservations: "Call for train reservations",
     callForCarRentals: "Call for car rentals",
+    callForHotelReservations: "Call for hotel reservations",
   },
   hero: {
     titleLine1: "Your whole trip,",
@@ -452,7 +455,7 @@ export const en: Messages = {
   categories: {
     bookingLead: "Booked for you by our travel team.",
     bookingBody:
-      "Add your trip details above, then call 888-404-0651 or email support@theglobaltripfair.com — we check current prices and availability and complete the booking with you.",
+      "Add your trip details above, then call {phone} or email support@theglobaltripfair.com — we check current prices and availability and complete the booking with you.",
     flightsTitle: "Flights worldwide,\ncompared and booked for you.",
     flightsCopy:
       "Enter your route and dates below. Our travel team checks current fares and completes the booking with you by phone.",

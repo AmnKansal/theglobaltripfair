@@ -19,7 +19,7 @@ export const de: Messages = {
     hotels: {
       title: "Hotelbuchung | TheGlobalTripFair.com",
       description:
-        "Buchen Sie Hotels weltweit mit TheGlobalTripFair.com. Zimmer und Tarifregeln telefonisch vergleichen — 888-404-0651.",
+        "Buchen Sie Hotels weltweit mit TheGlobalTripFair.com. Zimmer und Tarifregeln telefonisch vergleichen — +1 (888) 647-0631.",
     },
     holidays: {
       title: "Pauschalreisen | TheGlobalTripFair.com",
@@ -103,6 +103,7 @@ export const de: Messages = {
     callUs: "Anrufen",
     callTrains: "Zugreservierungen anrufen",
     callCarRentals: "Autovermietung anrufen",
+    callHotels: "Hotelreservierungen anrufen",
     close: "Schließen",
   },
   common: {
@@ -119,6 +120,7 @@ export const de: Messages = {
     reservations: "Reservierungen",
     trainReservations: "Zugreservierungen",
     carRentals: "Autovermietung",
+    hotelReservations: "Hotelreservierungen",
   },
   nav: {
     flights: "Flüge",
@@ -134,6 +136,7 @@ export const de: Messages = {
     callForReservations: "Für Reservierungen anrufen",
     callForTrainReservations: "Für Zugreservierungen anrufen",
     callForCarRentals: "Für Mietwagen anrufen",
+    callForHotelReservations: "Für Hotelreservierungen anrufen",
   },
   hero: {
     titleLine1: "Ihre ganze Reise,",
@@ -432,7 +435,7 @@ export const de: Messages = {
   categories: {
     bookingLead: "Von unserem Reiseteam für Sie gebucht.",
     bookingBody:
-      "Geben Sie oben Ihre Reisedaten ein und rufen Sie dann 888-404-0651 an oder schreiben Sie an support@theglobaltripfair.com — wir prüfen aktuelle Preise und Verfügbarkeit und schließen die Buchung mit Ihnen ab.",
+      "Geben Sie oben Ihre Reisedaten ein und rufen Sie dann {phone} an oder schreiben Sie an support@theglobaltripfair.com — wir prüfen aktuelle Preise und Verfügbarkeit und schließen die Buchung mit Ihnen ab.",
     flightsTitle: "Flüge weltweit,\nfür Sie verglichen und gebucht.",
     flightsCopy:
       "Geben Sie unten Ihre Strecke und Ihre Reisedaten ein. Unser Reiseteam prüft die aktuellen Tarife und schließt die Buchung telefonisch mit Ihnen ab.",
