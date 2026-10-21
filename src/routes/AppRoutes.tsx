@@ -47,6 +47,8 @@ export function AppRoutes() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
+          {/* The Spanish homepage; LanguageProvider reads the language from this URL. */}
+          <Route path="/es" element={<Home />} />
           <Route path="/flights" element={<Flights />} />
           {/* Keyed by slug so the quote form resets when moving between flight pages. */}
           {destinationFlightPages.map((doc) => (

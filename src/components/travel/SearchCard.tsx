@@ -47,7 +47,7 @@ const tabs: { id: SearchTab; icon: ReactNode }[] = [
 ]
 
 export function SearchCard({ defaultTab = "flights", flightTo }: SearchCardProps) {
-  const { t } = useTranslation()
+  const { t, messages } = useTranslation()
   const navigate = useNavigate()
   const [activeSearchType, setActiveSearchType] = useState<SearchTab>(defaultTab)
   const [drafts, setDrafts] = useState<Drafts>({
@@ -120,7 +120,7 @@ export function SearchCard({ defaultTab = "flights", flightTo }: SearchCardProps
           <>
             <LocationField
               label={t("search.from")}
-              placeholder={t("search.cityOrAirport")}
+              placeholder={messages.search.fromPlaceholder ?? t("search.cityOrAirport")}
               value={request.from}
               query={queries.from}
               includeAirports
@@ -147,7 +147,7 @@ export function SearchCard({ defaultTab = "flights", flightTo }: SearchCardProps
             </button>
             <LocationField
               label={t("search.to")}
-              placeholder={t("search.cityOrAirport")}
+              placeholder={messages.search.toPlaceholder ?? t("search.cityOrAirport")}
               value={request.to}
               query={queries.to}
               includeAirports

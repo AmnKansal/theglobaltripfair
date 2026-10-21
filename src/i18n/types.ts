@@ -108,6 +108,9 @@ export type Messages = {
     date: string
     passengers: string
     cityOrAirport: string
+    /** Optional flight From/To placeholders, for languages where cityOrAirport is too long for the field. */
+    fromPlaceholder?: string
+    toPlaceholder?: string
     cityOrHotel: string
     whereTo: string
     pickupPlaceholder: string
@@ -297,6 +300,11 @@ export type Messages = {
     contactHeading: string
     flightDestinations: string
     flightTypes: string
+  }
+  /** Footer link labels for the English flight pages, keyed by page slug. Without them the footer shows the page names. */
+  flightLinks?: {
+    cities: Record<string, string>
+    types: Record<string, string>
   }
   reach: {
     eyebrow: string

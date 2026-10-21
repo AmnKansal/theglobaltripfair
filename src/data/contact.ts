@@ -75,3 +75,15 @@ export const contactAddressQuery = `${contactInfo.address.street}, ${contactInfo
 export const contactMapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactAddressQuery)}`
 
 export const contactCityLine = `${contactInfo.address.city}, ${contactInfo.address.state}`
+
+/** The office country in the page language, e.g. "Estados Unidos" on the Spanish homepage. */
+export function contactCountryName(lang: string): string {
+  try {
+    return (
+      new Intl.DisplayNames([lang], { type: "region" }).of(contactInfo.address.countryCode) ??
+      contactInfo.address.country
+    )
+  } catch {
+    return contactInfo.address.country
+  }
+}

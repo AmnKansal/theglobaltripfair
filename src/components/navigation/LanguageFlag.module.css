@@ -1,0 +1,16 @@
+.flag {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  /* A hairline keeps the white bands of the US, French and Italian flags off white surfaces. */
+  box-shadow: 0 0 0 1px rgba(22, 21, 19, 0.12);
+}
+
+.flag svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

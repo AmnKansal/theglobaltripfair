@@ -40,6 +40,8 @@ On Netlify, add `public/_redirects` only if you move the redirect file into `pub
 
 On Vercel (the current host), the root `vercel.json` rewrites every route to `/index.html`. Keep it: without it, Vercel returns HTTP 404 for direct visits to `/trains`, `/flights` and the other pages, and Google Ads disapproves ads that land on them.
 
+The Spanish homepage `/es` has its own shell. The build writes `dist/es/index.html` with Spanish `lang`, title, description, canonical and hreflang tags (see `vite.config.ts`), and the first rewrite in `vercel.json` serves it for `/es`. On other hosts, serve `es/index.html` for `/es` too.
+
 ## After deploy
 
 - Confirm `https://theglobaltripfair.com/` loads and the search form works.

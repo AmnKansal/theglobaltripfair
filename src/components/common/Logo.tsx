@@ -8,13 +8,13 @@ type LogoProps = {
 }
 
 export function Logo({ compact = false, theme = "dark" }: LogoProps) {
-  const { t } = useTranslation()
+  const { t, homePath } = useTranslation()
   const light = theme === "light"
   const src = compact ? "/icon.png" : light ? "/logo-white.png" : "/logo.png"
 
   return (
     <Link
-      to="/"
+      to={homePath}
       className={`${styles.brand} ${compact ? styles.compact : ""} ${light ? styles.light : ""}`}
       aria-label={t("a11y.home")}
     >

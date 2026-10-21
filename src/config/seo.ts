@@ -93,6 +93,7 @@ const flightPagePaths: PublicPath[] = [
 /** Canonical public routes. Keep sitemap.xml in sync when this list changes. */
 export const publicPaths: PublicPath[] = [
   { path: "/", seoKey: "home", changefreq: "daily", priority: "1.0", indexable: true },
+  { path: "/es", seoKey: "home", changefreq: "daily", priority: "1.0", indexable: true },
   { path: "/flights", seoKey: "flights", changefreq: "weekly", priority: "0.9", indexable: true },
   ...flightPagePaths,
   { path: "/hotels", seoKey: "hotels", changefreq: "weekly", priority: "0.9", indexable: true },
@@ -126,6 +127,13 @@ export const publicPaths: PublicPath[] = [
 
 export const sitemapPaths = publicPaths.filter((route) => route.indexable)
 
+/** The homepage in each language that has its own URL, linked to each other with hreflang. Keep in sync with scripts/write-sitemap.mjs. */
+export const homeAlternates = [
+  { hreflang: "en", path: "/" },
+  { hreflang: "es", path: "/es" },
+  { hreflang: "x-default", path: "/" },
+] as const
+
 export const absoluteUrl = (path = "/") => {
   if (path === "/") return SITE_URL
   return `${SITE_ORIGIN}${path}`
@@ -138,7 +146,8 @@ export const ogLocales: Record<string, string> = {
   en: "en_US",
   fr: "fr_FR",
   de: "de_DE",
-  es: "es_ES",
+  /* The /es homepage is written for US and Latin American Spanish speakers. */
+  es: "es_LA",
   it: "it_IT",
   pt: "pt_PT",
 }

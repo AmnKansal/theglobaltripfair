@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom"
 import { Mail, MapPin, Phone } from "lucide-react"
-import { contactCityLine, contactInfo, contactMapsHref, hasTrainsPhone } from "../../data/contact"
+import { contactCityLine, contactCountryName, contactInfo, contactMapsHref, hasTrainsPhone } from "../../data/contact"
 import { Logo } from "../common/Logo"
 import { destinationFlightLinks, flightTypeLinks } from "../../data/flightPages"
 import { footerTravelNav } from "../../data/navigation"
-import { useTranslation } from "../../i18n"
+import { languageMeta, useTranslation } from "../../i18n"
 import styles from "./Footer.module.css"
 
 export function Footer() {
-  const { t } = useTranslation()
+  const { t, locale, messages } = useTranslation()
   const year = new Date().getFullYear()
 
   return (
@@ -86,7 +86,7 @@ export function Footer() {
               <br />
               {contactCityLine} {contactInfo.address.zip}
               <br />
-              {contactInfo.address.country}
+              {contactCountryName(languageMeta[locale].htmlLang)}
             </span>
           </a>
         </div>
@@ -98,7 +98,7 @@ export function Footer() {
           <ul>
             {destinationFlightLinks.map((item) => (
               <li key={item.to}>
-                <Link to={item.to}>{item.city}</Link>
+                <Link to={item.to}>{messages.flightLinks?.cities[item.slug] ?? item.city}</Link>
               </li>
             ))}
           </ul>
@@ -108,7 +108,7 @@ export function Footer() {
           <ul>
             {flightTypeLinks.map((item) => (
               <li key={item.to}>
-                <Link to={item.to}>{item.label}</Link>
+                <Link to={item.to}>{messages.flightLinks?.types[item.slug] ?? item.label}</Link>
               </li>
             ))}
           </ul>

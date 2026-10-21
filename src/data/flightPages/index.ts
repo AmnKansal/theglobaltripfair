@@ -16,12 +16,14 @@ export const getDestinationFlightPage = (slug?: string) =>
 export const getFlightTypePage = (slug?: string) => flightTypePages.find((doc) => doc.slug === slug)
 
 export const destinationFlightLinks = destinationFlightPages.map((doc) => ({
+  slug: doc.slug,
   to: destinationFlightPath(doc.slug),
   label: `Flights to ${doc.shortName}`,
   city: doc.shortName,
 }))
 
 export const flightTypeLinks = flightTypePages.map((doc) => ({
+  slug: doc.slug,
   to: flightTypePath(doc.slug),
   label: doc.name,
 }))

@@ -14,7 +14,7 @@ import { primaryNav } from "../../data/navigation"
 import { useTranslation } from "../../i18n"
 import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
 import { Logo } from "../common/Logo"
-import { LanguageMenu } from "./LanguageMenu"
+import { LanguageList } from "./LanguageMenu"
 import styles from "./MobileMenu.module.css"
 
 type MobileMenuProps = {
@@ -97,7 +97,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
         </div>
 
         <div className={styles.language}>
-          <LanguageMenu variant="panel" />
+          <LanguageList onSelect={onClose} />
         </div>
       </aside>
     </div>,

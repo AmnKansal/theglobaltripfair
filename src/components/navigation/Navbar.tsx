@@ -74,8 +74,8 @@ export function Navbar() {
         </nav>
 
         <div className={styles.right}>
+          <LanguageMenu />
           <div className={styles.desktopActions}>
-            <LanguageMenu />
             <a className={styles.phone} href={headerPhoneHref} aria-label={headerPhoneLabel}>
               <span className={styles.phoneBadge} aria-hidden="true">
                 <Phone size={16} strokeWidth={2.2} />

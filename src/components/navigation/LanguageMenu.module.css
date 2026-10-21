@@ -5,22 +5,33 @@
 .trigger {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   height: 40px;
-  padding: 0 12px;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--color-charcoal);
+  padding: 0 10px 0 9px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-full);
+  color: var(--color-ink);
   white-space: nowrap;
+  transition:
+    background-color 180ms var(--ease),
+    border-color 180ms var(--ease);
 }
 
 .trigger:hover,
 .open {
-  background: var(--color-mist);
+  background: var(--color-paper);
+  border-color: var(--color-line-strong);
+}
+
+.code {
+  font-size: 0.8rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.06em;
 }
 
 .chevron {
+  color: var(--color-stone);
   transition: transform 180ms var(--ease);
 }
 
@@ -32,50 +43,173 @@
   position: absolute;
   top: calc(100% + 10px);
   right: 0;
-  min-width: 200px;
-  background: var(--color-white);
-  border: 1px solid var(--color-line);
-  border-radius: 16px;
-  box-shadow: var(--shadow-md);
-  padding: 8px;
   z-index: 20;
+  width: 224px;
+  padding: 6px;
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  box-shadow:
+    0 1px 2px rgba(22, 21, 19, 0.08),
+    0 16px 36px rgba(22, 21, 19, 0.14);
+  /* Short screens (landscape phones, zoomed-in laptops) scroll the list instead of cutting it off. */
+  max-height: calc(100dvh - var(--nav-height) - 16px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  transform-origin: top right;
+  animation: menu-in 180ms var(--ease);
+}
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
 }
 
 .option {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
   width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: var(--radius-sm);
   text-align: left;
-  padding: 10px 12px;
-  border-radius: 10px;
+  color: var(--color-ink);
+  transition: background-color 140ms var(--ease);
+}
+
+/* Fixed width so the initials and names line up in two columns. */
+.option .code {
+  width: 1.9rem;
+}
+
+.name {
+  flex: 1;
+  min-width: 0;
   font-size: 0.92rem;
-  font-weight: 600;
+  font-weight: 500;
+  color: var(--color-slate);
 }
 
 .option:hover,
-.option:focus-visible,
-.selected {
+.option:focus-visible {
+  background: var(--color-paper);
+}
+
+.option:focus-visible {
+  outline-offset: -2px;
+}
+
+.selected,
+.selected:hover,
+.selected:focus-visible {
   background: var(--color-red-soft);
+}
+
+.selected .name {
+  font-weight: 600;
   color: var(--color-red-ink);
 }
 
-.panel {
-  width: 100%;
+.check {
+  flex-shrink: 0;
+  color: var(--color-red);
 }
 
-.panel .trigger {
-  width: 100%;
-  justify-content: flex-start;
-  height: 48px;
+/* Mobile menu: all languages as tappable chips. */
+.listLabel {
+  margin-bottom: 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-stone);
+}
+
+.listGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: 48px;
+  padding: 0 12px;
   border-radius: 14px;
   background: var(--color-paper);
-  padding: 0 14px;
+  color: var(--color-ink);
+  text-align: left;
+  transition: background-color 140ms var(--ease);
 }
 
-.panel .menu {
-  left: 0;
-  right: 0;
-  width: 100%;
+.chip:hover {
+  background: var(--color-mist);
+}
+
+.chip .name {
+  overflow: hidden;
+  font-size: 0.88rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chipActive,
+.chipActive:hover {
+  background: var(--color-red-soft);
+}
+
+.chipActive .code,
+.chipActive .name {
+  color: var(--color-red-ink);
+}
+
+.chipActive .name {
+  font-weight: 600;
+}
+
+/* Tablet and phone header: matches the square call and menu buttons beside it. */
+@media (max-width: 1080px) {
+  .trigger {
+    gap: 7px;
+    height: 42px;
+    padding: 0 11px;
+    border: 0;
+    border-radius: 12px;
+    background: var(--color-paper);
+  }
+
+  .trigger:hover,
+  .open {
+    background: var(--color-mist);
+  }
+
+  .chevron {
+    display: none;
+  }
+}
+
+/* 40–42px button, 44px touch area. */
+@media (pointer: coarse) {
+  .trigger {
+    position: relative;
+  }
+
+  .trigger::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu {
+    animation: none;
+  }
+
+  .chevron {
+    transition: none;
+  }
 }

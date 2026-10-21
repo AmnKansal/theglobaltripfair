@@ -7,6 +7,7 @@ import {
   absoluteUrl,
   business,
   findPublicPath,
+  homeAlternates,
   ogLocales,
   searchVerification,
   type SeoRouteKey,
@@ -33,6 +34,18 @@ const upsertLink = (rel: string, href: string) => {
     document.head.appendChild(node)
   }
   node.setAttribute("href", href)
+}
+
+/** Replaces every hreflang link, so pages without a translation carry none. */
+const syncAlternateLinks = (links: ReadonlyArray<{ hreflang: string; href: string }>) => {
+  document.head.querySelectorAll('link[rel="alternate"][hreflang]').forEach((node) => node.remove())
+  for (const { hreflang, href } of links) {
+    const node = document.createElement("link")
+    node.setAttribute("rel", "alternate")
+    node.setAttribute("hreflang", hreflang)
+    node.setAttribute("href", href)
+    document.head.appendChild(node)
+  }
 }
 
 const pageTitleKey = (key: SeoRouteKey) => `seo.${key}.title`
@@ -84,6 +97,7 @@ export function SeoHead() {
       : t("seo.notFound.description")
   const ogLocale = ogLocales[locale] ?? "en_US"
   const ogImage = route?.image ? absoluteUrl(route.image) : DEFAULT_OG_IMAGE_ABS
+  const translatedHome = homeAlternates.some((entry) => entry.path === pathname)
 
   useLayoutEffect(() => {
     document.title = title
@@ -95,6 +109,11 @@ export function SeoHead() {
       content: indexable ? "index, follow" : "noindex, follow",
     })
     upsertLink("canonical", canonical)
+    syncAlternateLinks(
+      translatedHome
+        ? homeAlternates.map((entry) => ({ hreflang: entry.hreflang, href: absoluteUrl(entry.path) }))
+        : [],
+    )
 
     upsertMeta('meta[property="og:title"]', { property: "og:title", content: title })
     upsertMeta('meta[property="og:description"]', { property: "og:description", content: description })
@@ -173,7 +192,7 @@ export function SeoHead() {
       "@context": "https://schema.org",
       "@graph": graph,
     })
-  }, [canonical, description, indexable, locale, ogImage, ogLocale, title])
+  }, [canonical, description, indexable, locale, ogImage, ogLocale, title, translatedHome])
 
   return null
 }

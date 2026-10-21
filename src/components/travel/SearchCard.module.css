@@ -46,6 +46,19 @@
   box-shadow: var(--shadow-sm);
 }
 
+/* 42px tabs, 44px touch area inside the bar's padding. */
+@media (pointer: coarse) {
+  .tab {
+    position: relative;
+  }
+
+  .tab::after {
+    content: "";
+    position: absolute;
+    inset: -1px 0;
+  }
+}
+
 .form {
   display: flex;
   flex-wrap: wrap;
@@ -284,7 +297,8 @@
   cursor: pointer;
 }
 
-@media (max-width: 1200px) {
+/* Five flight fields, the swap and the quote button only share one row from about 1300px; narrower, the dates clip. */
+@media (max-width: 1300px) {
   .form {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));

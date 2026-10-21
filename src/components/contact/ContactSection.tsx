@@ -1,13 +1,13 @@
 import { useRef, useState } from "react"
 import { Mail, MapPin, Phone, TrainFront } from "lucide-react"
-import { contactCityLine, contactInfo, contactMapsHref, hasTrainsPhone } from "../../data/contact"
-import { useTranslation } from "../../i18n"
+import { contactCityLine, contactCountryName, contactInfo, contactMapsHref, hasTrainsPhone } from "../../data/contact"
+import { languageMeta, useTranslation } from "../../i18n"
 import { SectionHeading } from "../common/SectionHeading"
 import { ContactCard } from "./ContactCard"
 import styles from "./ContactSection.module.css"
 
 export function ContactSection() {
-  const { t } = useTranslation()
+  const { t, locale } = useTranslation()
   const gridRef = useRef<HTMLDivElement>(null)
   const [activeCard, setActiveCard] = useState(0)
   const cardCount = hasTrainsPhone ? 4 : 3
@@ -75,7 +75,7 @@ export function ContactSection() {
                   <br />
                   {contactInfo.address.city}, {contactInfo.address.state} {contactInfo.address.zip}
                   <br />
-                  {contactInfo.address.country}
+                  {contactCountryName(languageMeta[locale].htmlLang)}
                 </>
               }
               copy={t("reach.visitCopy")}
