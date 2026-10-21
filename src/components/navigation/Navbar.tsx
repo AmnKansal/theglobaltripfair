@@ -9,6 +9,7 @@ import {
   isCarsPath,
   isHotelsPath,
   isTrainsPath,
+  mainPhoneFor,
   toInternationalDisplay,
 } from "../../data/contact"
 import { primaryNav } from "../../data/navigation"
@@ -47,8 +48,7 @@ export function Navbar() {
             label: t("nav.callForHotelReservations"),
           }
         : {
-            href: contactInfo.phoneHref,
-            display: contactInfo.phoneDisplay,
+            ...mainPhoneFor(location.pathname),
             a11y: t("a11y.callUs"),
             label: t("nav.callForReservations"),
           }

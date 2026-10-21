@@ -1,6 +1,13 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { Mail, MapPin, Phone } from "lucide-react"
-import { contactCityLine, contactCountryName, contactInfo, contactMapsHref, hasTrainsPhone } from "../../data/contact"
+import {
+  contactCityLine,
+  contactCountryName,
+  contactInfo,
+  contactMapsHref,
+  hasTrainsPhone,
+  mainPhoneFor,
+} from "../../data/contact"
 import { Logo } from "../common/Logo"
 import { destinationFlightLinks, flightTypeLinks } from "../../data/flightPages"
 import { footerTravelNav } from "../../data/navigation"
@@ -9,6 +16,7 @@ import styles from "./Footer.module.css"
 
 export function Footer() {
   const { t, locale, messages } = useTranslation()
+  const mainPhone = mainPhoneFor(useLocation().pathname)
   const year = new Date().getFullYear()
 
   return (
@@ -56,11 +64,11 @@ export function Footer() {
 
         <div className={`${styles.column} ${styles.contactColumn}`}>
           <p className={styles.heading}>{t("footer.contactHeading")}</p>
-          <a href={contactInfo.phoneHref} aria-label={`${t("a11y.callUs")} ${contactInfo.phoneDisplay}`}>
+          <a href={mainPhone.href} aria-label={`${t("a11y.callUs")} ${mainPhone.display}`}>
             <Phone size={14} strokeWidth={2.2} aria-hidden="true" />
             <span>
               <small>{t("common.reservations")}</small>
-              {contactInfo.phoneDisplay}
+              {mainPhone.display}
             </span>
           </a>
           {hasTrainsPhone ? (

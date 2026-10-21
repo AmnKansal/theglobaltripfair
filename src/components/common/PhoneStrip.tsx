@@ -1,5 +1,6 @@
+import { useLocation } from "react-router-dom"
 import { CarFront, Hotel, Phone, TrainFront } from "lucide-react"
-import { contactInfo, hasCarsPhone, hasHotelsPhone, hasTrainsPhone } from "../../data/contact"
+import { contactInfo, hasCarsPhone, hasHotelsPhone, hasTrainsPhone, mainPhoneFor } from "../../data/contact"
 import { useTranslation } from "../../i18n"
 import { classNames } from "../../utils/classNames"
 import styles from "./PhoneStrip.module.css"
@@ -22,6 +23,7 @@ export function PhoneStrip({
   className,
 }: PhoneStripProps) {
   const { t } = useTranslation()
+  const mainPhone = mainPhoneFor(useLocation().pathname)
   const trains = showTrains && hasTrainsPhone
   const cars = showCars && hasCarsPhone
   const hotels = showHotels && hasHotelsPhone
@@ -33,13 +35,13 @@ export function PhoneStrip({
       {showMain ? (
         <a
           className={styles.line}
-          href={contactInfo.phoneHref}
-          aria-label={`${t("a11y.callUs")} ${contactInfo.phoneDisplay}`}
+          href={mainPhone.href}
+          aria-label={`${t("a11y.callUs")} ${mainPhone.display}`}
         >
           <Phone size={16} strokeWidth={2.2} aria-hidden="true" />
           <span>
             <small>{t("common.reservations")}</small>
-            <strong>{contactInfo.phoneDisplay}</strong>
+            <strong>{mainPhone.display}</strong>
           </span>
         </a>
       ) : null}

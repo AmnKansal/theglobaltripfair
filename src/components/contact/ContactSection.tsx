@@ -1,6 +1,14 @@
 import { useRef, useState } from "react"
+import { useLocation } from "react-router-dom"
 import { Mail, MapPin, Phone, TrainFront } from "lucide-react"
-import { contactCityLine, contactCountryName, contactInfo, contactMapsHref, hasTrainsPhone } from "../../data/contact"
+import {
+  contactCityLine,
+  contactCountryName,
+  contactInfo,
+  contactMapsHref,
+  hasTrainsPhone,
+  mainPhoneFor,
+} from "../../data/contact"
 import { languageMeta, useTranslation } from "../../i18n"
 import { SectionHeading } from "../common/SectionHeading"
 import { ContactCard } from "./ContactCard"
@@ -8,6 +16,7 @@ import styles from "./ContactSection.module.css"
 
 export function ContactSection() {
   const { t, locale } = useTranslation()
+  const mainPhone = mainPhoneFor(useLocation().pathname)
   const gridRef = useRef<HTMLDivElement>(null)
   const [activeCard, setActiveCard] = useState(0)
   const cardCount = hasTrainsPhone ? 4 : 3
@@ -40,10 +49,10 @@ export function ContactSection() {
             onScroll={handleScroll}
           >
             <ContactCard
-              href={contactInfo.phoneHref}
+              href={mainPhone.href}
               icon={<Phone size={20} strokeWidth={2.1} />}
               title={t("reach.call")}
-              value={contactInfo.phoneDisplay}
+              value={mainPhone.display}
               copy={t("reach.callCopy")}
               cta={t("reach.callCta")}
             />
