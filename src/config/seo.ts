@@ -1,4 +1,4 @@
-import { contactAddressQuery, contactInfo, hasTrainsPhone, toE164 } from "../data/contact"
+import { contactAddressQuery, contactInfo, footerPhoneLines, toE164 } from "../data/contact"
 import {
   destinationFlightPages,
   destinationFlightPath,
@@ -22,8 +22,7 @@ export const searchVerification = {
 export const business = {
   name: SITE_NAME,
   phoneDisplay: contactInfo.phoneDisplay,
-  telephone: toE164(contactInfo.phoneDisplay),
-  trainsTelephone: hasTrainsPhone ? toE164(contactInfo.trainsPhoneDisplay) : "",
+  telephones: footerPhoneLines.map((line) => toE164(line.display)),
   email: contactInfo.email,
   url: SITE_URL,
   address: {

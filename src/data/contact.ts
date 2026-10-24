@@ -70,6 +70,20 @@ export const hotelsDeskPhoneDisplay = hasHotelsPhone ? contactInfo.hotelsPhoneDi
 
 export const isHotelsPath = (pathname: string) => pathname === "/hotels"
 
+/**
+ * The phone lines every page lists in its footer. vite.config.ts writes the same numbers into
+ * the HTML shell, because Google Ads only approves a call-asset number it can find on the page.
+ */
+export const footerPhoneLines = [
+  { display: contactInfo.phoneDisplay, href: contactInfo.phoneHref, labelKey: "common.reservations", callKey: "a11y.callUs" },
+  ...(hasTrainsPhone
+    ? [{ display: contactInfo.trainsPhoneDisplay, href: contactInfo.trainsPhoneHref, labelKey: "common.trainReservations", callKey: "a11y.callTrains" }]
+    : []),
+  ...(hasCarsPhone
+    ? [{ display: contactInfo.carsPhoneDisplay, href: contactInfo.carsPhoneHref, labelKey: "common.carRentals", callKey: "a11y.callCarRentals" }]
+    : []),
+]
+
 export const contactAddressQuery = `${contactInfo.address.street}, ${contactInfo.address.city}, ${contactInfo.address.state} ${contactInfo.address.zip}, ${contactInfo.address.country}`
 
 export const contactMapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactAddressQuery)}`

@@ -2,12 +2,43 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join, resolve } from 'node:path'
 import react from '@vitejs/plugin-react'
 import { defineConfig, type Plugin } from 'vite'
+import { footerPhoneLines, toE164 } from './src/data/contact.ts'
 import { homeSeo } from './src/i18n/homeSeo.ts'
 
 const SITE_ORIGIN = 'https://theglobaltripfair.com'
 
 const escapeHtml = (value: string) =>
   value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+
+/** Applies each swap to the shell, failing the build if index.html no longer has what a swap replaces. */
+function swapShell(plugin: string, html: string, swaps: Array<[RegExp, string]>) {
+  for (const [pattern, replacement] of swaps) {
+    if (!pattern.test(html)) throw new Error(`${plugin}: index.html no longer matches ${pattern}`)
+    html = html.replace(pattern, () => replacement)
+  }
+  return html
+}
+
+/**
+ * Writes every footer phone line from src/data/contact.ts into the app shell, as the
+ * TravelAgency "telephone" list and as <noscript> call links. Before the app runs, the shell
+ * is the whole page, and Google Ads disapproves a call-asset number it can't find there.
+ */
+function phonesInShell(): Plugin {
+  return {
+    name: 'phones-in-shell',
+    transformIndexHtml(html) {
+      const telephones = JSON.stringify(footerPhoneLines.map((line) => toE164(line.display)))
+      const links = footerPhoneLines
+        .map((line) => `<a href="${line.href}">${escapeHtml(line.display)}</a>`)
+        .join(' · ')
+      return swapShell('phones-in-shell', html, [
+        [/"telephone": "[^"]*"/, `"telephone": ${telephones}`],
+        [/<div id="root"><\/div>/, `<div id="root"></div>\n    <noscript><p>${links}</p></noscript>`],
+      ])
+    },
+  }
+}
 
 /**
  * Writes dist/es/index.html: the app shell with the Spanish homepage's language, title,
@@ -45,12 +76,8 @@ function spanishHomeShell(): Plugin {
         [/<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/>/, `<meta name="twitter:description" content="${description}" />`],
       ]
 
-      let html = readFileSync(join(outDir, 'index.html'), 'utf8')
-      for (const [pattern, replacement] of swaps) {
-        // Fail the build rather than ship an /es page that is still partly English.
-        if (!pattern.test(html)) throw new Error(`spanish-home-shell: index.html no longer matches ${pattern}`)
-        html = html.replace(pattern, () => replacement)
-      }
+      // Fail the build rather than ship an /es page that is still partly English.
+      const html = swapShell('spanish-home-shell', readFileSync(join(outDir, 'index.html'), 'utf8'), swaps)
       mkdirSync(join(outDir, 'es'), { recursive: true })
       writeFileSync(join(outDir, 'es', 'index.html'), html)
     },
@@ -59,5 +86,5 @@ function spanishHomeShell(): Plugin {
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), spanishHomeShell()],
+  plugins: [react(), phonesInShell(), spanishHomeShell()],
 })
