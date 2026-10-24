@@ -9,7 +9,6 @@ import {
   isCarsPath,
   isHotelsPath,
   isTrainsPath,
-  mainPhoneFor,
 } from "../../data/contact"
 import { primaryNav } from "../../data/navigation"
 import { useTranslation } from "../../i18n"
@@ -29,7 +28,6 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
   const trainsPrimary = hasTrainsPhone && isTrainsPath(pathname)
   const carsPrimary = hasCarsPhone && isCarsPath(pathname)
   const hotelsPrimary = hasHotelsPhone && isHotelsPath(pathname)
-  const mainPhone = mainPhoneFor(pathname)
   useLockBodyScroll(open)
   if (!open) return null
 
@@ -88,12 +86,12 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
               <strong>{contactInfo.hotelsPhoneDisplay}</strong>
             </a>
           ) : (
-            <a className={styles.call} href={mainPhone.href} onClick={onClose}>
+            <a className={styles.call} href={contactInfo.phoneHref} onClick={onClose}>
               <span className={styles.callLabel}>
                 <Phone size={16} strokeWidth={2.2} aria-hidden="true" />
                 {t("a11y.callUs")}
               </span>
-              <strong>{mainPhone.display}</strong>
+              <strong>{contactInfo.phoneDisplay}</strong>
             </a>
           )}
         </div>

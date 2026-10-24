@@ -27,14 +27,9 @@ export const CARS_PHONE_DISPLAY = "+1 (888) 737-0661"
 /** Dedicated hotel reservations TFN, shown in international format on the hotels page. */
 export const HOTELS_PHONE_DISPLAY = "+1 (888) 647-0631"
 
-/** TFN for the Spanish homepage (/es), shown there in place of the main number. */
-export const SPANISH_PHONE_DISPLAY = "888-647-0631"
-
 export const contactInfo = {
   phoneDisplay: MAIN_PHONE_DISPLAY,
   phoneHref: toTelHref(MAIN_PHONE_DISPLAY),
-  spanishPhoneDisplay: SPANISH_PHONE_DISPLAY,
-  spanishPhoneHref: toTelHref(SPANISH_PHONE_DISPLAY),
   trainsPhoneDisplay: TRAINS_PHONE_DISPLAY,
   trainsPhoneHref: toTelHref(TRAINS_PHONE_DISPLAY),
   carsPhoneDisplay: CARS_PHONE_DISPLAY,
@@ -74,14 +69,6 @@ export const hasHotelsPhone = toE164(HOTELS_PHONE_DISPLAY).length >= 12
 export const hotelsDeskPhoneDisplay = hasHotelsPhone ? contactInfo.hotelsPhoneDisplay : contactInfo.phoneDisplay
 
 export const isHotelsPath = (pathname: string) => pathname === "/hotels"
-
-export const isSpanishHomePath = (pathname: string) => pathname.replace(/\/+$/, "") === "/es"
-
-/** The general reservations line for a page: the Spanish TFN on /es, the main TFN everywhere else. */
-export const mainPhoneFor = (pathname: string) =>
-  isSpanishHomePath(pathname)
-    ? { display: contactInfo.spanishPhoneDisplay, href: contactInfo.spanishPhoneHref }
-    : { display: contactInfo.phoneDisplay, href: contactInfo.phoneHref }
 
 export const contactAddressQuery = `${contactInfo.address.street}, ${contactInfo.address.city}, ${contactInfo.address.state} ${contactInfo.address.zip}, ${contactInfo.address.country}`
 

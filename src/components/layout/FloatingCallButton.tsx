@@ -9,7 +9,6 @@ import {
   isCarsPath,
   isHotelsPath,
   isTrainsPath,
-  mainPhoneFor,
 } from "../../data/contact"
 import { useTranslation } from "../../i18n"
 import styles from "./FloatingCallButton.module.css"
@@ -70,7 +69,8 @@ export function FloatingCallButton() {
             tagIcon: <Hotel size={14} strokeWidth={2.2} />,
           }
         : {
-            ...mainPhoneFor(pathname),
+            href: contactInfo.phoneHref,
+            display: contactInfo.phoneDisplay,
             label: t("a11y.callUs"),
             tag: t("common.travelHelp"),
             tagIcon: <Headset size={14} strokeWidth={2.2} />,
