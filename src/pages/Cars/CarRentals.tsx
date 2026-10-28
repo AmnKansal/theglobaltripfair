@@ -19,7 +19,7 @@ function CallLink({ className }: { className: string }) {
     >
       <small>{t("nav.callForCarRentals")}</small>
       <strong>
-        <Phone size={22} strokeWidth={2.4} aria-hidden="true" />
+        <Phone size={18} strokeWidth={2.4} aria-hidden="true" />
         {contactInfo.carsPhoneDisplay}
       </strong>
     </a>
