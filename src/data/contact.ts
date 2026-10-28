@@ -22,7 +22,7 @@ export const MAIN_PHONE_DISPLAY = "888-404-0651"
 export const TRAINS_PHONE_DISPLAY = "888-720-0121"
 
 /** Dedicated car rentals number, shown in international format on the car rental page. */
-export const CARS_PHONE_DISPLAY = "+1 (463) 277-4701"
+export const CARS_PHONE_DISPLAY = "+1 (888) 647-0631"
 
 /** Dedicated hotel reservations TFN, shown in international format on the hotels page. */
 export const HOTELS_PHONE_DISPLAY = "+1 (888) 647-0631"
