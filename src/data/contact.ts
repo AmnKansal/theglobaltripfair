@@ -21,8 +21,8 @@ export const MAIN_PHONE_DISPLAY = "888-404-0651"
 /** Dedicated US train reservations TFN. */
 export const TRAINS_PHONE_DISPLAY = "888-720-0121"
 
-/** Dedicated car rentals TFN, shown in international format on the car rental page. */
-export const CARS_PHONE_DISPLAY = "+1 (888) 737-0661"
+/** Dedicated car rentals number, shown in international format on the car rental page. */
+export const CARS_PHONE_DISPLAY = "+1 (463) 277-4701"
 
 /** Dedicated hotel reservations TFN, shown in international format on the hotels page. */
 export const HOTELS_PHONE_DISPLAY = "+1 (888) 647-0631"
@@ -81,6 +81,9 @@ export const footerPhoneLines = [
     : []),
   ...(hasCarsPhone
     ? [{ display: contactInfo.carsPhoneDisplay, href: contactInfo.carsPhoneHref, labelKey: "common.carRentals", callKey: "a11y.callCarRentals" }]
+    : []),
+  ...(hasHotelsPhone
+    ? [{ display: contactInfo.hotelsPhoneDisplay, href: contactInfo.hotelsPhoneHref, labelKey: "common.hotelReservations", callKey: "a11y.callHotels" }]
     : []),
 ]
 

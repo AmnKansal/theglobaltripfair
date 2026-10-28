@@ -1,0 +1,790 @@
+.page {
+  --cars-on-dark: #f7f4ee;
+  --cars-on-dark-muted: rgba(247, 244, 238, 0.86);
+  --cars-glass: rgba(255, 255, 255, 0.14);
+  --cars-glass-line: rgba(255, 255, 255, 0.3);
+  --cars-shade-strong: rgba(16, 17, 14, 0.82);
+  --cars-shade-mid: rgba(16, 17, 14, 0.5);
+  --cars-shade-light: rgba(16, 17, 14, 0.08);
+  --cars-heading: clamp(1.6rem, 3vw, 2.2rem);
+  --cars-section-gap: 88px;
+
+  padding-bottom: 88px;
+  background: var(--color-white);
+}
+
+.page h2 {
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+/* Hero */
+
+.hero {
+  padding: 20px 0 8px;
+}
+
+.stage {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 48px;
+  min-height: min(86vh, 760px);
+  padding: 80px 32px 28px;
+  border-radius: var(--radius-xl);
+  background: var(--color-ink);
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 72% 60%;
+}
+
+.media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, var(--cars-shade-strong) 0%, var(--cars-shade-mid) 48%, var(--cars-shade-light) 100%),
+    linear-gradient(180deg, var(--cars-shade-light) 40%, var(--cars-shade-mid) 100%);
+}
+
+.heroCopy {
+  position: relative;
+  max-width: 660px;
+  padding-inline: 18px;
+  color: var(--cars-on-dark);
+}
+
+.heroCopy h1 {
+  font-size: clamp(2.1rem, 4.6vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+.heroCopy h1 span {
+  display: block;
+}
+
+.heroCopy > p {
+  max-width: 34rem;
+  margin-top: 22px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--cars-on-dark-muted);
+  text-wrap: pretty;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.quoteLink {
+  display: inline-flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 20px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--cars-glass-line);
+  background: var(--cars-glass);
+  color: var(--cars-on-dark);
+  font-weight: 700;
+  transition:
+    background 180ms var(--ease),
+    color 180ms var(--ease);
+}
+
+.quoteLink:hover {
+  background: var(--color-white);
+  color: var(--color-ink);
+}
+
+/* The rental slip: the one animated moment on the page. */
+
+.slip {
+  position: relative;
+  align-self: end;
+  padding: 20px 24px 22px;
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+  box-shadow: var(--shadow-search);
+  animation: slip-in 700ms var(--ease) 120ms both;
+}
+
+.slipTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* Outranks ".page h2" so the slip label stays small-print tight. */
+.page .slipTitle {
+  letter-spacing: -0.02em;
+}
+
+.slipTitle svg {
+  color: var(--color-red);
+}
+
+.slipGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 2.3fr) repeat(3, minmax(0, 1fr));
+  margin: 16px 0 0;
+}
+
+.slipGrid dt {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-slate);
+}
+
+.slipGrid dd {
+  margin: 4px 0 0;
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.route {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(36px, 72px) minmax(0, 1fr);
+  align-items: start;
+  gap: 14px;
+  padding-right: 20px;
+}
+
+/* Sits level with the first line of the pickup and return values. */
+.routeLine {
+  position: relative;
+  height: 2px;
+  margin-top: 32px;
+  background: var(--color-red);
+  transform-origin: left center;
+  animation: route-draw 800ms var(--ease) 420ms both;
+}
+
+.routeLine::before,
+.routeLine::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  transform: translateY(-50%);
+}
+
+.routeLine::before {
+  left: -2px;
+  background: var(--color-red);
+}
+
+.routeLine::after {
+  right: -2px;
+  border: 2px solid var(--color-red);
+  background: var(--color-white);
+}
+
+.slipItem {
+  padding-left: 20px;
+  border-left: 1px solid var(--color-line);
+}
+
+@keyframes slip-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+@keyframes route-draw {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slip,
+  .routeLine {
+    animation: none;
+  }
+}
+
+/* Vehicle classes */
+
+.classes {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
+  gap: 48px;
+  align-items: start;
+  margin-top: var(--cars-section-gap);
+}
+
+.classesHead h2,
+.included h2,
+.steps h2,
+.tripsHead h2,
+.pickup h2,
+.faq h2,
+.cta h2 {
+  font-size: var(--cars-heading);
+}
+
+.classesHead > p {
+  margin-top: 12px;
+  color: var(--color-slate);
+}
+
+.classesHead .intro {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-line);
+  font-size: 0.95rem;
+}
+
+.board {
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+
+.board table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.board thead th {
+  padding: 14px 20px;
+  background: var(--color-paper);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-align: left;
+  text-transform: uppercase;
+  color: var(--color-slate);
+}
+
+.board tbody th,
+.board tbody td {
+  padding: 16px 20px;
+  border-top: 1px solid var(--color-line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.board tbody th {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.board tbody td {
+  color: var(--color-slate);
+}
+
+.board tbody td + td {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: var(--color-ink);
+}
+
+.board tbody tr {
+  transition: background 180ms var(--ease);
+}
+
+.board tbody tr:hover {
+  background: var(--color-paper);
+}
+
+.boardNote {
+  padding: 14px 20px;
+  border-top: 1px solid var(--color-line);
+  background: var(--color-paper);
+  font-size: 0.85rem;
+  color: var(--color-slate);
+}
+
+/* What the booking covers */
+
+.included {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+  margin-top: var(--cars-section-gap);
+}
+
+.included img {
+  width: 100%;
+  height: 100%;
+  max-height: 560px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 45% center;
+  border-radius: var(--radius-xl);
+}
+
+.checks {
+  display: grid;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.checks li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  background: var(--color-paper);
+}
+
+.checks span {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-full);
+  background: var(--color-red-soft);
+  color: var(--color-red);
+}
+
+/* Steps: a real sequence, so they read left to right along one rule. */
+
+.steps {
+  margin-top: var(--cars-section-gap);
+}
+
+.steps ol {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0 28px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 2px solid var(--color-ink);
+}
+
+.steps li {
+  padding-top: 20px;
+}
+
+.steps li > span {
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--color-red-deep);
+}
+
+.steps h3 {
+  margin-top: 8px;
+  font-size: 1.08rem;
+  letter-spacing: -0.02em;
+}
+
+.steps p {
+  margin-top: 6px;
+  font-size: 0.93rem;
+  color: var(--color-slate);
+}
+
+/* Trip types */
+
+.trips {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr);
+  gap: 40px;
+  align-items: start;
+  margin-top: var(--cars-section-gap);
+}
+
+.tripsHead p {
+  max-width: 34ch;
+  margin-top: 12px;
+  color: var(--color-slate);
+}
+
+.trips ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 32px;
+}
+
+.trips li {
+  padding: 18px 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.trips h3 {
+  font-size: 1.02rem;
+  letter-spacing: -0.02em;
+}
+
+.trips li p {
+  margin-top: 4px;
+  font-size: 0.93rem;
+  color: var(--color-slate);
+}
+
+/* Pickup checklist and FAQ */
+
+.help {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr);
+  gap: 40px;
+  align-items: start;
+  margin-top: var(--cars-section-gap);
+}
+
+.pickup {
+  padding: 28px;
+  border-radius: var(--radius-xl);
+  background: var(--color-red-soft);
+}
+
+.pickup > p {
+  margin-top: 10px;
+  color: var(--color-slate);
+}
+
+.pickup .checks li {
+  background: var(--color-white);
+}
+
+.faqList {
+  margin-top: 18px;
+  border-top: 1px solid var(--color-line);
+}
+
+.faqList details {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.faqList summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 4px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  list-style: none;
+  cursor: pointer;
+}
+
+.faqList summary::-webkit-details-marker {
+  display: none;
+}
+
+.faqList summary svg {
+  flex-shrink: 0;
+  color: var(--color-red);
+  transition: transform 180ms var(--ease);
+}
+
+.faqList details[open] summary svg {
+  transform: rotate(180deg);
+}
+
+.faqList details p {
+  max-width: 72ch;
+  padding: 0 4px 16px;
+  color: var(--color-slate);
+}
+
+.notice {
+  margin-top: 48px;
+  padding: 16px 18px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-paper);
+  font-size: 0.95rem;
+  color: var(--color-charcoal);
+}
+
+/* Call band */
+
+.cta {
+  position: relative;
+  overflow: hidden;
+  margin-top: 32px;
+  padding: 52px 44px;
+  border-radius: var(--radius-xl);
+  background: var(--color-ink);
+  color: var(--cars-on-dark);
+}
+
+.cta img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 62%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  opacity: 0.6;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 45%);
+}
+
+.ctaCopy {
+  position: relative;
+  max-width: 560px;
+}
+
+.ctaCopy > p {
+  margin-top: 12px;
+  color: var(--cars-on-dark-muted);
+}
+
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.emailLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 1px solid var(--cars-glass-line);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  transition:
+    background 180ms var(--ease),
+    color 180ms var(--ease);
+}
+
+.emailLink:hover {
+  background: var(--color-white);
+  color: var(--color-ink);
+}
+
+/* Related services */
+
+.related {
+  margin-top: 36px;
+}
+
+.related > p {
+  margin-bottom: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-slate);
+}
+
+.related div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.related a {
+  padding: 10px 16px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition:
+    border-color 180ms var(--ease),
+    color 180ms var(--ease);
+}
+
+.related a:hover {
+  border-color: var(--color-red);
+  color: var(--color-red);
+}
+
+@media (max-width: 1080px) {
+  .slipGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px 0;
+  }
+
+  .route {
+    grid-column: 1 / -1;
+    padding: 0 0 16px;
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .slipItem:nth-child(2) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .classes,
+  .trips,
+  .help {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .steps ol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 28px;
+  }
+
+  .included {
+    gap: 32px;
+  }
+}
+
+@media (max-width: 860px) {
+  .page {
+    --cars-section-gap: 64px;
+  }
+
+  .stage {
+    gap: 36px;
+    min-height: 0;
+    padding: 48px 12px 12px;
+    border-radius: var(--radius-lg);
+  }
+
+  /* The copy runs full width here, over the bright sky, so the shade covers the whole image. */
+  .media::after {
+    background: linear-gradient(180deg, var(--cars-shade-strong) 0%, var(--cars-shade-mid) 70%, var(--cars-shade-strong) 100%);
+  }
+
+  .heroCopy {
+    padding-inline: 14px;
+  }
+
+  .heroCopy > p {
+    font-size: 1rem;
+  }
+
+  .slip {
+    padding: 18px;
+  }
+
+  .included {
+    grid-template-columns: 1fr;
+  }
+
+  .included img {
+    aspect-ratio: 16 / 10;
+    max-height: 380px;
+  }
+}
+
+@media (max-width: 720px) {
+  .board thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .board tbody tr {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 16px;
+    padding: 16px 18px;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .board tbody tr:first-child {
+    border-top: 0;
+  }
+
+  .board tbody th,
+  .board tbody td {
+    padding: 0;
+    border: 0;
+  }
+
+  .board tbody th,
+  .board tbody td:first-of-type {
+    grid-column: 1 / -1;
+  }
+
+  .board tbody td + td::before {
+    content: attr(data-label) " ";
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-slate);
+  }
+
+  .trips ul {
+    grid-template-columns: 1fr;
+  }
+
+  .pickup {
+    padding: 22px 18px;
+  }
+
+  .cta {
+    padding: 32px 20px;
+  }
+
+  .cta img {
+    width: 100%;
+    opacity: 0.28;
+  }
+}
+
+@media (max-width: 560px) {
+  .slipGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .route {
+    grid-template-columns: minmax(0, 1fr) 36px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .slipItem {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .slipItem dd {
+    margin: 0;
+    text-align: right;
+  }
+
+  .steps ol {
+    grid-template-columns: 1fr;
+  }
+}

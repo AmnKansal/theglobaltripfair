@@ -1,4 +1,4 @@
-export type ServicePageSlug = "hotels" | "cars" | "cruises" | "trains"
+export type ServicePageSlug = "hotels" | "cruises" | "trains"
 
 export type ServiceHighlight = {
   title: string

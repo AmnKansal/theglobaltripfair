@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { Navigate, Route, Routes, useLocation } from "react-router-dom"
 import { Layout } from "../components/layout/Layout"
+import { CarRentals } from "../pages/Cars/CarRentals"
 import { Contact } from "../pages/Contact/Contact"
 import { ContentPage } from "../pages/Content/ContentPage"
 import { AboutPage } from "../pages/Legal/AboutPage"
@@ -62,7 +63,7 @@ export function AppRoutes() {
             <Route key={doc.slug} path={flightTypePath(doc.slug)} element={<FlightTypePage key={doc.slug} doc={doc} />} />
           ))}
           <Route path="/hotels" element={<Hotels />} />
-          <Route path="/cars" element={<ServicePage slug="cars" />} />
+          <Route path="/cars" element={<CarRentals />} />
           <Route path="/holidays" element={<Holidays />} />
           <Route path="/transfers" element={<Transfers />} />
           <Route path="/cruises" element={<ServicePage slug="cruises" />} />

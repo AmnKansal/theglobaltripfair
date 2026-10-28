@@ -19,7 +19,7 @@ type ServicePageProps = {
 export function ServicePage({ slug }: ServicePageProps) {
   const { t } = useTranslation()
   const doc = getServicePage(slug)
-  const related = servicePageLinks.filter((item) => item.slug !== slug)
+  const related = servicePageLinks.filter((item) => item.to !== `/${slug}`)
 
   return (
     <article className={styles.page}>
@@ -32,8 +32,6 @@ export function ServicePage({ slug }: ServicePageProps) {
           <>
             {slug === "trains" ? (
               <PhoneStrip variant="hero" showTrains showMain={false} />
-            ) : slug === "cars" ? (
-              <PhoneStrip variant="hero" showCars showMain={false} />
             ) : slug === "hotels" ? (
               <PhoneStrip variant="hero" showHotels showMain={false} />
             ) : (
@@ -172,8 +170,6 @@ export function ServicePage({ slug }: ServicePageProps) {
             <div className={styles.actions}>
               {slug === "trains" ? (
                 <PhoneStrip variant="dark" showTrains showMain={false} />
-              ) : slug === "cars" ? (
-                <PhoneStrip variant="dark" showCars showMain={false} />
               ) : slug === "hotels" ? (
                 <PhoneStrip variant="dark" showHotels showMain={false} />
               ) : (
