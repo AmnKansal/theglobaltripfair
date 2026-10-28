@@ -8,7 +8,7 @@ import { servicePageLinks } from "../../data/servicePages"
 import { useTranslation } from "../../i18n"
 import styles from "./CarRentals.module.css"
 
-const related = servicePageLinks.filter((item) => item.to !== "/cars")
+const related = servicePageLinks.filter((item) => item.to !== "/car-rentals")
 
 export function CarRentals() {
   const { t } = useTranslation()

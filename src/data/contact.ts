@@ -62,7 +62,7 @@ export const hasCarsPhone = toE164(CARS_PHONE_DISPLAY).length >= 12
 
 export const carsDeskPhoneDisplay = hasCarsPhone ? contactInfo.carsPhoneDisplay : contactInfo.phoneDisplay
 
-export const isCarsPath = (pathname: string) => pathname === "/cars"
+export const isCarsPath = (pathname: string) => pathname === "/car-rentals"
 
 export const hasHotelsPhone = toE164(HOTELS_PHONE_DISPLAY).length >= 12
 

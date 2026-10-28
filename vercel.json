@@ -1,5 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/cars", "destination": "/car-rentals", "permanent": true },
+    { "source": "/cabs", "destination": "/car-rentals", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/es", "destination": "/es/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }

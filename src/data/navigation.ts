@@ -6,7 +6,7 @@ export type NavLinkItem = {
 export const primaryNav: NavLinkItem[] = [
   { labelKey: "nav.flights", to: "/flights" },
   { labelKey: "nav.hotels", to: "/hotels" },
-  { labelKey: "nav.cars", to: "/cars" },
+  { labelKey: "nav.cars", to: "/car-rentals" },
   { labelKey: "nav.cruises", to: "/cruises" },
   { labelKey: "nav.trains", to: "/trains" },
 ]

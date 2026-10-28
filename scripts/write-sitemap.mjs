@@ -57,7 +57,7 @@ const indexable = [
   { path: "/flights", changefreq: "weekly", priority: "0.9" },
   ...flightPages,
   { path: "/hotels", changefreq: "weekly", priority: "0.9" },
-  { path: "/cars", changefreq: "weekly", priority: "0.9" },
+  { path: "/car-rentals", changefreq: "weekly", priority: "0.9" },
   { path: "/holidays", changefreq: "weekly", priority: "0.9" },
   { path: "/transfers", changefreq: "weekly", priority: "0.8" },
   { path: "/cruises", changefreq: "weekly", priority: "0.9" },

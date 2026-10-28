@@ -63,12 +63,14 @@ export function AppRoutes() {
             <Route key={doc.slug} path={flightTypePath(doc.slug)} element={<FlightTypePage key={doc.slug} doc={doc} />} />
           ))}
           <Route path="/hotels" element={<Hotels />} />
-          <Route path="/cars" element={<CarRentals />} />
+          <Route path="/car-rentals" element={<CarRentals />} />
           <Route path="/holidays" element={<Holidays />} />
           <Route path="/transfers" element={<Transfers />} />
           <Route path="/cruises" element={<ServicePage slug="cruises" />} />
           <Route path="/trains" element={<ServicePage slug="trains" />} />
-          <Route path="/cabs" element={<Navigate to="/cars" replace />} />
+          {/* vercel.json 301s these on the server; the in-app redirects cover client-side links. */}
+          <Route path="/cars" element={<Navigate to="/car-rentals" replace />} />
+          <Route path="/cabs" element={<Navigate to="/car-rentals" replace />} />
           <Route path="/activities" element={<ComingSoon kind="activities" />} />
           <Route path="/insurance" element={<ComingSoon kind="insurance" />} />
           <Route path="/search" element={<SearchMaintenance />} />
