@@ -1,381 +1,313 @@
 .page {
+  /* Pure black so the showroom photo's own black background disappears into the hero. */
+  --cars-night: #000000;
   --cars-on-dark: #f7f4ee;
-  --cars-on-dark-muted: rgba(247, 244, 238, 0.86);
-  --cars-glass: rgba(255, 255, 255, 0.14);
-  --cars-glass-line: rgba(255, 255, 255, 0.3);
-  --cars-shade-strong: rgba(16, 17, 14, 0.82);
-  --cars-shade-mid: rgba(16, 17, 14, 0.5);
-  --cars-shade-light: rgba(16, 17, 14, 0.08);
-  --cars-heading: clamp(1.6rem, 3vw, 2.2rem);
-  --cars-section-gap: 88px;
+  --cars-on-dark-muted: rgba(247, 244, 238, 0.78);
+  --cars-glass: rgba(255, 255, 255, 0.06);
+  --cars-glass-line: rgba(255, 255, 255, 0.16);
+  --cars-glass-line-strong: rgba(255, 255, 255, 0.34);
+  --cars-glow: rgba(227, 27, 35, 0.32);
+  --cars-tile-shade: rgba(10, 10, 9, 0.88);
+  --cars-heading: clamp(1.7rem, 3.2vw, 2.5rem);
+  --cars-section-gap: 96px;
 
   padding-bottom: 88px;
   background: var(--color-white);
 }
 
 .page h2 {
+  font-size: var(--cars-heading);
+  line-height: 1.1;
   letter-spacing: -0.04em;
-  line-height: 1.12;
   text-wrap: balance;
 }
 
-/* Hero */
+/* Hero: a dark showroom with the car on the right */
 
 .hero {
-  padding: 20px 0 8px;
-}
-
-.stage {
   position: relative;
-  display: grid;
-  grid-template-rows: 1fr auto;
-  gap: 48px;
-  min-height: min(86vh, 760px);
-  padding: 80px 32px 28px;
-  border-radius: var(--radius-xl);
-  background: var(--color-ink);
-}
-
-.media {
-  position: absolute;
-  inset: 0;
   overflow: hidden;
-  border-radius: inherit;
+  padding: 72px 0 40px;
+  background: var(--cars-night);
+  color: var(--cars-on-dark);
 }
 
-.media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 72% 60%;
-}
-
-.media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, var(--cars-shade-strong) 0%, var(--cars-shade-mid) 48%, var(--cars-shade-light) 100%),
-    linear-gradient(180deg, var(--cars-shade-light) 40%, var(--cars-shade-mid) 100%);
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: 24px;
 }
 
 .heroCopy {
   position: relative;
-  max-width: 660px;
-  padding-inline: 18px;
-  color: var(--cars-on-dark);
+  z-index: 1;
 }
 
 .heroCopy h1 {
-  font-size: clamp(2.1rem, 4.6vw, 3.75rem);
+  font-size: clamp(2.5rem, 5.4vw, 4.5rem);
   font-weight: 800;
-  line-height: 1.04;
-  letter-spacing: -0.035em;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
   text-wrap: balance;
-  overflow-wrap: break-word;
 }
 
 .heroCopy h1 span {
   display: block;
 }
 
-.heroCopy > p {
-  max-width: 34rem;
-  margin-top: 22px;
-  font-size: 1.1rem;
+.lead {
+  max-width: 32rem;
+  margin-top: 24px;
+  font-size: 1.08rem;
   line-height: 1.6;
   color: var(--cars-on-dark-muted);
   text-wrap: pretty;
 }
 
-.heroActions {
-  display: flex;
-  flex-wrap: wrap;
+/* The phone number is the page's display type. */
+.heroCall,
+.ctaCall {
+  display: inline-grid;
+  gap: 2px;
+}
+
+.heroCall {
+  margin-top: 32px;
+  padding: 14px 26px 16px 22px;
+  border-radius: var(--radius-lg);
+  background: var(--color-red);
+  color: var(--color-white);
+  box-shadow: 0 18px 40px var(--cars-glow);
+  transition: background 180ms var(--ease);
+}
+
+.heroCall:hover {
+  background: var(--color-red-deep);
+}
+
+.heroCall small,
+.ctaCall small {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.heroCall small {
+  color: var(--cars-on-dark-muted);
+}
+
+.heroCall strong,
+.ctaCall strong {
+  display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin-top: 28px;
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
 }
 
 .quoteLink {
-  display: inline-flex;
-  align-items: center;
-  height: 48px;
-  padding: 0 20px;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--cars-glass-line);
-  background: var(--cars-glass);
-  color: var(--cars-on-dark);
+  display: table;
+  margin-top: 18px;
   font-weight: 700;
-  transition:
-    background 180ms var(--ease),
-    color 180ms var(--ease);
+  color: var(--cars-on-dark);
+  text-decoration: underline;
+  text-decoration-color: var(--cars-glass-line-strong);
+  text-underline-offset: 5px;
+  transition: text-decoration-color 180ms var(--ease);
 }
 
 .quoteLink:hover {
+  text-decoration-color: var(--color-red);
+}
+
+.heroCar {
+  position: relative;
+  margin-right: -6%;
+}
+
+/* A red floor light under the car. */
+.heroCar::before {
+  content: "";
+  position: absolute;
+  inset: 30% 0 -4% 8%;
+  background: radial-gradient(ellipse 50% 40% at 50% 72%, var(--cars-glow), transparent 70%);
+}
+
+/* The photo's backdrop is not pure black everywhere, so its edges fade out instead of showing a box. */
+.heroCar img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  mask-image: radial-gradient(ellipse 50% 50% at 50% 55%, #000 62%, transparent 100%);
+  animation: car-in 900ms var(--ease) 80ms both;
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--cars-glass-line);
+}
+
+.facts li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--cars-on-dark-muted);
+}
+
+.facts svg {
+  color: var(--color-red);
+}
+
+@keyframes car-in {
+  from {
+    opacity: 0;
+    transform: translateX(5%);
+  }
+}
+
+/* Class picker */
+
+.picker {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  gap: 32px;
+  margin-top: 28px;
+  padding: 26px 28px;
+  border: 1px solid var(--cars-glass-line);
+  border-radius: var(--radius-lg);
+  background: var(--cars-glass);
+}
+
+.page .pickerTitle {
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.pickerTabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.pickerTabs button {
+  height: 40px;
+  padding: 0 18px;
+  border: 1px solid var(--cars-glass-line-strong);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  color: var(--cars-on-dark);
+  transition:
+    background 180ms var(--ease),
+    border-color 180ms var(--ease),
+    color 180ms var(--ease);
+}
+
+.pickerTabs button:hover {
+  border-color: var(--cars-on-dark);
+}
+
+.pickerTabs button[aria-pressed="true"] {
+  border-color: var(--color-white);
   background: var(--color-white);
   color: var(--color-ink);
 }
 
-/* The rental slip: the one animated moment on the page. */
-
-.slip {
-  position: relative;
-  align-self: end;
-  padding: 20px 24px 22px;
-  border-radius: var(--radius-lg);
-  background: var(--color-white);
-  box-shadow: var(--shadow-search);
-  animation: slip-in 700ms var(--ease) 120ms both;
+.pickerNote {
+  max-width: 36ch;
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: var(--cars-on-dark-muted);
 }
 
-.slipTitle {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.95rem;
+.pickerPanel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 18px 24px;
+  height: 100%;
+  animation: panel-in 220ms var(--ease);
+}
+
+.pickerName {
+  grid-column: 1 / -1;
+  font-size: 1.1rem;
   font-weight: 700;
-}
-
-/* Outranks ".page h2" so the slip label stays small-print tight. */
-.page .slipTitle {
   letter-spacing: -0.02em;
 }
 
-.slipTitle svg {
-  color: var(--color-red);
-}
-
-.slipGrid {
+.pickerPanel dl {
   display: grid;
-  grid-template-columns: minmax(0, 2.3fr) repeat(3, minmax(0, 1fr));
-  margin: 16px 0 0;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  gap: 28px;
+  margin: 0;
 }
 
-.slipGrid dt {
-  font-size: 0.7rem;
+.pickerPanel dt {
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-slate);
+  color: var(--cars-on-dark-muted);
 }
 
-.slipGrid dd {
-  margin: 4px 0 0;
-  font-size: 0.98rem;
-  font-weight: 700;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
+.pickerPanel dd {
+  margin: 6px 0 0;
+  color: var(--cars-on-dark);
 }
 
-.route {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(36px, 72px) minmax(0, 1fr);
-  align-items: start;
-  gap: 14px;
-  padding-right: 20px;
+.pickerPanel .spec {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
-/* Sits level with the first line of the pickup and return values. */
-.routeLine {
-  position: relative;
-  height: 2px;
-  margin-top: 32px;
-  background: var(--color-red);
-  transform-origin: left center;
-  animation: route-draw 800ms var(--ease) 420ms both;
-}
-
-.routeLine::before,
-.routeLine::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 10px;
-  height: 10px;
+.reserve {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 46px;
+  padding: 0 20px;
   border-radius: var(--radius-full);
-  transform: translateY(-50%);
-}
-
-.routeLine::before {
-  left: -2px;
-  background: var(--color-red);
-}
-
-.routeLine::after {
-  right: -2px;
-  border: 2px solid var(--color-red);
   background: var(--color-white);
+  color: var(--color-ink);
+  font-weight: 700;
+  white-space: nowrap;
+  transition: color 180ms var(--ease);
 }
 
-.slipItem {
-  padding-left: 20px;
-  border-left: 1px solid var(--color-line);
+.reserve:hover {
+  color: var(--color-red);
 }
 
-@keyframes slip-in {
+@keyframes panel-in {
   from {
     opacity: 0;
-    transform: translateY(18px);
-  }
-}
-
-@keyframes route-draw {
-  from {
-    transform: scaleX(0);
+    transform: translateY(6px);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .slip,
-  .routeLine {
+  .heroCar img,
+  .pickerPanel {
     animation: none;
   }
 }
 
-/* Vehicle classes */
-
-.classes {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
-  gap: 48px;
-  align-items: start;
-  margin-top: var(--cars-section-gap);
-}
-
-.classesHead h2,
-.included h2,
-.steps h2,
-.tripsHead h2,
-.pickup h2,
-.faq h2,
-.cta h2 {
-  font-size: var(--cars-heading);
-}
-
-.classesHead > p {
-  margin-top: 12px;
-  color: var(--color-slate);
-}
-
-.classesHead .intro {
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid var(--color-line);
-  font-size: 0.95rem;
-}
-
-.board {
-  overflow: hidden;
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-lg);
-  background: var(--color-white);
-  box-shadow: var(--shadow-md);
-}
-
-.board table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.95rem;
-}
-
-.board thead th {
-  padding: 14px 20px;
-  background: var(--color-paper);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-align: left;
-  text-transform: uppercase;
-  color: var(--color-slate);
-}
-
-.board tbody th,
-.board tbody td {
-  padding: 16px 20px;
-  border-top: 1px solid var(--color-line);
-  text-align: left;
-  vertical-align: top;
-}
-
-.board tbody th {
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-.board tbody td {
-  color: var(--color-slate);
-}
-
-.board tbody td + td {
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-  color: var(--color-ink);
-}
-
-.board tbody tr {
-  transition: background 180ms var(--ease);
-}
-
-.board tbody tr:hover {
-  background: var(--color-paper);
-}
-
-.boardNote {
-  padding: 14px 20px;
-  border-top: 1px solid var(--color-line);
-  background: var(--color-paper);
-  font-size: 0.85rem;
-  color: var(--color-slate);
-}
-
-/* What the booking covers */
-
-.included {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 48px;
-  align-items: center;
-  margin-top: var(--cars-section-gap);
-}
-
-.included img {
-  width: 100%;
-  height: 100%;
-  max-height: 560px;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: 45% center;
-  border-radius: var(--radius-xl);
-}
-
-.checks {
-  display: grid;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.checks li {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 12px 14px;
-  border-radius: var(--radius-md);
-  background: var(--color-paper);
-}
-
-.checks span {
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
-  width: 26px;
-  height: 26px;
-  border-radius: var(--radius-full);
-  background: var(--color-red-soft);
-  color: var(--color-red);
-}
-
-/* Steps: a real sequence, so they read left to right along one rule. */
+/* Steps: large outlined numerals along one row */
 
 .steps {
   margin-top: var(--cars-section-gap);
@@ -384,97 +316,190 @@
 .steps ol {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0 28px;
-  margin: 24px 0 0;
+  gap: 32px;
+  margin: 32px 0 0;
   padding: 0;
   list-style: none;
-  border-top: 2px solid var(--color-ink);
-}
-
-.steps li {
-  padding-top: 20px;
 }
 
 .steps li > span {
-  font-size: 0.82rem;
+  display: block;
+  font-size: 4.5rem;
   font-weight: 800;
-  letter-spacing: 0.04em;
-  color: var(--color-red-deep);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  color: var(--color-red);
+}
+
+@supports (-webkit-text-stroke: 1px black) {
+  .steps li > span {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--color-red);
+  }
 }
 
 .steps h3 {
-  margin-top: 8px;
-  font-size: 1.08rem;
+  margin-top: 18px;
+  font-size: 1.12rem;
   letter-spacing: -0.02em;
 }
 
 .steps p {
-  margin-top: 6px;
-  font-size: 0.93rem;
+  margin-top: 8px;
+  font-size: 0.95rem;
   color: var(--color-slate);
 }
 
-/* Trip types */
+/* What the booking covers */
 
-.trips {
+.included {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr);
-  gap: 40px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 56px;
   align-items: start;
   margin-top: var(--cars-section-gap);
 }
 
+.includedHead p {
+  margin-top: 14px;
+  color: var(--color-slate);
+}
+
+.includedHead img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  margin-top: 28px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+.included ul {
+  border-top: 2px solid var(--color-ink);
+}
+
+.included li {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 12px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--color-line);
+  font-size: 1.02rem;
+}
+
+.included li svg {
+  margin-top: 3px;
+  color: var(--color-red);
+}
+
+/* Trip tiles */
+
+.trips {
+  margin-top: var(--cars-section-gap);
+}
+
+.tripsHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px 32px;
+}
+
 .tripsHead p {
-  max-width: 34ch;
-  margin-top: 12px;
+  max-width: 36ch;
   color: var(--color-slate);
 }
 
 .trips ul {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0 32px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 28px;
 }
 
 .trips li {
-  padding: 18px 0;
-  border-top: 1px solid var(--color-line);
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+  border-radius: var(--radius-lg);
+  background: var(--color-ink);
+}
+
+.trips li img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.trips li::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, var(--cars-tile-shade) 0%, transparent 62%);
+}
+
+.trips li div {
+  position: absolute;
+  z-index: 1;
+  inset: auto 0 0;
+  padding: 22px;
+  color: var(--cars-on-dark);
 }
 
 .trips h3 {
-  font-size: 1.02rem;
+  font-size: 1.2rem;
   letter-spacing: -0.02em;
 }
 
 .trips li p {
-  margin-top: 4px;
-  font-size: 0.93rem;
-  color: var(--color-slate);
+  margin-top: 6px;
+  font-size: 0.92rem;
+  color: var(--cars-on-dark-muted);
 }
 
 /* Pickup checklist and FAQ */
 
 .help {
   display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr);
-  gap: 40px;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+  gap: 48px;
   align-items: start;
   margin-top: var(--cars-section-gap);
 }
 
 .pickup {
   padding: 28px;
-  border-radius: var(--radius-xl);
-  background: var(--color-red-soft);
+  border: 2px solid var(--color-ink);
+  border-radius: var(--radius-lg);
 }
 
-.pickup > p {
-  margin-top: 10px;
-  color: var(--color-slate);
+.page .pickup h2 {
+  font-size: 1.45rem;
 }
 
-.pickup .checks li {
-  background: var(--color-white);
+.pickup ol {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: pickup;
+}
+
+.pickup li {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 10px;
+  padding: 12px 0;
+  border-top: 1px solid var(--color-line);
+  counter-increment: pickup;
+}
+
+.pickup li::before {
+  content: counter(pickup, decimal-leading-zero);
+  font-weight: 800;
+  color: var(--color-red-deep);
 }
 
 .faqList {
@@ -531,63 +556,53 @@
 /* Call band */
 
 .cta {
-  position: relative;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 32px;
   margin-top: 32px;
-  padding: 52px 44px;
+  padding: 44px;
   border-radius: var(--radius-xl);
-  background: var(--color-ink);
-  color: var(--cars-on-dark);
+  background: var(--color-red-soft);
 }
 
-.cta img {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 62%;
-  height: 100%;
-  object-fit: cover;
-  object-position: right center;
-  opacity: 0.6;
-  mask-image: linear-gradient(90deg, transparent 0%, #000 45%);
-}
-
-.ctaCopy {
-  position: relative;
-  max-width: 560px;
-}
-
-.ctaCopy > p {
+.cta p {
+  max-width: 48ch;
   margin-top: 12px;
-  color: var(--cars-on-dark-muted);
+  color: var(--color-slate);
 }
 
 .ctaActions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-  margin-top: 28px;
+  display: grid;
+  justify-items: start;
+  gap: 14px;
+}
+
+.ctaCall {
+  color: var(--color-red-deep);
+  transition: color 180ms var(--ease);
+}
+
+.ctaCall:hover {
+  color: var(--color-red-ink);
+}
+
+.ctaCall small {
+  color: var(--color-slate);
 }
 
 .emailLink {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  min-height: 48px;
-  padding: 0 20px;
-  border: 1px solid var(--cars-glass-line);
-  border-radius: var(--radius-full);
   font-weight: 700;
+  color: var(--color-ink);
   overflow-wrap: anywhere;
-  transition:
-    background 180ms var(--ease),
-    color 180ms var(--ease);
+  transition: color 180ms var(--ease);
 }
 
 .emailLink:hover {
-  background: var(--color-white);
-  color: var(--color-ink);
+  color: var(--color-red);
 }
 
 /* Related services */
@@ -628,163 +643,93 @@
 }
 
 @media (max-width: 1080px) {
-  .slipGrid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px 0;
-  }
-
-  .route {
-    grid-column: 1 / -1;
-    padding: 0 0 16px;
-    border-bottom: 1px solid var(--color-line);
-  }
-
-  .slipItem:nth-child(2) {
-    padding-left: 0;
-    border-left: 0;
-  }
-
-  .classes,
-  .trips,
+  .picker,
+  .included,
   .help {
     grid-template-columns: 1fr;
+  }
+
+  .picker,
+  .included {
     gap: 24px;
   }
 
-  .steps ol {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0 28px;
+  .help {
+    gap: 40px;
   }
 
-  .included {
-    gap: 32px;
+  .steps ol,
+  .trips ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 860px) {
   .page {
-    --cars-section-gap: 64px;
+    --cars-section-gap: 72px;
   }
 
-  .stage {
-    gap: 36px;
-    min-height: 0;
-    padding: 48px 12px 12px;
-    border-radius: var(--radius-lg);
+  .hero {
+    padding: 44px 0 28px;
   }
 
-  /* The copy runs full width here, over the bright sky, so the shade covers the whole image. */
-  .media::after {
-    background: linear-gradient(180deg, var(--cars-shade-strong) 0%, var(--cars-shade-mid) 70%, var(--cars-shade-strong) 100%);
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 
-  .heroCopy {
-    padding-inline: 14px;
+  .heroCar {
+    order: -1;
+    margin: -8px -14px 0;
   }
 
-  .heroCopy > p {
+  .lead {
     font-size: 1rem;
   }
 
-  .slip {
-    padding: 18px;
-  }
-
-  .included {
-    grid-template-columns: 1fr;
-  }
-
-  .included img {
-    aspect-ratio: 16 / 10;
-    max-height: 380px;
-  }
-}
-
-@media (max-width: 720px) {
-  .board thead {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-  }
-
-  .board tbody tr {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 6px 16px;
-    padding: 16px 18px;
-    border-top: 1px solid var(--color-line);
-  }
-
-  .board tbody tr:first-child {
-    border-top: 0;
-  }
-
-  .board tbody th,
-  .board tbody td {
-    padding: 0;
-    border: 0;
-  }
-
-  .board tbody th,
-  .board tbody td:first-of-type {
-    grid-column: 1 / -1;
-  }
-
-  .board tbody td + td::before {
-    content: attr(data-label) " ";
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-slate);
-  }
-
-  .trips ul {
-    grid-template-columns: 1fr;
-  }
-
-  .pickup {
-    padding: 22px 18px;
-  }
-
   .cta {
-    padding: 32px 20px;
-  }
-
-  .cta img {
-    width: 100%;
-    opacity: 0.28;
+    grid-template-columns: 1fr;
+    padding: 32px 24px;
   }
 }
 
 @media (max-width: 560px) {
-  .slipGrid {
+  .heroCall {
+    display: grid;
+    padding: 14px 18px;
+  }
+
+  .picker {
+    padding: 20px 18px;
+  }
+
+  .pickerPanel {
     grid-template-columns: 1fr;
-    gap: 12px;
   }
 
-  .route {
-    grid-template-columns: minmax(0, 1fr) 36px minmax(0, 1fr);
-    gap: 10px;
+  .pickerPanel dl {
+    grid-template-columns: auto auto;
+    gap: 18px 28px;
   }
 
-  .slipItem {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    padding-left: 0;
-    border-left: 0;
+  .pickerPanel dl > div:last-child {
+    grid-column: 1 / -1;
   }
 
-  .slipItem dd {
-    margin: 0;
-    text-align: right;
+  .reserve {
+    justify-content: center;
   }
 
-  .steps ol {
+  .steps ol,
+  .trips ul {
     grid-template-columns: 1fr;
+  }
+
+  .trips li {
+    min-height: 260px;
+  }
+
+  .pickup {
+    padding: 22px 18px;
   }
 }

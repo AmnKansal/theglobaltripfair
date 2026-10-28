@@ -2,12 +2,9 @@ import { BRAND_NAME, COMPANY_NAME } from "./legal/brand"
 import { carsDeskPhoneDisplay, contactInfo } from "./contact"
 import { media } from "./media"
 
-export type CarSlipItem = {
-  label: string
-  value: string
-}
-
 export type CarClass = {
+  /** Short name for the class picker button. */
+  label: string
   name: string
   goodFor: string
   seats: string
@@ -22,6 +19,8 @@ export type CarStep = {
 export type CarTrip = {
   title: string
   copy: string
+  image: string
+  imageAlt: string
 }
 
 export type CarFaq = {
@@ -34,61 +33,53 @@ export type CarRentalsDoc = {
   lead: string
   heroImage: string
   heroAlt: string
-  slipTitle: string
-  route: [CarSlipItem, CarSlipItem]
-  slip: CarSlipItem[]
-  intro: string
+  heroFacts: string[]
   classesTitle: string
-  classesLead: string
   classes: CarClass[]
   classesNote: string
+  stepsTitle: string
+  steps: CarStep[]
   includedTitle: string
+  intro: string
   includedImage: string
   includedAlt: string
   included: string[]
-  stepsTitle: string
-  steps: CarStep[]
   tripsTitle: string
   tripsLead: string
   trips: CarTrip[]
   pickupTitle: string
-  pickupLead: string
   pickup: string[]
   faqTitle: string
   faqs: CarFaq[]
   notice: string
   ctaTitle: string
   ctaCopy: string
-  ctaImage: string
 }
 
 export const carRentals: CarRentalsDoc = {
-  title: "The right rental car for every trip,\nbooked in one call.",
-  lead: "Tell us where you pick up, where you return and who is driving. Our car rental team compares major rental companies and books the car that fits your group, with the full total quoted before you pay.",
-  heroImage: media.carsSuv,
-  heroAlt: "A white SUV parked on a mountain road, ready for a rental road trip",
-  slipTitle: "Your rental, arranged by one team",
-  route: [
-    { label: "Pickup", value: "Airport, city or hotel" },
-    { label: "Return", value: "Same place or another city" },
-  ],
-  slip: [
-    { label: "Car", value: "Sized to your group and bags" },
-    { label: "Extras", value: "Child seats, drivers, toll passes" },
-    { label: "Total", value: "Quoted in full before you pay" },
-  ],
-  intro: `${COMPANY_NAME} books rental cars at airports, city locations and hotels around the world, for a day, a weekend road trip or a month-long stay. The team that makes your booking is the team you call for any change along the way.`,
-  classesTitle: "Choose by seats and bags",
-  classesLead: "Category names differ between rental companies, so we match the class to your passengers, your luggage and the roads ahead.",
+  title: "Rent the right car.\nOne call does the rest.",
+  lead: "Tell us the pickup city, the dates and who is driving. Our car rental team compares major rental companies and books the car that fits, with the full total quoted before you pay.",
+  heroImage: media.cars,
+  heroAlt: "A black luxury sedan in a dark showroom, lit from above",
+  heroFacts: ["Airport, city or hotel pickup", "One-way or round trip", "Full total before you pay"],
+  classesTitle: "Choose your class",
   classes: [
-    { name: "Economy and compact", goodFor: "City trips and couples", seats: "4–5", bags: "1–2" },
-    { name: "Midsize and full-size sedans", goodFor: "Business travel and long highway days", seats: "5", bags: "2–3" },
-    { name: "SUVs", goodFor: "Families, mountain roads and winter trips", seats: "5–7", bags: "3–5" },
-    { name: "Minivans", goodFor: "Groups and family holidays", seats: "7–8", bags: "4–6" },
-    { name: "Premium and convertibles", goodFor: "Celebrations, business and coastal drives", seats: "2–5", bags: "1–3" },
+    { label: "Economy", name: "Economy and compact", goodFor: "City trips and couples", seats: "4–5", bags: "1–2" },
+    { label: "Sedan", name: "Midsize and full-size sedans", goodFor: "Business travel and long highway days", seats: "5", bags: "2–3" },
+    { label: "SUV", name: "SUVs", goodFor: "Families, mountain roads and winter trips", seats: "5–7", bags: "3–5" },
+    { label: "Minivan", name: "Minivans", goodFor: "Groups and family holidays", seats: "7–8", bags: "4–6" },
+    { label: "Premium", name: "Premium and convertibles", goodFor: "Celebrations, business and coastal drives", seats: "2–5", bags: "1–3" },
   ],
   classesNote: "Typical capacity. Models vary by company, so we confirm seats and luggage space for your booking.",
+  stepsTitle: "From your call to the keys",
+  steps: [
+    { title: "Share your trip", copy: "Pickup and return locations, dates and times, the driver’s age, and how many people and bags are coming." },
+    { title: "Compare your options", copy: "Your agent checks availability across major rental companies and recommends the class that fits, with the full total for each." },
+    { title: "Confirm the booking", copy: "We read back the car, the total, the counter hours and the cancellation terms, and book once you say yes." },
+    { title: "Pick up the keys", copy: "Your written confirmation lists the counter address and what to bring, so you are ready at the desk." },
+  ],
   includedTitle: "Everything the booking covers",
+  intro: `${COMPANY_NAME} books rental cars at airports, city locations and hotels around the world, for a day, a weekend road trip or a month-long stay. The team that makes your booking is the team you call for any change along the way.`,
   includedImage: media.transfers,
   includedAlt: "A driver at the wheel of a rental car on a city drive at dusk",
   included: [
@@ -100,25 +91,17 @@ export const carRentals: CarRentalsDoc = {
     "Written confirmation with the counter address, opening hours and cancellation terms.",
     "One team to call for extensions and changes.",
   ],
-  stepsTitle: "From your call to the keys",
-  steps: [
-    { title: "Share your trip", copy: "Pickup and return locations, dates and times, the driver’s age, and how many people and bags are coming." },
-    { title: "Compare your options", copy: "Your agent checks availability across major rental companies and recommends the class that fits, with the full total for each." },
-    { title: "Confirm the booking", copy: "We read back the car, the total, the counter hours and the cancellation terms, and book once you say yes." },
-    { title: "Pick up the keys", copy: "Your written confirmation lists the counter address and what to bring, so you are ready at the desk." },
-  ],
   tripsTitle: "Rentals for every kind of trip",
   tripsLead: "Tell us what the trip looks like and we arrange the car around it.",
   trips: [
-    { title: "One-way trips", copy: "Pick up in one city and return in another. We compare one-way totals across companies for your route." },
-    { title: "Road trips", copy: "National parks, coastal highways and long weekends, with mileage terms checked for the distance you plan to drive." },
-    { title: "Family holidays", copy: "Minivans and SUVs with room for everyone, and child seats reserved before you arrive." },
-    { title: "Business travel", copy: "A comfortable sedan at the airport or near your hotel, with the booking details sent to your inbox." },
-    { title: "Monthly stays", copy: "Weekly and monthly rates compared, with extensions arranged when plans run longer." },
-    { title: "Rentals abroad", copy: "The license, permit and border rules for your destination explained before you book." },
+    { title: "One-way trips", copy: "Pick up in one city and return in another, with one-way totals compared across companies.", image: media.sanFrancisco, imageAlt: "The Golden Gate Bridge in San Francisco at sunset" },
+    { title: "Road trips", copy: "National parks and long weekends, with mileage terms checked for the distance you plan to drive.", image: media.holidays, imageAlt: "A traveller looking out over a mountain valley" },
+    { title: "Family holidays", copy: "Minivans and SUVs with room for everyone, and child seats reserved before you arrive.", image: media.flightsFamily, imageAlt: "A family playing together on a sunny beach" },
+    { title: "Business travel", copy: "A comfortable sedan at the airport or near your hotel, with the booking details in your inbox.", image: media.chicago, imageAlt: "The Chicago skyline along the lakefront" },
+    { title: "Monthly stays", copy: "Weekly and monthly rates compared, with extensions arranged when plans run longer.", image: media.miami, imageAlt: "Miami Beach and the ocean coastline from above" },
+    { title: "Rentals abroad", copy: "The license, permit and border rules for your destination explained before you book.", image: media.rome, imageAlt: "The Colosseum in Rome at dusk" },
   ],
   pickupTitle: "What to bring to the counter",
-  pickupLead: "Your confirmation repeats this list, along with the counter address and hours.",
   pickup: [
     "A valid driver’s license for every driver.",
     "A credit card in the main driver’s name.",
@@ -137,7 +120,6 @@ export const carRentals: CarRentalsDoc = {
     { question: "Can I extend or change my rental?", answer: `Usually, yes. Call ${carsDeskPhoneDisplay} as soon as plans change. Extensions and return changes depend on availability, and we explain any price difference before you agree.` },
   ],
   notice: `${BRAND_NAME} is an independent booking service operated by ${COMPANY_NAME} and is not affiliated with any car rental company. Rates and availability are confirmed with the rental company when you book, and any service fee is included in the total we quote before you pay.`,
-  ctaTitle: "Ready to drive? Call and we will line up the right car.",
-  ctaCopy: `Call ${carsDeskPhoneDisplay} or email ${contactInfo.email} with your pickup city, dates and group size.`,
-  ctaImage: media.cars,
+  ctaTitle: "Your car is one call away.",
+  ctaCopy: `Share your pickup city, dates and group size, or email ${contactInfo.email}. We will line up the right car.`,
 }
